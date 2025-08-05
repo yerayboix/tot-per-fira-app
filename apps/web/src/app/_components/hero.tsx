@@ -2,16 +2,12 @@
 
 import { Button } from "@/components/ui/button"
 import { AvailabilityIndicator } from "@/components/availability-indicator"
+import { EmeraldVoid } from "@/components/backgrounds/emerald-void"
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center">
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background: "radial-gradient(125% 125% at 50% 90%, #000000 40%, #072607 100%)",
-        }}
-      />
+      <EmeraldVoid />
       <div className="container mx-auto px-4 py-16 z-10">
         <div className="flex flex-col items-center justify-center text-center space-y-8">
           {/* Título principal */}
