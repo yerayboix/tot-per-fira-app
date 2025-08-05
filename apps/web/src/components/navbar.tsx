@@ -43,11 +43,10 @@ export function Navbar() {
   ]
 
   return (
-    <nav className={`${
-      isScrolled 
-        ? 'fixed bg-black/40 backdrop-blur-xl border-b border-white/20' 
+    <nav className={`${isScrolled
+        ? 'fixed bg-black/40 backdrop-blur-xl border-b border-white/20'
         : 'absolute'
-    } top-0 left-0 right-0 z-50 transition-all duration-300`}>
+      } top-0 left-0 right-0 z-50 transition-all duration-300`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -110,8 +109,8 @@ export function Navbar() {
                   <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent 
-                side="right" 
+              <SheetContent
+                side="right"
                 className="bg-white/10 backdrop-blur-md border-l border-white/20 w-80 p-0"
               >
                 <SheetTitle className="sr-only">Menú de navegación</SheetTitle>

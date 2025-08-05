@@ -14,7 +14,7 @@ export function Hero() {
           <div className="space-y-6 max-w-4xl">
             <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
               Todo lo necesario para el{" "}
-              <span className="text-lime-400">evento perfecto</span>
+              <span className="text-lime-400 drop-shadow-[0_0_10px_rgba(132,204,22,0.5)]">evento perfecto</span>
             </h1>
 
             {/* Frase inspiradora */}
