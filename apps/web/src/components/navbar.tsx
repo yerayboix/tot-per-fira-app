@@ -1,17 +1,28 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
 import { Menu, X, User, LogOut } from "lucide-react"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
   const router = useRouter()
   const { data: session, isPending } = authClient.useSession()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      setIsScrolled(scrollTop > 10)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleSignOut = () => {
     authClient.signOut({
@@ -32,7 +43,11 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+    <nav className={`${
+      isScrolled 
+        ? 'fixed bg-black/40 backdrop-blur-xl border-b border-white/20' 
+        : 'absolute'
+    } top-0 left-0 right-0 z-50 transition-all duration-300`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -57,46 +72,31 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
+          </div>
 
-            {/* Auth Buttons */}
-            <div className="flex items-center space-x-3">
-              {isPending ? (
-                <div className="w-20 h-9 bg-gray-600/20 rounded-md animate-pulse" />
-              ) : session ? (
-                <div className="flex items-center space-x-3">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={handleSignOut}
-                    className="border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900"
-                  >
-                    <LogOut className="w-4 h-4 mr-2" />
-                    Cerrar Sesión
-                  </Button>
-                </div>
-              ) : (
-                <>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    asChild
-                    className="border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900"
-                  >
-                    <Link href="/login">
-                      <User className="w-4 h-4 mr-2" />
-                      Iniciar Sesión
-                    </Link>
-                  </Button>
-                  <Button
-                    size="sm"
-                    asChild
-                    className="bg-lime-500 hover:bg-lime-600 text-blue-900"
-                  >
-                    <Link href="/register">Registrarse</Link>
-                  </Button>
-                </>
-              )}
-            </div>
+          {/* Auth Buttons - Only on the right */}
+          <div className="flex items-center">
+            {isPending ? (
+              <div className="w-20 h-9 bg-gray-600/20 rounded-md animate-pulse" />
+            ) : session ? (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleSignOut}
+                className="border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Cerrar Sesión
+              </Button>
+            ) : (
+              <Button
+                size="sm"
+                asChild
+                className="bg-lime-500 hover:bg-lime-600 text-blue-900"
+              >
+                <Link href="/login">Login</Link>
+              </Button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,34 +111,30 @@ export function Navbar() {
                   <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="bg-blue-900/95 backdrop-blur-md border-l border-white/20">
-                <div className="flex flex-col h-full">
+              <SheetContent 
+                side="right" 
+                className="bg-white/10 backdrop-blur-md border-l border-white/20 w-80 p-0"
+              >
+                <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
+                <div className="flex flex-col h-full p-6">
                   {/* Header */}
-                  <div className="flex items-center justify-between py-4 border-b border-white/20">
+                  <div className="flex items-center justify-between py-6 border-b border-white/20">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                       <div className="w-8 h-8 bg-lime-400 rounded-lg flex items-center justify-center">
                         <span className="text-blue-900 font-bold text-sm">TF</span>
                       </div>
                       <span className="text-white font-bold text-xl">Tot per Fira</span>
                     </Link>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => setIsOpen(false)}
-                      className="text-white hover:bg-white/10"
-                    >
-                      <X className="w-5 h-5" />
-                    </Button>
                   </div>
 
                   {/* Navigation Links */}
-                  <div className="flex-1 py-6">
-                    <div className="space-y-4">
+                  <div className="flex-1 py-8">
+                    <div className="space-y-2">
                       {navigationLinks.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="block text-gray-200 hover:text-lime-400 transition-colors duration-200 font-medium text-lg py-2"
+                          className="block text-gray-200 hover:text-lime-400 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-lg hover:bg-white/5"
                           onClick={() => setIsOpen(false)}
                         >
                           {link.label}
@@ -150,17 +146,18 @@ export function Navbar() {
                   {/* Auth Section */}
                   <div className="border-t border-white/20 pt-6">
                     {isPending ? (
-                      <div className="w-full h-10 bg-gray-600/20 rounded-md animate-pulse" />
+                      <div className="w-full h-12 bg-white/10 rounded-lg animate-pulse" />
                     ) : session ? (
                       <div className="space-y-4">
-                        <div className="text-gray-200 text-sm">
-                          <p className="font-medium">Hola, {session.user.name}</p>
-                          <p className="text-gray-400">{session.user.email}</p>
+                        <div className="bg-white/5 rounded-lg p-4">
+                          <p className="text-lime-400 font-medium text-sm">Sesión activa</p>
+                          <p className="text-gray-200 font-medium">{session.user.name}</p>
+                          <p className="text-gray-400 text-sm">{session.user.email}</p>
                         </div>
                         <Button
                           variant="outline"
                           onClick={handleSignOut}
-                          className="w-full border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900"
+                          className="w-full border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900 transition-all duration-200"
                         >
                           <LogOut className="w-4 h-4 mr-2" />
                           Cerrar Sesión
@@ -171,7 +168,7 @@ export function Navbar() {
                         <Button
                           variant="outline"
                           asChild
-                          className="w-full border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900"
+                          className="w-full border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900 transition-all duration-200"
                           onClick={() => setIsOpen(false)}
                         >
                           <Link href="/login">
@@ -181,7 +178,7 @@ export function Navbar() {
                         </Button>
                         <Button
                           asChild
-                          className="w-full bg-lime-500 hover:bg-lime-600 text-blue-900"
+                          className="w-full bg-lime-500 hover:bg-lime-600 text-blue-900 transition-all duration-200"
                           onClick={() => setIsOpen(false)}
                         >
                           <Link href="/register">Registrarse</Link>
