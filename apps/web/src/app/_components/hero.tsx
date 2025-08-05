@@ -32,10 +32,10 @@ export function Hero() {
 
           {/* Botones de acción */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-lime-500 hover:bg-lime-600 text-blue-900 font-bold px-8 py-4 text-lg">
+            <Button variant="subtle" size="2xl" className="px-10 py-4">
               Reserva Ahora
             </Button>
-            <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900">
+            <Button variant="subtle" size="2xl" className="px-10 py-4">
               Ver Catálogo
             </Button>
           </div>

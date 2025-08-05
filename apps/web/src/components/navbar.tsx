@@ -80,10 +80,9 @@ export function Navbar() {
               <div className="w-20 h-9 bg-gray-600/20 rounded-md animate-pulse" />
             ) : session ? (
               <Button
-                variant="outline"
+                variant="subtle"
                 size="sm"
                 onClick={handleSignOut}
-                className="border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900"
               >
                 <LogOut className="w-4 h-4 mr-2" />
                 Cerrar Sesión
@@ -91,8 +90,8 @@ export function Navbar() {
             ) : (
               <Button
                 size="sm"
+                variant="subtle"
                 asChild
-                className="bg-lime-500 hover:bg-lime-600 text-blue-900"
               >
                 <Link href="/login">Login</Link>
               </Button>
@@ -155,9 +154,9 @@ export function Navbar() {
                           <p className="text-gray-400 text-sm">{session.user.email}</p>
                         </div>
                         <Button
-                          variant="outline"
+                          variant="subtle"
                           onClick={handleSignOut}
-                          className="w-full border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900 transition-all duration-200"
+                          className="w-full"
                         >
                           <LogOut className="w-4 h-4 mr-2" />
                           Cerrar Sesión
@@ -166,9 +165,9 @@ export function Navbar() {
                     ) : (
                       <div className="space-y-3">
                         <Button
-                          variant="outline"
+                          variant="subtle"
                           asChild
-                          className="w-full border-lime-400 text-lime-400 hover:bg-lime-400 hover:text-blue-900 transition-all duration-200"
+                          className="w-full"
                           onClick={() => setIsOpen(false)}
                         >
                           <Link href="/login">
@@ -177,8 +176,9 @@ export function Navbar() {
                           </Link>
                         </Button>
                         <Button
+                          variant="subtle"
                           asChild
-                          className="w-full bg-lime-500 hover:bg-lime-600 text-blue-900 transition-all duration-200"
+                          className="w-full"
                           onClick={() => setIsOpen(false)}
                         >
                           <Link href="/register">Registrarse</Link>
