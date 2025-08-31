@@ -1,10 +1,20 @@
 import { Hero } from "./_components/hero"
+import { Services } from "./_components/services"
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Hero />
-      <div className="min-h-screen"></div>
+      <div className="px-4">
+        <Hero />
+      </div>
+      {/* Separator */}
+      <hr className="border-gray-300" />
+      <div className="px-4">
+        <Services />
+      </div>
+      <div className="min-h-screen">
+
+      </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { AvailabilityIndicator } from "@/components/availability-indicator"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto">
 
       <div className="container mx-auto px-4 py-24 z-10 relative">
         <div className="max-w-4xl mx-auto text-center">

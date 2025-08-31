@@ -42,8 +42,8 @@ export function Navbar() {
 
   return (
     <nav className={`${isScrolled
-        ? 'fixed bg-black/40 backdrop-blur-xl border-b border-white/20'
-        : 'absolute'
+        ? 'fixed bg-white border-b border-gray-300'
+        : 'absolute bg-white border-b border-gray-300'
       } top-0 left-0 right-0 z-50 transition-all duration-300`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -63,7 +63,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[var(--secondary-color)] transition-colors duration-200 font-medium"
+                  className="text-gray-700 hover:text-[var(--primary-color)] transition-colors duration-200 font-medium"
                 >
                   {link.label}
                 </Link>
@@ -102,24 +102,24 @@ export function Navbar() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-white hover:bg-white/10"
+                  className="text-gray-700 hover:bg-gray-100"
                 >
                   <Menu className="w-5 h-5" />
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="bg-white/10 backdrop-blur-md border-l border-white/20 w-80 p-0"
+                className="bg-white border-l border-gray-300 w-80 p-0"
               >
                 <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
                 <div className="flex flex-col h-full p-6">
                   {/* Header */}
-                  <div className="flex items-center justify-between py-6 border-b border-white/20">
+                  <div className="flex items-center justify-between py-6 border-b border-gray-300">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
                       <div className="w-8 h-8 bg-[var(--secondary-color)] rounded-lg flex items-center justify-center">
                         <span className="text-[var(--primary-color)] font-bold text-sm">TPF</span>
                       </div>
-                      <span className="text-white font-bold text-xl">Tot Per Fira</span>
+                      <span className="text-[var(--primary-color)] font-bold text-xl">Tot Per Fira</span>
                     </Link>
                   </div>
 
@@ -130,7 +130,7 @@ export function Navbar() {
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="block text-gray-200 hover:text-[var(--primary-color)] transition-all duration-200 font-medium text-lg py-3 px-4 rounded-lg hover:bg-white/5"
+                          className="block text-gray-700 hover:text-[var(--primary-color)] transition-all duration-200 font-medium text-lg py-3 px-4 rounded-lg hover:bg-gray-100"
                           onClick={() => setIsOpen(false)}
                         >
                           {link.label}
@@ -140,15 +140,15 @@ export function Navbar() {
                   </div>
 
                   {/* Auth Section */}
-                  <div className="border-t border-white/20 pt-6">
+                  <div className="border-t border-gray-300 pt-6">
                     {isPending ? (
-                      <div className="w-full h-12 bg-white/10 rounded-lg animate-pulse" />
+                      <div className="w-full h-12 bg-gray-200 rounded-lg animate-pulse" />
                     ) : session ? (
                       <div className="space-y-4">
-                        <div className="bg-white/5 rounded-lg p-4">
+                        <div className="bg-gray-50 rounded-lg p-4">
                           <p className="text-[var(--primary-color)] font-medium text-sm">Sesión activa</p>
-                          <p className="text-gray-200 font-medium">{session.user.name}</p>
-                          <p className="text-gray-400 text-sm">{session.user.email}</p>
+                          <p className="text-gray-800 font-medium">{session.user.name}</p>
+                          <p className="text-gray-600 text-sm">{session.user.email}</p>
                         </div>
                         <Button
                           variant="subtle"
