@@ -29,15 +29,14 @@ export function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
-              size="lg"
-              className="px-8 py-4 text-base font-semibold bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-clash-display"
+              size="xl"
+              variant="primary-brand"
             >
               Solicitar presupuesto
             </Button>
             <Button
-              variant="outline"
-              size="lg"
-              className="px-8 py-4 text-base font-semibold border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300 font-clash-display"
+              variant="secondary-brand"
+              size="xl"
             >
               Contactar
             </Button>

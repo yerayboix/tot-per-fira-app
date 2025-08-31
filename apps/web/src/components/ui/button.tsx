@@ -22,6 +22,8 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         subtle: "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/30 transition-all duration-200",
         "subtle-glow": "bg-white/10 backdrop-blur-sm border border-lime-400/30 text-lime-400 drop-shadow-[0_0_10px_rgba(132,204,22,0.5)] hover:bg-lime-400/20 hover:border-lime-400/50 hover:drop-shadow-[0_0_15px_rgba(132,204,22,0.7)] transition-all duration-200",
+        "primary-brand": "bg-[var(--primary-color)] text-white shadow-lg hover:shadow-xl hover:bg-[var(--primary-color)]/90 transition-all duration-300 font-clash-display",
+        "secondary-brand": "border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300 font-clash-display",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
