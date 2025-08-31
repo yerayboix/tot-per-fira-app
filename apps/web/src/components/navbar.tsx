@@ -37,9 +37,7 @@ export function Navbar() {
 
   const navigationLinks = [
     { href: "/", label: "Inicio" },
-    { href: "/servicios", label: "Servicios" },
-    { href: "/productos", label: "Productos" },
-    { href: "/contacto", label: "Contacto" },
+    { href: "/fira-onda-2025", label: "Fira d'Onda 2025" },
   ]
 
   return (
@@ -51,10 +49,10 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-lime-400 rounded-lg flex items-center justify-center">
-              <span className="text-blue-900 font-bold text-sm">TF</span>
+            <div className="w-8 h-8 bg-[var(--secondary-color)] rounded-lg flex items-center justify-center">
+              <span className="text-[var(--primary-color)] font-bold text-sm">TPF</span>
             </div>
-            <span className="text-white font-bold text-xl">Tot per Fira</span>
+            <span className="text-[var(--primary-color)] font-bold text-xl">Tot per Fira</span>
           </Link>
 
           {/* Desktop Navigation */}

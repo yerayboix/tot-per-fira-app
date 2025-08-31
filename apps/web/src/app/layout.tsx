@@ -26,8 +26,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "tot-per-fira-app",
-  description: "tot-per-fira-app",
+  title: "TOT PER FIRA",
+  description: "TOT PER FIRA",
 };
 
 export default function RootLayout({
