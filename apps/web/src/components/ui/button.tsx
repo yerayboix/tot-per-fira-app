@@ -21,6 +21,7 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
         subtle: "bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 hover:border-white/30 transition-all duration-200",
+        "subtle-glow": "bg-white/10 backdrop-blur-sm border border-lime-400/30 text-lime-400 drop-shadow-[0_0_10px_rgba(132,204,22,0.5)] hover:bg-lime-400/20 hover:border-lime-400/50 hover:drop-shadow-[0_0_15px_rgba(132,204,22,0.7)] transition-all duration-200",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

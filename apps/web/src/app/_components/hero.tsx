@@ -30,8 +30,8 @@ export function Hero() {
 
           {/* Botones de acción */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="subtle" size="2xl" className="px-10 py-4">
-              Reserva Ahora
+            <Button variant="subtle-glow" size="2xl" className="px-10 py-4">
+              Ponte en contacto
             </Button>
             <Button variant="subtle" size="2xl" className="px-10 py-4">
               Ver Catálogo
