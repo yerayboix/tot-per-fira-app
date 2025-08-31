@@ -36,7 +36,7 @@ export function AvailabilityIndicator({
       <div className={cn(baseClasses, className)}>
         <div className={dotClasses} />
         {showText && (
-          <span className="text-md font-pt-mono text-muted-foreground">
+          <span className="text-md font-pt-mono">
             {text}
           </span>
         )}

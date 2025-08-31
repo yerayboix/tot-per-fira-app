@@ -52,7 +52,7 @@ export function Navbar() {
             <div className="w-8 h-8 bg-[var(--secondary-color)] rounded-lg flex items-center justify-center">
               <span className="text-[var(--primary-color)] font-bold text-sm">TPF</span>
             </div>
-            <span className="text-[var(--primary-color)] font-bold text-xl">Tot per Fira</span>
+            <span className="text-[var(--primary-color)] font-bold text-xl">Tot Per Fira</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -63,7 +63,7 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-gray-200 hover:text-lime-400 transition-colors duration-200 font-medium"
+                  className="text-[var(--secondary-color)] transition-colors duration-200 font-medium"
                 >
                   {link.label}
                 </Link>
@@ -116,10 +116,10 @@ export function Navbar() {
                   {/* Header */}
                   <div className="flex items-center justify-between py-6 border-b border-white/20">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                      <div className="w-8 h-8 bg-lime-400 rounded-lg flex items-center justify-center">
-                        <span className="text-blue-900 font-bold text-sm">TF</span>
+                      <div className="w-8 h-8 bg-[var(--secondary-color)] rounded-lg flex items-center justify-center">
+                        <span className="text-[var(--primary-color)] font-bold text-sm">TPF</span>
                       </div>
-                      <span className="text-white font-bold text-xl">Tot per Fira</span>
+                      <span className="text-white font-bold text-xl">Tot Per Fira</span>
                     </Link>
                   </div>
 
@@ -130,7 +130,7 @@ export function Navbar() {
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="block text-gray-200 hover:text-lime-400 transition-all duration-200 font-medium text-lg py-3 px-4 rounded-lg hover:bg-white/5"
+                          className="block text-gray-200 hover:text-[var(--primary-color)] transition-all duration-200 font-medium text-lg py-3 px-4 rounded-lg hover:bg-white/5"
                           onClick={() => setIsOpen(false)}
                         >
                           {link.label}
@@ -146,7 +146,7 @@ export function Navbar() {
                     ) : session ? (
                       <div className="space-y-4">
                         <div className="bg-white/5 rounded-lg p-4">
-                          <p className="text-lime-400 font-medium text-sm">Sesión activa</p>
+                          <p className="text-[var(--primary-color)] font-medium text-sm">Sesión activa</p>
                           <p className="text-gray-200 font-medium">{session.user.name}</p>
                           <p className="text-gray-400 text-sm">{session.user.email}</p>
                         </div>
