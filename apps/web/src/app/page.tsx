@@ -1,5 +1,6 @@
 import { Hero } from "./_components/hero"
 import { Services } from "./_components/services"
+import OurMission from "./_components/our-mission"
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <hr className="border-gray-300" />
       <div className="px-4">
         <Services />
+        <OurMission />
       </div>
       <div className="min-h-screen">
 
