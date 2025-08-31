@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Outfit, Montserrat } from "next/font/google";
 import "../index.css";
 import Providers from "@/components/providers";
 import { Navbar } from "@/components/navbar";
@@ -11,6 +12,16 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-outfit",
+  subsets: ["latin"],
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
@@ -27,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${montserrat.variable} antialiased`}
       >
         <Providers>
           <div className="min-h-screen">
