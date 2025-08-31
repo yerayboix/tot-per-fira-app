@@ -11,16 +11,16 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           {/* Main headline - Restructurado */}
             <div className="mb-2">
-              <span className="text-sm lg:text-xl font-medium">¡No te estreses más!</span>
+              <span className="text-sm lg:text-xl font-medium font-clash-display">¡No te estreses más!</span>
             </div>
           <div className="space-y-6 mb-8">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[var(--primary-color)] font-bold tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-[var(--primary-color)] font-semibold tracking-tight font-clash-display">
               La manera más sencilla de organizar tus fiestas
             </h1>
           </div>
           {/* Description */}
           <div className="mb-10 max-w-2xl mx-auto">
-            <p className="text-sm lg:text-xl text-gray-600 leading-relaxed">
+            <p className="text-sm lg:text-xl text-gray-600 leading-relaxed font-clash-display">
               Bebidas, congeladores, altavoces y mucho más... <br />
               No tengas miedo en pedirnos presupuesto, nosotros nos encargamos de todo.
             </p>
@@ -30,14 +30,14 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               size="lg"
-              className="px-8 py-4 text-base font-semibold bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="px-8 py-4 text-base font-semibold bg-[var(--primary-color)] hover:bg-[var(--primary-color)]/90 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-clash-display"
             >
               Solicitar presupuesto
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="px-8 py-4 text-base font-semibold border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300"
+              className="px-8 py-4 text-base font-semibold border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300 font-clash-display"
             >
               Contactar
             </Button>
