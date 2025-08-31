@@ -93,6 +93,8 @@ body {
 }
 
 @theme inline {
+  --font-clash-display: var(--font-clash-display);
+  --font-khand: var(--font-khand);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
