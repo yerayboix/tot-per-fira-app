@@ -8,12 +8,12 @@ import FrequentQuestionts from "./_components/faqs"
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <div className="px-4">
+      <div className="px-2">
         <Hero />
       </div>
       {/* Separator */}
       <hr className="border-gray-300" />
-      <div className="px-4">
+      <div className="px-2">
         <Services />
         <OurMission />
         <Products />
