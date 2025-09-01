@@ -10,10 +10,7 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-[var(--secondary-color)] font-bold text-sm">TPF</span>
-              </div>
-              <span className="text-[var(--primary-color)] font-bold text-xl">Tot Per Fira</span>
+              <span className="text-[var(--primary-color)] font-bold text-xl font-khand">TOT PER FIRA</span>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
               Servicio completo y fiable para la organización de fiestas y eventos. 
