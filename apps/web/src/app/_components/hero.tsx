@@ -6,6 +6,8 @@ import { NumberTicker } from "@/components/magicui/number-ticker"
 import Button from "@/components/ui/retro-btn"
 import Link from "next/link"
 import Image from "next/image"
+import { useRef } from "react";
+import { Confetti, type ConfettiRef } from "@/components/magicui/confetti";
 
 interface ExperienceCounterProps {
   value: number
@@ -34,8 +36,18 @@ function ExperienceCounter({ value, text, prefix = "+", className = "" }: Experi
 }
 
 export function Hero() {
+  const confettiRef = useRef<ConfettiRef>(null);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto pt-20">
+      <Confetti
+        ref={confettiRef}
+        options={{
+          particleCount: 400,
+          spread: 100,
+          origin: { y: 0.6 }
+        }}
+        className="absolute left-0 top-0 z-20 size-full"
+      />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
