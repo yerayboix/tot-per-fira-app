@@ -14,20 +14,20 @@ export function OurMission() {
             </div>
             <div>
               <div className="space-y-6">
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-700 leading-relaxed">
                   En <strong className="text-[var(--primary-color)]">Tot per Fira</strong>, creemos que cada cliente es único y merece una atención especial.
                 </p>
 
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                   Nos esforzamos al máximo para que el trato con cada uno de vosotros sea lo más cercano y personalizado posible.
                 </p>
 
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-600 leading-relaxed">
                   Queremos que te sientas como en casa y que confíes plenamente en nosotros para hacer realidad tu evento.
                 </p>
 
-                <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-[var(--primary-color)]">
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                <div className="bg-gray-50 p-6 border-l-4 border-[var(--primary-color)]">
+                  <p className="text-base md:text-ºlg text-gray-700 leading-relaxed">
                     <strong>¿Tienes dudas?</strong> Siempre estamos disponibles para resolver cualquier consulta que tengas, ya sea por teléfono, email o WhatsApp.
                   </p>
                 </div>
