@@ -24,6 +24,7 @@ const buttonVariants = cva(
         "subtle-glow": "bg-white/10 backdrop-blur-sm border border-lime-400/30 text-lime-400 drop-shadow-[0_0_10px_rgba(132,204,22,0.5)] hover:bg-lime-400/20 hover:border-lime-400/50 hover:drop-shadow-[0_0_15px_rgba(132,204,22,0.7)] transition-all duration-200",
         "primary-brand": "bg-[var(--primary-color)] text-white shadow-lg hover:shadow-xl hover:bg-[var(--primary-color)]/90 transition-all duration-300 font-clash-display",
         "secondary-brand": "border-2 border-[var(--secondary-color)] text-[var(--secondary-color)] hover:bg-[var(--secondary-color)] hover:text-white transition-all duration-300 font-clash-display",
+        "hero": "bg-[var(--primary-color)] text-white font-semibold shadow-[0_4px_14px_0_rgba(0,118,255,0.39)] hover:shadow-[0_6px_20px_rgba(0,118,255,0.23)] hover:bg-[var(--primary-color)]/90 active:scale-[0.98] transition-all duration-200 ease-out font-clash-display sm:text-base text-sm sm:px-8 sm:py-3 px-6 py-2.5",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",

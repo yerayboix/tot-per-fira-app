@@ -12,20 +12,6 @@ export function CTASection() {
               Sabemos mejor que nadie el coñazo de organizarlo todo
             </h3>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Button
-                size="xl"
-                variant="primary-brand"
-              >
-                Solicitar Presupuesto
-              </Button>
-              <Button
-                variant="secondary-brand"
-                size="xl"
-              >
-                Contactar
-              </Button>
-            </div>
           </div>
           <div className="grid grid-rows-4">
             <FeatureCard

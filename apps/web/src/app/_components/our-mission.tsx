@@ -36,7 +36,7 @@ export function OurMission() {
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button
                   size="xl"
-                  variant="primary-brand"
+                  variant="hero"
                 >
                   Solicitar Presupuesto
                 </Button>

@@ -64,7 +64,7 @@ export function Products() {
         </div>
         
         {/* CTA Section */}
-        <div className="pt-20 border-t border-gray-300 text-center">
+        <div className="pt-20 border-t border-gray-300 text-center p-4">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-3xl md:text-5xl font-bold font-khand text-[var(--primary-color)] mb-6">
               ¿Te interesa alguno de nuestros servicios?

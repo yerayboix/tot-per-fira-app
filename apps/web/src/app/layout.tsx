@@ -117,7 +117,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning className="light">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${montserrat.variable} ${clashDisplay.variable} ${khand.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${montserrat.variable} ${clashDisplay.variable} ${khand.variable} antialiased scroll-smooth`}
       >
         <Providers>
           <div className="min-h-screen">
