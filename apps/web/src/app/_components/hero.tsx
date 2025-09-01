@@ -5,6 +5,7 @@ import { AvailabilityIndicator } from "@/components/availability-indicator"
 import { NumberTicker } from "@/components/magicui/number-ticker"
 import Button from "@/components/ui/retro-btn"
 import Link from "next/link"
+import Image from "next/image"
 
 interface ExperienceCounterProps {
   value: number
@@ -34,62 +35,58 @@ function ExperienceCounter({ value, text, prefix = "+", className = "" }: Experi
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto pt-20">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/pexels-kampus-6760884.jpg"
+          alt="Event background"
+          fill
+          className="object-cover blur-sm"
+          priority
+        />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
 
-      <div className="container mx-auto px-4 justify-center relative">
+      <div className="container mx-auto px-4 justify-center relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main headline - Restructurado */}
-          <div className="mb-2 text-center">
-            <span className="text-sm lg:text-xl font-medium font-clash-display">¡No te estreses más!</span>
+          <div className="mb-8 text-center">
+            <span className="text-md lg:text-xl font-semibold font-clash-display text-white">¡No te estreses más!</span>
           </div>
-          <div className="space-y-6 mb-4 text-center">
-            <h1 className="text-5xl lg:text-6xl xl:text-7xl text-[var(--primary-color)] font-semibold font-clash-display">
-              Organiza tu evento ideal
+          <div className="mb-12 text-center">
+            <h1 className="text-7xl lg:text-8xl text-white font-bold font-khand">
+              ORGANIZA TU EVENTO IDEAL
             </h1>
           </div>
           {/* Description */}
-          <div className="mb-10 max-w-2xl mx-auto text-center">
-            <p className="text-sm lg:text-xl text-gray-600 leading-relaxed tracking-wider font-clash-display">
-              Bebidas, congeladores, altavoces y mucho más... <br />
-              Nosotros nos encargamos de todo.
+          <div className="mb-16 max-w-2xl mx-auto text-center">
+            <p className="text-base lg:text-xl text-gray-200 leading-relaxed tracking-wider font-clash-display">
+              BEBIDAS, CONGELADORES, ALTAVOCES Y MUCHOS MÁS... <br />
+              <span className="text-white font-semibold">¡Nosotros nos encargamos de todo!</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 items-center justify-center gap-4 mb-12">
-            <ExperienceCounter
-              value={10}
-              text="Años de experiencia"
-            />
-            <ExperienceCounter
-              value={100}
-              text="Clientes satisfechos"
-            />
-            <ExperienceCounter
-              value={30}
-              text="Eventos organizados"
-              className="col-span-2 md:col-span-1"
-            />
+          {/* CTA Buttons */}
+          <div className="flex flex-row gap-6 items-center justify-center mb-16">
+            <Link href="/contact">
+              <Button
+                size="md"
+                variant="default"
+              >
+                Crear presupuesto
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                size="md"
+                variant="secondary"
+              >
+                Contactar
+              </Button>
+            </Link>
           </div>
-
-                      {/* CTA Buttons */}
-            <div className="flex flex-row gap-4 items-center justify-center mb-12">
-              <Link href="/contact">
-                <Button
-                  size="md"
-                  variant="default"
-                >
-                  Crear presupuesto
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="md"
-                  variant="outline"
-                >
-                  Contactar
-                </Button>
-              </Link>
-            </div>
         </div>
       </div>
     </section>
