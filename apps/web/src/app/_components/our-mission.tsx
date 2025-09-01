@@ -1,4 +1,5 @@
 import Button from "@/components/ui/retro-btn"
+import Link from "next/link"
 
 
 export function OurMission() {
@@ -34,18 +35,22 @@ export function OurMission() {
               </div>
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="md"
-                  variant="default"
-                >
-                  Solicitar Presupuesto
-                </Button>
-                <Button
-                  variant="outline"
-                  size="md"
-                >
-                  Contactar
-                </Button>
+                <Link href="/nuevo-presupuesto">
+                  <Button
+                    size="md"
+                    variant="default"
+                  >
+                    Solicitar Presupuesto
+                  </Button>
+                </Link>
+                <Link href="/contacto">
+                  <Button
+                    variant="outline"
+                    size="md"
+                  >
+                    Contactar
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import { Speaker, Refrigerator, type LucideIcon, Utensils, BrushCleaning, Barrel, GlassWater } from "lucide-react"
 import Button from "@/components/ui/retro-btn"
+import Link from "next/link"
 
 export function Products() {
   return (
@@ -73,18 +74,22 @@ export function Products() {
               No dudes en contactarnos para solicitar un presupuesto personalizado o resolver cualquier duda que tengas.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="md"
-                variant="default"
-              >
-                Solicitar Presupuesto
-              </Button>
-              <Button
-                variant="outline"
-                size="md"
-              >
-                Contactar
-              </Button>
+              <Link href="/nuevo-presupuesto">
+                <Button
+                  size="md"
+                  variant="default"
+                >
+                  Solicitar Presupuesto
+                </Button>
+              </Link>
+              <Link href="/contacto">
+                <Button
+                  variant="outline"
+                  size="md"
+                >
+                  Contactar
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -82,7 +82,7 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-row gap-6 items-center justify-center mb-16">
-            <Link href="/contact">
+            <Link href="/nuevo-presupuesto">
               <Button
                 size="md"
                 variant="default"
@@ -90,7 +90,7 @@ export function Hero() {
                 Crear presupuesto
               </Button>
             </Link>
-            <Link href="/contact">
+            <Link href="/contacto">
               <Button
                 size="md"
                 variant="secondary"
