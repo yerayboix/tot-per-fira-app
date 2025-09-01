@@ -36,7 +36,7 @@ export default function FrequentQuestions() {
         <div>
           <Accordion type="single" collapsible className="">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-300 last:border-b-0 p-4">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-300 p-4">
                 <AccordionTrigger className="text-left py-6 hover:no-underline group cursor-pointer">
                   <h3 className="text-xl md:text-2xl font-bold font-khand text-[var(--secondary-color)] group-hover:text-[var(--primary-color)] transition-colors">
                     {faq.question}
