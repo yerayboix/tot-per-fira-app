@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 export function Products() {
   return (
     
-    <section className="relative overflow-hidden border border-t-0 border-gray-300 container mx-auto">
+    <section className="relative overflow-hidden border border-t-0 border-b-0 border-gray-300 container mx-auto pb-20">
       <div className="container mx-auto">
         <div className="p-4 border-b border-gray-300 text-center bg-[var(--complementary-color-yellow)]/10">
           <h2 className="text-4xl md:text-8xl font-bold font-khand text-[var(--primary-color)]">¿QUÉ SERVICIOS OFRECEMOS?</h2>
@@ -64,7 +64,7 @@ export function Products() {
         </div>
         
         {/* CTA Section */}
-        <div className="p-8 border-t border-gray-300 text-center">
+        <div className="pt-20 border-t border-gray-300 text-center">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-3xl md:text-5xl font-bold font-khand text-[var(--primary-color)] mb-6">
               ¿Te interesa alguno de nuestros servicios?

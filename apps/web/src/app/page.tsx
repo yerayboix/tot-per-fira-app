@@ -3,6 +3,7 @@ import { Services } from "./_components/services"
 import { Products } from "./_components/products"
 import { OurMission } from "./_components/our-mission"
 import { CTASection } from "./_components/cta-section"
+import FrequentQuestionts from "./_components/faqs"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <OurMission />
         <Products />
         <CTASection />
+        <FrequentQuestionts />
       </div>
       <div className="min-h-screen">
 

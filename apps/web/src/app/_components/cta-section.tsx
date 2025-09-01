@@ -1,20 +1,16 @@
 import { Button } from "@/components/ui/button";
 
+
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden border border-b-0 border-t-0 border-gray-300 container mx-auto">
-      <div className="p-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div>
+    <section className="relative overflow-hidden border border-b border-t border-gray-300 container mx-auto">
+      <div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+          <div className="p-4">
             <span className="text-lg text-[var(--secondary-color)] mb-4 font-clash-display font-bold">DÉJALO EN NUESTRAS MANOSY LLÉVATE TODO EL MÉRITO</span>
             <h3 className="text-4xl md:text-6xl font-bold font-khand text-[var(--primary-color)] mb-4">
               Sabemos mejor que nadie el coñazo de organizarlo todo
             </h3>
-          </div>
-          <div>
-            <div className="space-y-6">
-              
-            </div>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Button
@@ -31,8 +27,50 @@ export function CTASection() {
               </Button>
             </div>
           </div>
+          <div className="grid grid-rows-4">
+            <FeatureCard
+              title="+10 años de experiencia"
+              description="Conocemos perfectamente el sector de eventos y fiestas"
+            />
+            <FeatureCard
+              title="Atención personalizada"
+              description="Nos ajustamos a tus necesidades específicas"
+            />
+            <FeatureCard
+              title="Servicio integral"
+              description="Sonido, bebida, montaje, barra y personal"
+            />
+            <FeatureCard
+              title="Flexibilidad total"
+              description="Nos adaptamos a cualquier tipo de fiesta o evento"
+              className="border-b-0"
+            />
+          </div>
         </div>
       </div>
     </section>
   )
-} 
+}
+
+function FeatureCard({
+  title,
+  description,
+  className = ""
+}: {
+  title: string;
+  description: string;
+  className?: string;
+}) {
+  return (
+    <div className={`row-span-1 border-b border-l border-gray-300 p-4 ${className}`}>
+      <div className="flex flex-col">
+        <h4 className="text-2xl font-bold font-khand text-[var(--primary-color)]">
+          {title}
+        </h4>
+        <span className="text-md text-muted-foreground">
+          {description}
+        </span>
+      </div>
+    </div>
+  );
+}

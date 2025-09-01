@@ -11,7 +11,7 @@ export function Services() {
             <ServiceCard step="01" title="Recibimos tu pedido" description="Una vez recibimos el fórmulario con tu pedido, te contactaremos para confirmar los detalles." />
           </div>
           <div className="p-4 border-b border-gray-300">
-            <ServiceCard step="02" stepColor="text-[var(--complementary-color-green)]" title="Buscamos la mejor solución" description="Con el pedido confirmado, buscamos la mejor solución para ti, con el mejor precio y te pasamos el presupuesto." />
+            <ServiceCard step="02" stepColor="text-[var(--complementary-color-green)]" title="Buscamos la mejor solución" description="Con el pedido confirmado, buscamos la mejor solución para ti, con el mejor precio y te enviamos el presupuesto." />
           </div>
           <div className="p-4 border-b md:border-r border-gray-300">
             <ServiceCard step="03" stepColor="text-[var(--complementary-color-turquoise)]" title="Entregamos y montamos" description="Si todo está bien y aceptas el presupuesto, te lo entregamos y montamos donde y cuando quieras." />
