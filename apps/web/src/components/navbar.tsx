@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { authClient } from "@/lib/auth-client"
@@ -49,10 +50,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-[var(--secondary-color)] rounded-lg flex items-center justify-center">
-              <span className="text-[var(--primary-color)] font-bold text-sm">TPF</span>
-            </div>
-            <span className="text-[var(--primary-color)] font-bold text-xl">Tot Per Fira</span>
+            <span className="text-[var(--primary-color)] font-khand font-bold text-4xl">TOT PER FIRA</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -116,9 +114,13 @@ export function Navbar() {
                   {/* Header */}
                   <div className="flex items-center justify-between py-6 border-b border-gray-300">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                      <div className="w-8 h-8 bg-[var(--secondary-color)] rounded-lg flex items-center justify-center">
-                        <span className="text-[var(--primary-color)] font-bold text-sm">TPF</span>
-                      </div>
+                      <Image
+                        src="/images/LOGO_Rectangular.svg"
+                        alt="Tot Per Fira Logo"
+                        width={32}
+                        height={32}
+                        className="w-8 h-8"
+                      />
                       <span className="text-[var(--primary-color)] font-bold text-xl">Tot Per Fira</span>
                     </Link>
                   </div>

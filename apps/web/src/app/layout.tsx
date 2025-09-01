@@ -30,37 +30,37 @@ const montserrat = Montserrat({
 const clashDisplay = localFont({
   src: [
     {
-      path: "../public/fonts/ClashDisplay-Extralight.woff2",
+      path: "../../public/fonts/ClashDisplay-Extralight.woff2",
       weight: "200",
       style: "normal",
     },
     {
-      path: "../public/fonts/ClashDisplay-Light.woff2",
+      path: "../../public/fonts/ClashDisplay-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../public/fonts/ClashDisplay-Regular.woff2",
+      path: "../../public/fonts/ClashDisplay-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/ClashDisplay-Medium.woff2",
+      path: "../../public/fonts/ClashDisplay-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../public/fonts/ClashDisplay-Semibold.woff2",
+      path: "../../public/fonts/ClashDisplay-Semibold.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../public/fonts/ClashDisplay-Bold.woff2",
+      path: "../../public/fonts/ClashDisplay-Bold.woff2",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../public/fonts/ClashDisplay-Variable.woff2",
+      path: "../../public/fonts/ClashDisplay-Variable.woff2",
       weight: "100 900",
       style: "normal",
     },
@@ -71,32 +71,32 @@ const clashDisplay = localFont({
 const khand = localFont({
   src: [
     {
-      path: "../public/fonts/Khand-Light.woff2",
+      path: "../../public/fonts/Khand-Light.woff2",
       weight: "300",
       style: "normal",
     },
     {
-      path: "../public/fonts/Khand-Regular.woff2",
+      path: "../../public/fonts/Khand-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../public/fonts/Khand-Medium.woff2",
+      path: "../../public/fonts/Khand-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../public/fonts/Khand-SemiBold.woff2",
+      path: "../../public/fonts/Khand-SemiBold.woff2",
       weight: "600",
       style: "normal",
     },
     {
-      path: "../public/fonts/Khand-Bold.woff2",
+      path: "../../public/fonts/Khand-Bold.woff2",
       weight: "700",
       style: "normal",
     },
     {
-      path: "../public/fonts/Khand-Variable.woff2",
+      path: "../../public/fonts/Khand-Variable.woff2",
       weight: "100 900",
       style: "normal",
     },
