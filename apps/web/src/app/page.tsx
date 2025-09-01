@@ -1,6 +1,7 @@
 import { Hero } from "./_components/hero"
 import { Services } from "./_components/services"
-import OurMission from "./_components/our-mission"
+import { Products } from "./_components/products"
+import { OurMission } from "./_components/our-mission"
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <div className="px-4">
         <Services />
         <OurMission />
+        <Products />
       </div>
       <div className="min-h-screen">
 

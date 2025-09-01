@@ -1,5 +1,3 @@
-import { ChevronRight, PillBottle, type LucideIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export function Services() {
   return (
@@ -45,7 +43,7 @@ function ServiceCard({
   return (
     <div className="p-4 border-gray-300">
       <h2 className={`text-2xl font-bold font-khand ${stepColor}`}>{step}.</h2>
-      <h2 className={`text-5xl font-bold font-khand ${titleColor}`}>{title}</h2>
+      <h2 className={`text-3xl md:text-5xl font-bold font-khand ${titleColor}`}>{title}</h2>
       <p className={descriptionColor}>{description}</p>
     </div>
   )

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 
 
-export default function OurMission() {
+export function OurMission() {
   return (
     <section className="relative overflow-hidden border border-b border-t-0 border-gray-300 container mx-auto pt-20 pb-20">
         <div className="p-4">
