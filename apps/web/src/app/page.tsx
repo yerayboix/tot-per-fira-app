@@ -20,9 +20,6 @@ export default function Home() {
         <CTASection />
         <FrequentQuestionts />
       </div>
-      <div className="min-h-screen">
-
-      </div>
     </div>
   )
 }

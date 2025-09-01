@@ -24,6 +24,18 @@ export default function FrequentQuestions() {
     {
       question: "¿Dónde trabajamos?",
       answer: "Nuestra base está en Onda (Castellón), y actualmente ofrecemos servicio en localidades cercanas como Betxí, l' Alcora, Vila-Real, Nules, Tales, Artesa, Sueras, Fanzara y otras zonas del interior de Castellón."
+    },
+    {
+      question: "¿Cómo se conectan los altavoces, por Bluetooth o por USB?",
+      answer: "Nuestros altavoces se pueden conectar de varias formas para que no tengas problema: con Bluetooth (desde el móvil u otro dispositivo), por USB o con cable auxiliar. Y si tu equipo no tiene Bluetooth, también podemos montar una mesa con receptor para que lo tengas igual de fácil."
+    },
+    {
+      question: "¿Repartís hielo entre semana o solo los fines de semana?",
+      answer: "Repartimos hielo todos los días, también entre semana. Lo único que pedimos es que nos avises con un poco de antelación para poder organizar la entrega a la hora que mejor te venga."
+    },
+    {
+      question: "Si necesito devolver algo, ¿qué hago?",
+      answer: "No te preocupes. Si algo no sale como esperabas o necesitas devolver un producto, solo tienes que llamarnos o escribirnos. Revisamos cada caso personalmente y buscamos la mejor solución contigo: cambiarlo, devolverlo o ajustar el servicio según lo que necesites."
     }
   ]
 
