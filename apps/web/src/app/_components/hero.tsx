@@ -8,6 +8,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useRef } from "react";
 import { Confetti, type ConfettiRef } from "@/components/magicui/confetti";
+import GlitchText from "@/components/ui/glitch-text";
 
 interface ExperienceCounterProps {
   value: number
@@ -68,9 +69,9 @@ export function Hero() {
             <span className="text-md lg:text-xl font-semibold font-clash-display text-white">¡No te estreses más!</span>
           </div>
           <div className="mb-12 text-center">
-            <h1 className="text-6xl lg:text-8xl text-white font-bold font-khand">
+            <GlitchText className="text-6xl lg:text-8xl text-white font-bold font-khand">
               ORGANIZAMOS TU EVENTO IDEAL
-            </h1>
+            </GlitchText>
           </div>
           {/* Description */}
           <div className="mb-16 max-w-2xl mx-auto text-center">

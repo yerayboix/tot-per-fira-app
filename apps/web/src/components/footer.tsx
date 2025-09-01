@@ -98,7 +98,6 @@ export function Footer() {
                 variant="default" 
                 size="md" 
                 className="w-full"
-                asChild
               >
                 <Link href="tel:616121597">
                   Llamar ahora
@@ -108,7 +107,6 @@ export function Footer() {
                 variant="outlinewhite" 
                 size="md" 
                 className="w-full"
-                asChild
               >
                 <Link href="https://wa.me/34616121597" target="_blank">
                   WhatsApp

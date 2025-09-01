@@ -71,7 +71,6 @@ export function Navbar() {
                 <Button
                   size="md"
                   variant="default"
-                  asChild
                 >
                   <Link href="/login">Login</Link>
                 </Button>
@@ -144,7 +143,6 @@ export function Navbar() {
                       <div className="space-y-3">
                         <Button
                           variant="default"
-                          asChild
                           className="w-full"
                           onClick={() => setIsOpen(false)}
                         >
@@ -155,7 +153,6 @@ export function Navbar() {
                         </Button>
                         <Button
                           variant="outline"
-                          asChild
                           className="w-full"
                           onClick={() => setIsOpen(false)}
                         >
