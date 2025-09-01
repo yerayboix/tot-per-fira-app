@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import Button from "@/components/ui/retro-btn"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { authClient } from "@/lib/auth-client"
 import { useRouter } from "next/navigation"
@@ -60,8 +60,8 @@ export function Navbar() {
                 <div className="w-20 h-9 bg-gray-200 rounded-md animate-pulse" />
               ) : session ? (
                 <Button
-                  variant="subtle"
-                  size="sm"
+                  variant="outline"
+                  size="md"
                   onClick={handleSignOut}
                 >
                   <LogOut className="w-4 h-4 mr-2" />
@@ -69,8 +69,8 @@ export function Navbar() {
                 </Button>
               ) : (
                 <Button
-                  size="sm"
-                  variant="subtle"
+                  size="md"
+                  variant="default"
                   asChild
                 >
                   <Link href="/login">Login</Link>
@@ -84,8 +84,8 @@ export function Navbar() {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button
-                  variant="ghost"
-                  size="sm"
+                  variant="outline"
+                  size="md"
                   className="text-gray-700 hover:bg-gray-100"
                 >
                   <Menu className="w-5 h-5" />
@@ -132,7 +132,7 @@ export function Navbar() {
                           <p className="text-gray-600 text-sm">{session.user.email}</p>
                         </div>
                         <Button
-                          variant="subtle"
+                          variant="outline"
                           onClick={handleSignOut}
                           className="w-full"
                         >
@@ -143,7 +143,7 @@ export function Navbar() {
                     ) : (
                       <div className="space-y-3">
                         <Button
-                          variant="subtle"
+                          variant="default"
                           asChild
                           className="w-full"
                           onClick={() => setIsOpen(false)}
@@ -154,7 +154,7 @@ export function Navbar() {
                           </Link>
                         </Button>
                         <Button
-                          variant="subtle"
+                          variant="outline"
                           asChild
                           className="w-full"
                           onClick={() => setIsOpen(false)}

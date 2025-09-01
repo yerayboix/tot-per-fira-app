@@ -1,5 +1,5 @@
 import { Speaker, Refrigerator, type LucideIcon, Utensils, BrushCleaning, Barrel, GlassWater } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Button from "@/components/ui/retro-btn"
 
 export function Products() {
   return (
@@ -74,14 +74,14 @@ export function Products() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                size="xl"
-                variant="primary-brand"
+                size="md"
+                variant="default"
               >
                 Solicitar Presupuesto
               </Button>
               <Button
-                variant="secondary-brand"
-                size="xl"
+                variant="outline"
+                size="md"
               >
                 Contactar
               </Button>

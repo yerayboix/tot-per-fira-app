@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button"
+import Button from "@/components/ui/retro-btn"
 
 
 export function OurMission() {
@@ -35,14 +35,14 @@ export function OurMission() {
 
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Button
-                  size="xl"
-                  variant="hero"
+                  size="md"
+                  variant="default"
                 >
                   Solicitar Presupuesto
                 </Button>
                 <Button
-                  variant="secondary-brand"
-                  size="xl"
+                  variant="outline"
+                  size="md"
                 >
                   Contactar
                 </Button>

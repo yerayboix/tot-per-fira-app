@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { Phone, Mail, Instagram, MapPin, Clock } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Button from "@/components/ui/retro-btn"
 
 export function Footer() {
   return (
@@ -98,8 +98,8 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <Button 
-                variant="primary-brand" 
-                size="sm" 
+                variant="default" 
+                size="md" 
                 className="w-full"
                 asChild
               >
@@ -108,8 +108,8 @@ export function Footer() {
                 </Link>
               </Button>
               <Button 
-                variant="secondary-brand" 
-                size="sm" 
+                variant="outlinewhite" 
+                size="md" 
                 className="w-full"
                 asChild
               >

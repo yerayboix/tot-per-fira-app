@@ -61,15 +61,15 @@ export function Hero() {
         <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
-      <div className="container mx-auto px-4 justify-center relative z-10">
+      <div className="container mx-auto px-4 justify-center relative z-30">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main headline - Restructurado */}
           <div className="mb-8 text-center">
             <span className="text-md lg:text-xl font-semibold font-clash-display text-white">¡No te estreses más!</span>
           </div>
           <div className="mb-12 text-center">
-            <h1 className="text-7xl lg:text-8xl text-white font-bold font-khand">
-              ORGANIZA TU EVENTO IDEAL
+            <h1 className="text-6xl lg:text-8xl text-white font-bold font-khand">
+              ORGANIZAMOS TU EVENTO IDEAL
             </h1>
           </div>
           {/* Description */}
