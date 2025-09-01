@@ -54,7 +54,7 @@ export function Hero() {
           src="/images/pexels-kampus-6760884.jpg"
           alt="Event background"
           fill
-          className="object-cover blur-sm"
+          className="object-cover blur-[5px]"
           priority
         />
         {/* Dark overlay */}
