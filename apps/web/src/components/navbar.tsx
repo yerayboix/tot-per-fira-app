@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -11,19 +11,8 @@ import { Menu, X, User, LogOut } from "lucide-react"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const router = useRouter()
   const { data: session, isPending } = authClient.useSession()
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > 10)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const handleSignOut = () => {
     authClient.signOut({
@@ -42,10 +31,7 @@ export function Navbar() {
   ]
 
   return (
-    <nav className={`${isScrolled
-        ? 'fixed bg-white border-b border-gray-300'
-        : 'absolute bg-white border-b border-gray-300'
-      } top-0 left-0 right-0 z-50 transition-all duration-300`}>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -67,30 +53,30 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
-          </div>
 
-          {/* Auth Buttons - Only on the right */}
-          <div className="flex items-center">
-            {isPending ? (
-              <div className="w-20 h-9 bg-gray-600/20 rounded-md animate-pulse" />
-            ) : session ? (
-              <Button
-                variant="subtle"
-                size="sm"
-                onClick={handleSignOut}
-              >
-                <LogOut className="w-4 h-4 mr-2" />
-                Cerrar Sesión
-              </Button>
-            ) : (
-              <Button
-                size="sm"
-                variant="subtle"
-                asChild
-              >
-                <Link href="/login">Login</Link>
-              </Button>
-            )}
+            {/* Auth Buttons */}
+            <div className="flex items-center">
+              {isPending ? (
+                <div className="w-20 h-9 bg-gray-200 rounded-md animate-pulse" />
+              ) : session ? (
+                <Button
+                  variant="subtle"
+                  size="sm"
+                  onClick={handleSignOut}
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  Cerrar Sesión
+                </Button>
+              ) : (
+                <Button
+                  size="sm"
+                  variant="subtle"
+                  asChild
+                >
+                  <Link href="/login">Login</Link>
+                </Button>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,21 +93,14 @@ export function Navbar() {
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="bg-white border-l border-gray-300 w-80 p-0"
+                className="bg-white border-l border-gray-200 w-80 p-0"
               >
                 <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
                 <div className="flex flex-col h-full p-6">
                   {/* Header */}
-                  <div className="flex items-center justify-between py-6 border-b border-gray-300">
+                  <div className="flex items-center justify-between py-6 border-b border-gray-200">
                     <Link href="/" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                      <Image
-                        src="/images/LOGO_Rectangular.svg"
-                        alt="Tot Per Fira Logo"
-                        width={32}
-                        height={32}
-                        className="w-8 h-8"
-                      />
-                      <span className="text-[var(--primary-color)] font-bold text-xl">Tot Per Fira</span>
+                      <span className="text-[var(--primary-color)] font-khand font-bold text-2xl">TOT PER FIRA</span>
                     </Link>
                   </div>
 
@@ -132,7 +111,7 @@ export function Navbar() {
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="block text-gray-700 hover:text-[var(--primary-color)] transition-all duration-200 font-medium text-lg py-3 px-4 rounded-lg hover:bg-gray-100"
+                          className="block text-gray-700 hover:text-[var(--primary-color)] transition-all duration-200 font-medium text-lg py-3 px-4 rounded-lg hover:bg-gray-50"
                           onClick={() => setIsOpen(false)}
                         >
                           {link.label}
@@ -142,7 +121,7 @@ export function Navbar() {
                   </div>
 
                   {/* Auth Section */}
-                  <div className="border-t border-gray-300 pt-6">
+                  <div className="border-t border-gray-200 pt-6">
                     {isPending ? (
                       <div className="w-full h-12 bg-gray-200 rounded-lg animate-pulse" />
                     ) : session ? (
