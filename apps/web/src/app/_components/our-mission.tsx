@@ -34,7 +34,7 @@ export function OurMission() {
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <div className="mt-8 flex flex-row gap-4 justify-center">
                 <Link href="/nuevo-presupuesto">
                   <Button
                     size="md"

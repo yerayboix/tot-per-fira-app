@@ -73,7 +73,7 @@ export function Products() {
             <p className="text-md md:text-lg text-muted-foreground mb-8 leading-relaxed">
               No dudes en contactarnos para solicitar un presupuesto personalizado o resolver cualquier duda que tengas.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-row gap-4 justify-center">
               <Link href="/nuevo-presupuesto">
                 <Button
                   size="md"

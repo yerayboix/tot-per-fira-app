@@ -6,8 +6,8 @@ export function CTASection() {
     <section className="relative overflow-hidden border border-b border-t border-gray-300 container mx-auto">
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
-          <div className="p-4">
-            <span className="text-base md:text-lg text-[var(--secondary-color)] mb-4 font-clash-display font-bold">DÉJALO EN NUESTRAS MANOSY LLÉVATE TODO EL MÉRITO</span>
+          <div className="p-4 sm:border-b-0 border-b border-gray-300">
+            <span className="text-base md:text-lg text-[var(--secondary-color)] mb-4 font-clash-display font-bold">DÉJALO EN NUESTRAS MANOS Y LLÉVATE TODO EL MÉRITO</span>
             <h3 className="text-4xl md:text-6xl font-bold font-khand text-[var(--primary-color)] mb-4">
               Sabemos mejor que nadie el coñazo de organizarlo todo
             </h3>
@@ -48,7 +48,7 @@ function FeatureCard({
   className?: string;
 }) {
   return (
-    <div className={`row-span-1 border-b border-l border-gray-300 p-4 ${className}`}>
+    <div className={`row-span-1 sm:border-l border-b border-gray-300 p-4 ${className}`}>
       <div className="flex flex-col">
         <h4 className="text-2xl font-bold font-khand text-[var(--primary-color)]">
           {title}
