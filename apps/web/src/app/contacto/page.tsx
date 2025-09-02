@@ -6,7 +6,7 @@ import Link from "next/link"
 
 export default function ContactoPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen px-2">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto pt-20">
         {/* Background Image with Overlay */}
@@ -43,7 +43,7 @@ export default function ContactoPage() {
       </section>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
