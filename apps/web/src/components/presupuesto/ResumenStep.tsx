@@ -124,28 +124,6 @@ export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar }: Resu
           </div>
         </>
       )}
-
-      {/* Botón de envío */}
-      <div className="p-6 text-center">
-        <Button
-          onClick={onEnviar}
-          disabled={!puedeEnviar}
-          variant="default"
-          size="lg"
-          className="px-12 py-4 text-xl"
-        >
-          <Send size={20} className="mr-3" />
-          {puedeEnviar ? 'Enviar Presupuesto' : 'Complete la información requerida'}
-        </Button>
-        
-        {!puedeEnviar && (
-          <div className="mt-4 p-4 border-2 border-red-600 shadow-[2px_2px_0px_0px_red] bg-red-50">
-            <p className="text-red-600 font-clash-display font-medium">
-              Debe completar la información personal y añadir al menos un producto
-            </p>
-          </div>
-        )}
-      </div>
     </div>
   );
 } 

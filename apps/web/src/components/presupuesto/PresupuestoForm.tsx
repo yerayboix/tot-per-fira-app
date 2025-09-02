@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Send } from "lucide-react";
 
 import Button from "@/components/ui/retro-btn";
 import PersonalInfoStep from "./PersonalInfoStep";
@@ -16,6 +16,17 @@ import PackMenajeStep from "./PackMenajeStep";
 import ResumenStep from "./ResumenStep";
 import CartModal from "./CartModal";
 import CartBar from "./CartBar";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 import { type Presupuesto, type LineaPresupuesto } from "@/types/presupuesto";
 
 const PASOS = [
@@ -308,12 +319,54 @@ export default function PresupuestoForm() {
                   <ChevronRight size={16} className="ml-2" />
                 </Button>
               ) : (
-                <div></div>
+                <AlertDialog>
+                  <AlertDialogTrigger asChild>
+                    <Button
+                      disabled={!puedeEnviar()}
+                      variant="default"
+                      size="md"
+                      className="w-full md:w-auto"
+                    >
+                      <Send size={16} className="mr-2" />
+                      Completar Pedido
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent className="border border-gray-300 rounded-none">
+                    <AlertDialogHeader>
+                      <AlertDialogTitle className="text-xl font-bold font-khand text-[var(--secondary-color)]">
+                        ¿Confirmar pedido?
+                      </AlertDialogTitle>
+                      <AlertDialogDescription className="font-clash-display text-[var(--secondary-color)]">
+                        ¿Estás seguro de que quieres enviar este presupuesto? Una vez enviado, recibirás una confirmación por email y nos pondremos en contacto contigo.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter className="gap-3">
+                      <AlertDialogCancel className="border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] rounded-none font-clash-display">
+                        Cancelar
+                      </AlertDialogCancel>
+                      <AlertDialogAction 
+                        onClick={enviarPresupuesto}
+                        className="bg-[var(--primary-color)] text-[var(--secondary-color)] border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] rounded-none font-clash-display hover:bg-[var(--primary-color)]/90"
+                      >
+                        Confirmar Pedido
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               )}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Mensaje de error si no puede enviar */}
+      {pasoActual === PASOS.length && !puedeEnviar() && (
+        <div className="p-4 border border-red-600 shadow-[2px_2px_0px_0px_red] bg-red-50 mx-4 md:mx-6 mb-4">
+          <p className="text-red-600 font-clash-display font-medium text-center">
+            Debe completar la información personal y añadir al menos un producto para completar el pedido
+          </p>
+        </div>
+      )}
 
       {/* Cart Bar */}
       <CartBar 
