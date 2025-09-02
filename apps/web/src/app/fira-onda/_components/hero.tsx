@@ -6,54 +6,68 @@ import Image from "next/image"
 import { useRef } from "react";
 import { Confetti, type ConfettiRef } from "@/components/magicui/confetti";
 import GlitchText from "@/components/ui/glitch-text";
+import { FireworksBackground } from "@/components/ui/shadcn-io/fireworks-background/fireworks";
 
 export function Hero() {
   const confettiRef = useRef<ConfettiRef>(null);
-  
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto pt-20 bg-white">
-      
 
       <div className="container mx-auto px-4 relative z-30">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
-          {/* Left side - Text content */}
-          <div className="text-center lg:text-left">
-            {/* Main headline */}
-            <div className="mb-8">
-              <span className="text-md lg:text-xl font-semibold font-clash-display text-primary">¡Fira d'Onda 2025!</span>
-            </div>
-            <div className="mb-12">
-              <GlitchText className="text-6xl lg:text-8xl text-[var(--primary-color)] font-bold font-khand" shadowColor1="#ff0080" shadowColor2="#00ffff">
-                LO QUE NECESITES PARA TUS FIESTAS
-              </GlitchText>
+          {/* Left side - Text content with fireworks background */}
+          <div className="text-center lg:text-left relative">
+            {/* Fireworks background covering the entire left section */}
+            <div className="absolute inset-0 z-0">
+              <FireworksBackground
+                population={1}
+                color={["#ff0000", "#00ff00", "#0000ff", "#ffff00"]}
+                fireworkSpeed={{ min: 4, max: 8 }}
+                particleSize={{ min: 2, max: 2 }}
+                fireworkSize={{ min: 2, max: 3 }}
+              />
             </div>
             
-            {/* Description */}
-            <div className="mb-16 max-w-2xl lg:max-w-none">
-              <p className="text-base lg:text-xl text-muted-foreground leading-relaxed tracking-wider font-clash-display">
-                SOMOS GENTE DE ONDA <br />
-                <span className="text-primary font-semibold">NADIE MEJOR PARA QUE NO TE FALTE DE NADA</span>
-              </p>
-            </div>
+            {/* Content with proper z-index to appear above fireworks */}
+            <div className="relative z-10">
+              {/* Main headline */}
+              <div className="mb-8">
+                <span className="text-md lg:text-xl font-semibold font-clash-display text-primary">¡Fira d'Onda 2025!</span>
+              </div>
+              <div className="mb-12">
+                <GlitchText className="text-6xl lg:text-8xl text-[var(--primary-color)] font-bold font-khand" shadowColor1="#ff0080" shadowColor2="#00ffff">
+                  LO QUE NECESITES PARA TUS FIESTAS
+                </GlitchText>
+              </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
-              <Link href="/contacto">
-                <Button
-                  size="md"
-                  variant="default"
-                >
-                  Crea tu presupuesto
-                </Button>
-              </Link>
-              <Link href="/contacto">
-                <Button
-                  size="md"
-                  variant="secondary"
-                >
-                  Contacta con nosotros
-                </Button>
-              </Link>
+              {/* Description */}
+              <div className="mb-16 max-w-2xl lg:max-w-none">
+                <p className="text-base lg:text-xl text-muted-foreground leading-relaxed tracking-wider font-clash-display">
+                  SOMOS GENTE DE ONDA <br />
+                  <span className="text-primary font-semibold">NADIE MEJOR PARA QUE NO TE FALTE DE NADA</span>
+                </p>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start">
+                <Link href="/contacto">
+                  <Button
+                    size="md"
+                    variant="default"
+                  >
+                    Crea tu presupuesto
+                  </Button>
+                </Link>
+                <Link href="/contacto">
+                  <Button
+                    size="md"
+                    variant="secondary"
+                  >
+                    Contacta con nosotros
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -72,7 +86,7 @@ export function Hero() {
           </div>
         </div>
       </div>
-      
+
     </section>
   )
 }
