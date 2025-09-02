@@ -11,8 +11,6 @@ export default function FiraOndaPage() {
       <div className="px-2">
         <Hero />
       </div>
-      {/* Separator */}
-      <hr className="border-gray-300" />
       <div className="px-2">
         <ConfidenceSection />
         <ServicesSection />
