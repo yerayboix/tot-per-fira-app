@@ -42,7 +42,7 @@ export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar }: Resu
   return (
     <div className="space-y-0">
       {/* Información Personal */}
-      <div className="border-b border-gray-300 bg-[var(--complementary-color-turquoise)]/10 p-4">
+      <div className="border-b border-gray-300 bg-[var(--complementary-color-pink)]/10 p-4">
         <h3 className="text-xl md:text-2xl font-bold font-khand text-[var(--secondary-color)]">
           Información Personal
         </h3>
@@ -71,7 +71,7 @@ export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar }: Resu
       </div>
 
       {/* Productos Seleccionados */}
-      <div className="border-b border-gray-300 bg-[var(--complementary-color-turquoise)]/10 p-4">
+      <div className="border-b border-gray-300 bg-[var(--complementary-color-pink)]/10 p-4">
         <h3 className="text-xl md:text-2xl font-bold font-khand text-[var(--secondary-color)]">
           Productos Seleccionados - Total Unidades: {presupuesto.objetosPedido.reduce((total, producto) => total + producto.unidades, 0)}
         </h3>
