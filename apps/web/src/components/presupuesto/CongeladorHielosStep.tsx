@@ -23,14 +23,14 @@ export default function CongeladorHielosStep({ objetosPedido, onAddProduct, onRe
   return (
     <div className="space-y-6">
       {/* Botones de categoría */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 px-4 pt-4">
         {categorias.map((categoria) => (
           <Button
             key={categoria.key}
             variant={categoriaActiva === categoria.key ? "default" : "outline"}
             onClick={() => setCategoriaActiva(categoria.key)}
             size="md"
-            className="h-12 md:h-16 text-base md:text-lg font-bold"
+            className="font-bold"
           >
             {categoria.label}
           </Button>

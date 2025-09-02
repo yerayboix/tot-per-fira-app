@@ -23,19 +23,19 @@ export default function SolicitarPresupuestoPage() {
                   para tu evento. Puedes omitir las secciones que no necesites.
                 </p>
                 
-                <div className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
-                    <div className="p-4 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-[var(--complementary-color-yellow)]/10">
-                      <h3 className="font-bold font-khand text-[var(--primary-color)] text-lg mb-2">Rápido y Fácil</h3>
-                      <p className="text-sm font-clash-display text-[var(--secondary-color)]">Solo 7 pasos sencillos para completar tu solicitud</p>
+                <div className="space-y-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                    <div className="p-6 text-center">
+                      <h3 className="font-bold font-khand text-[var(--primary-color)] text-xl md:text-2xl mb-3">Rápido y Fácil</h3>
+                      <p className="text-sm md:text-base font-clash-display text-[var(--secondary-color)]">Solo 7 pasos sencillos para completar tu solicitud</p>
                     </div>
-                    <div className="p-4 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-[var(--complementary-color-green)]/10">
-                      <h3 className="font-bold font-khand text-[var(--primary-color)] text-lg mb-2">Personalizado</h3>
-                      <p className="text-sm font-clash-display text-[var(--secondary-color)]">Elige solo los servicios que necesitas para tu evento</p>
+                    <div className="p-6 text-center">
+                      <h3 className="font-bold font-khand text-[var(--complementary-color-green)] text-xl md:text-2xl mb-3">Personalizado</h3>
+                      <p className="text-sm md:text-base font-clash-display text-[var(--secondary-color)]">Elige solo los servicios que necesitas para tu evento</p>
                     </div>
-                    <div className="p-4 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-[var(--complementary-color-turquoise)]/10">
-                      <h3 className="font-bold font-khand text-[var(--primary-color)] text-lg mb-2">Sin Compromiso</h3>
-                      <p className="text-sm font-clash-display text-[var(--secondary-color)]">Recibe tu presupuesto sin ningún tipo de compromiso</p>
+                    <div className="p-6 text-center">
+                      <h3 className="font-bold font-khand text-[var(--complementary-color-turquoise)] text-xl md:text-2xl mb-3">Sin Compromiso</h3>
+                      <p className="text-sm md:text-base font-clash-display text-[var(--secondary-color)]">Recibe tu presupuesto sin ningún tipo de compromiso</p>
                     </div>
                   </div>
 
@@ -60,7 +60,7 @@ export default function SolicitarPresupuestoPage() {
   }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen py-15 px-2">
       <section className="relative overflow-hidden border border-b-0 border-gray-300 container mx-auto">
         <div className="container mx-auto">
           <div className="border-b border-gray-300">

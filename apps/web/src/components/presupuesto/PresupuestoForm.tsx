@@ -190,9 +190,9 @@ export default function PresupuestoForm() {
   };
 
   return (
-    <div className="p-4">
+    <div>
       {/* Indicador de progreso */}
-      <div className="border-b border-gray-300 pb-6 mb-6">
+      <div className="border-b border-gray-300 pb-6 mb-0 p-4">
         {/* Versión móvil - solo pasos contextuales */}
         <div className="block lg:hidden">
           <div className="text-center mb-4">
@@ -204,12 +204,12 @@ export default function PresupuestoForm() {
             {getPasosMovil().map((paso, index) => (
               <div key={paso.id} className="flex items-center">
                 <div
-                  className={`w-10 h-10 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] flex items-center justify-center text-sm font-bold font-clash-display ${
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold font-clash-display ${
                     paso.id < pasoActual
                       ? "bg-[var(--complementary-color-green)] text-white"
                       : paso.id === pasoActual
                       ? "bg-[var(--primary-color)] text-white"
-                      : "bg-white text-[var(--secondary-color)]"
+                      : "bg-gray-200 text-[var(--secondary-color)]"
                   }`}
                 >
                   {paso.id < pasoActual ? <Check size={16} /> : paso.id}
@@ -233,12 +233,12 @@ export default function PresupuestoForm() {
             {PASOS.map((paso, index) => (
               <div key={paso.id} className="flex items-center">
                 <div
-                  className={`w-10 h-10 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] flex items-center justify-center text-sm font-bold font-clash-display ${
+                  className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold font-clash-display ${
                     paso.id < pasoActual
                       ? "bg-[var(--complementary-color-green)] text-white"
                       : paso.id === pasoActual
                       ? "bg-[var(--primary-color)] text-white"
-                      : "bg-white text-[var(--secondary-color)]"
+                      : "bg-gray-200 text-[var(--secondary-color)]"
                   }`}
                 >
                   {paso.id < pasoActual ? <Check size={16} /> : paso.id}
@@ -255,59 +255,59 @@ export default function PresupuestoForm() {
         </div>
 
         {/* Barra de progreso */}
-        <div className="w-full bg-gray-300 h-3 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000]">
+        <div className="w-full bg-gray-200 rounded-full h-3">
           <div
-            className="bg-[var(--primary-color)] h-full transition-all duration-300"
+            className="bg-[var(--primary-color)] h-full rounded-full transition-all duration-300"
             style={{ width: `${(pasoActual / PASOS.length) * 100}%` }}
           />
         </div>
       </div>
 
+      {/* Título del paso */}
+      <div className="border-b border-gray-300 bg-[var(--complementary-color-yellow)]/10 p-4">
+        <h2 className="text-2xl md:text-4xl font-bold font-khand text-[var(--secondary-color)]">
+          {pasoActualData.titulo}
+          {!pasoActualData.required && (
+            <span className="text-sm font-normal text-gray-600 ml-2 font-clash-display">(Opcional)</span>
+          )}
+        </h2>
+      </div>
+
       {/* Contenido del paso */}
-      <div className="border-2 border-[#000000] shadow-[4px_4px_0px_0px_#000000] bg-white mb-6">
-        <div className="border-b-2 border-[#000000] bg-[var(--complementary-color-yellow)]/20 p-4">
-          <h2 className="text-2xl md:text-4xl font-bold font-khand text-[var(--secondary-color)]">
-            {pasoActualData.titulo}
-            {!pasoActualData.required && (
-              <span className="text-sm font-normal text-gray-600 ml-2 font-clash-display">(Opcional)</span>
-            )}
-          </h2>
-        </div>
-        <div className="p-6">{renderPaso()}</div>
+      <div className="border-b border-gray-300">
+        {renderPaso()}
       </div>
 
       {/* Navegación */}
-      <div className="flex justify-between items-center">
+      <div className="p-4 md:p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <Button
-          variant="outline"
           onClick={pasoAnterior}
           disabled={pasoActual === 1}
+          variant="outline"
           size="md"
+          className="w-full sm:w-auto order-2 sm:order-1"
         >
           <ChevronLeft size={16} className="mr-2" />
           Anterior
         </Button>
 
-        <div className="flex gap-4">
-          {!pasoActualData.required && pasoActual !== PASOS.length && (
-            <Button variant="secondary" onClick={omitirPaso} size="md">
-              Omitir
-            </Button>
-          )}
-          
-          {pasoActual < PASOS.length && (
-            <Button onClick={siguientePaso} variant="default" size="md">
-              Siguiente
-              <ChevronRight size={16} className="ml-2" />
-            </Button>
-          )}
-        </div>
+        {pasoActual < PASOS.length ? (
+          <Button
+            onClick={siguientePaso}
+            variant="default"
+            size="md"
+            className="w-full sm:w-auto order-1 sm:order-2"
+          >
+            Siguiente
+            <ChevronRight size={16} className="ml-2" />
+          </Button>
+        ) : null}
       </div>
 
       {/* Info del presupuesto actual */}
       {presupuesto.objetosPedido.length > 0 && (
-        <div className="mt-6 p-4 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-[var(--complementary-color-turquoise)]/20">
-          <p className="text-sm font-clash-display text-[var(--secondary-color)]">
+        <div className="border-t border-gray-300 p-4 bg-[var(--complementary-color-turquoise)]/10">
+          <p className="text-sm font-clash-display text-[var(--secondary-color)] text-center">
             <strong>Productos añadidos:</strong> {presupuesto.objetosPedido.length}
           </p>
         </div>
