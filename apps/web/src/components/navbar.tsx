@@ -60,15 +60,24 @@ export function Navbar() {
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-3">
+            <Link href="/presupuesto" className="block">
+              <Button
+                size="md"
+                className="p-2"
+                variant="default"
+              >
+                Presupuesto
+              </Button>
+            </Link>
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <Button
                 variant="outline"
-                size="sm"
+                size="md"
                 className="p-2"
                 onClick={() => setIsOpen(true)}
               >
-                <Menu className="h-6 w-6" />
+                <Menu className="h-5 w-5" />
                 <span className="sr-only">Abrir menú</span>
               </Button>
               <SheetContent
