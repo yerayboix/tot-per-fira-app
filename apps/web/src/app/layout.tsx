@@ -6,6 +6,7 @@ import Providers from "@/components/providers";
 import { Navbar } from "@/components/navbar";
 import localFont from "next/font/local";
 import { ConditionalFooter } from "@/components/conditional-footer";
+import { unstable_ViewTransition as ViewTransition } from 'react'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -120,13 +121,16 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${montserrat.variable} ${clashDisplay.variable} ${khand.variable} antialiased scroll-smooth`}
       >
         <Providers>
-          <div className="min-h-screen">
-            <Navbar />
-            <main>
-              {children}
-            </main>
-            <ConditionalFooter />
-          </div>
+          <ViewTransition>
+            <div className="min-h-screen">
+              <Navbar />
+              <main>
+
+                {children}
+              </main>
+              <ConditionalFooter />
+            </div>
+          </ViewTransition>
         </Providers>
       </body>
     </html>
