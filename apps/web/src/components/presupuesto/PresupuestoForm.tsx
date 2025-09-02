@@ -194,7 +194,7 @@ export default function PresupuestoForm() {
 
   return (
     <>
-      <div className="pb-20"> {/* Padding bottom para la barra del carrito */}
+      <div className=""> {/* Padding bottom para la barra del carrito */}
         <div>
           {/* Indicador de progreso */}
           <div className="border-b border-gray-300 pb-6 mb-0 p-4">
