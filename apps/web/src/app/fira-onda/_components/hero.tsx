@@ -3,14 +3,10 @@
 import Button from "@/components/ui/retro-btn"
 import Link from "next/link"
 import Image from "next/image"
-import { useRef } from "react";
-import { Confetti, type ConfettiRef } from "@/components/magicui/confetti";
 import GlitchText from "@/components/ui/glitch-text";
-import { FireworksBackground } from "@/components/ui/shadcn-io/fireworks-background/fireworks";
+import { ResponsiveFireworks } from "./responsive-fireworks";
 
 export function Hero() {
-  const confettiRef = useRef<ConfettiRef>(null);
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto pt-20 bg-white">
 
@@ -20,13 +16,7 @@ export function Hero() {
           <div className="text-center lg:text-left relative">
             {/* Fireworks background covering the entire left section */}
             <div className="absolute inset-0 z-0">
-              <FireworksBackground
-                population={1}
-                color={["#ff0000", "#00ff00", "#0000ff", "#ffff00"]}
-                fireworkSpeed={{ min: 4, max: 8 }}
-                particleSize={{ min: 2, max: 2 }}
-                fireworkSize={{ min: 2, max: 3 }}
-              />
+              <ResponsiveFireworks />
             </div>
             
             {/* Content with proper z-index to appear above fireworks */}
