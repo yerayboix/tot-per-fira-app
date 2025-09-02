@@ -6,9 +6,9 @@ export function Footer() {
   return (
     <footer className="bg-[var(--secondary-color)] text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className="space-y-4 col-span-2 md:col-span-1">
             <div className="flex items-center space-x-2">
               <span className="text-[var(--primary-color)] font-bold text-xl font-khand">TOT PER FIRA</span>
             </div>
@@ -87,7 +87,7 @@ export function Footer() {
           </div>
 
           {/* CTA Section */}
-          <div className="space-y-4">
+          <div className="space-y-4 col-span-2 md:col-span-1">
             <h3 className="text-lg font-bold text-[var(--primary-color)] font-khand">¿NECESITAS AYUDA?</h3>
             <p className="text-white/80 text-sm">
               Si estás organizando una fiesta o evento y necesitas un servicio completo y fiable, 
