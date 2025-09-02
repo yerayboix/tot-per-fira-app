@@ -98,8 +98,19 @@ export default function PresupuestoForm() {
     toast.success(`${productoAEliminar.nombre} eliminado del carrito`);
   };
 
+  const puedeAvanzar = () => {
+    // Si estamos en el paso de información personal, validar que esté completa
+    if (pasoActual === 1) {
+      return presupuesto.nombreCompleto.trim() !== '' &&
+             presupuesto.correoElectronico.trim() !== '' &&
+             presupuesto.numeroTelefono.trim() !== '';
+    }
+    // Para otros pasos, siempre se puede avanzar
+    return true;
+  };
+
   const siguientePaso = () => {
-    if (pasoActual < PASOS.length) {
+    if (pasoActual < PASOS.length && puedeAvanzar()) {
       setPasoActual(pasoActual + 1);
     }
   };
@@ -311,6 +322,7 @@ export default function PresupuestoForm() {
               {pasoActual < PASOS.length ? (
                 <Button
                   onClick={siguientePaso}
+                  disabled={!puedeAvanzar()}
                   variant="default"
                   size="md"
                   className="w-full md:w-auto"
@@ -358,6 +370,15 @@ export default function PresupuestoForm() {
           </div>
         </div>
       </div>
+
+      {/* Mensaje de ayuda para información personal */}
+      {pasoActual === 1 && !puedeAvanzar() && (
+        <div className="p-4 border border-yellow-600 shadow-[2px_2px_0px_0px_orange] bg-yellow-50 mx-4 md:mx-6 mb-4">
+          <p className="text-yellow-700 font-clash-display font-medium text-center">
+            Complete todos los campos de información personal para continuar
+          </p>
+        </div>
+      )}
 
       {/* Mensaje de error si no puede enviar */}
       {pasoActual === PASOS.length && !puedeEnviar() && (
