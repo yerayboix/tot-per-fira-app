@@ -5,6 +5,7 @@ import Link from "next/link"
 import Button from "@/components/ui/retro-btn"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
+import GlitchText from "./ui/glitch-text"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,7 +21,9 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-[var(--primary-color)] font-khand font-bold text-2xl md:text-4xl">TOT PER FIRA</span>
+            <GlitchText className="text-[var(--primary-color)] font-khand font-bold text-2xl md:text-4xl" shadowColor1="var(--complementary-color-yellow)" shadowColor2="#00ffff">
+              TOT PER FIRA
+            </GlitchText>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,14 +46,14 @@ export function Navbar() {
               <Link href="/contacto" className="block">
                 <Button
                   variant="outline"
-                  size="md"
+                  size="sm"
                 >
                   Contactar
                 </Button>
               </Link>
               <Link href="/presupuesto" className="block">
                 <Button
-                  size="md"
+                  size="sm"
                   variant="default"
                 >
                   Crear presupuesto
