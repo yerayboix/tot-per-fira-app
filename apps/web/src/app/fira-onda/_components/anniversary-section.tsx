@@ -77,12 +77,7 @@ export function AnniversarySection() {
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center pt-4 pb-4">
           <Link href="/contacto">
             <Button size="lg" variant="default">
-              Organiza tu aniversario
-            </Button>
-          </Link>
-          <Link href="/contacto">
-            <Button size="lg" variant="secondary">
-              Pide presupuesto
+              Hablamos y te ayudamos
             </Button>
           </Link>
         </div>

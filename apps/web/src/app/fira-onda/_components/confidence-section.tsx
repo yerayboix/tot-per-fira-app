@@ -25,7 +25,7 @@ export function ConfidenceSection() {
             </div>
             
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-clash-display">
-              Ya han confiado en nosotros para organizar sus fiestas y eventos
+              Ya han confiado en nosotros para organizar sus ferias
             </p>
           </div>
         </div>
