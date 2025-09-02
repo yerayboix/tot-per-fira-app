@@ -54,7 +54,7 @@ export default function ProductSelector({
           Seleccionar Producto
         </Label>
         <select
-          className="w-full mt-2 p-3 border border-gray-300 rounded font-clash-display bg-white focus:outline-none focus:border-[var(--primary-color)] transition-all text-sm md:text-base"
+          className="w-full mt-2 p-3 h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display bg-white focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
           value={selectedProduct?.nombre || ''}
           onChange={(e) => {
             const producto = productos.find(p => p.nombre === e.target.value);
@@ -89,7 +89,7 @@ export default function ProductSelector({
             type="number"
             value={cantidad}
             onChange={(e) => setCantidad(Math.max(1, parseInt(e.target.value) || 1))}
-            className="w-20 text-center border border-gray-300 rounded font-clash-display focus:outline-none focus:border-[var(--primary-color)] transition-all text-sm md:text-base"
+            className="w-20 h-12 text-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
             min="1"
           />
           <Button

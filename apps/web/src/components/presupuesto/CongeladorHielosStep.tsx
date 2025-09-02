@@ -9,7 +9,7 @@ import ProductSelector from "./ProductSelector";
 interface CongeladorHielosStepProps {
   objetosPedido: LineaPresupuesto[];
   onAddProduct: (producto: LineaPresupuesto) => void;
-  onRemoveProduct: (index: number) => void;
+  onRemoveProduct: (producto: LineaPresupuesto) => void;
 }
 
 export default function CongeladorHielosStep({ objetosPedido, onAddProduct, onRemoveProduct }: CongeladorHielosStepProps) {

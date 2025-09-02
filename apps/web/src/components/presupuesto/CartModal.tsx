@@ -105,7 +105,7 @@ export default function CartModal({ isOpen, onClose, productos, onRemoveProduct 
                               x{producto.unidades}
                             </span>
                             {producto.precio && (
-                              <span className="text-[var(--complementary-color-green)] font-bold font-clash-display text-sm md:text-base">
+                              <span className="text-[var(--primary-color)] font-bold font-clash-display text-sm md:text-base">
                                 €{(producto.precio * producto.unidades).toFixed(2)}
                               </span>
                             )}
@@ -135,7 +135,7 @@ export default function CartModal({ isOpen, onClose, productos, onRemoveProduct 
               <span className="text-xl font-bold font-khand text-[var(--secondary-color)]">
                 Total Estimado:
               </span>
-              <span className="text-xl font-bold font-khand text-[var(--complementary-color-green)]">
+              <span className="text-xl font-bold font-khand text-[var(--primary-color)]">
                 €{calcularTotal().toFixed(2)}
               </span>
             </div>

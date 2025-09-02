@@ -34,10 +34,10 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                     onUpdate({ nombreCompleto: e.target.value });
                   }}
                   placeholder="Introduce tu nombre completo"
-                  className="border border-gray-300 rounded font-clash-display p-3 focus:outline-none focus:border-[var(--primary-color)] transition-all"
+                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
                 />
                 {field.state.meta.errors.map((error: any) => (
-                  <p key={error?.message} className="text-red-600 text-sm font-clash-display border border-red-300 bg-red-50 p-2 rounded">
+                  <p key={error?.message} className="text-red-600 text-sm font-clash-display border-2 border-red-600 bg-red-50 p-2 rounded-none">
                     {error?.message}
                   </p>
                 ))}
@@ -67,10 +67,10 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                     onUpdate({ correoElectronico: e.target.value });
                   }}
                   placeholder="ejemplo@correo.com"
-                  className="border border-gray-300 rounded font-clash-display p-3 focus:outline-none focus:border-[var(--primary-color)] transition-all"
+                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
                 />
                 {field.state.meta.errors.map((error: any) => (
-                  <p key={error?.message} className="text-red-600 text-sm font-clash-display border border-red-300 bg-red-50 p-2 rounded">
+                  <p key={error?.message} className="text-red-600 text-sm font-clash-display border-2 border-red-600 bg-red-50 p-2 rounded-none">
                     {error?.message}
                   </p>
                 ))}
@@ -100,10 +100,10 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                     onUpdate({ numeroTelefono: e.target.value });
                   }}
                   placeholder="123456789"
-                  className="border border-gray-300 rounded font-clash-display p-3 focus:outline-none focus:border-[var(--primary-color)] transition-all"
+                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
                 />
                 {field.state.meta.errors.map((error: any) => (
-                  <p key={error?.message} className="text-red-600 text-sm font-clash-display border border-red-300 bg-red-50 p-2 rounded">
+                  <p key={error?.message} className="text-red-600 text-sm font-clash-display border-2 border-red-600 bg-red-50 p-2 rounded-none">
                     {error?.message}
                   </p>
                 ))}
