@@ -12,7 +12,7 @@ interface PersonalInfoStepProps {
 
 export default function PersonalInfoStep({ form, presupuesto, onUpdate }: PersonalInfoStepProps) {
   return (
-    <div className="border-2 border-[#000000] shadow-[4px_4px_0px_0px_#000000] bg-white p-4 md:p-6">
+    <div className="bg-white p-4 md:p-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
         <div>
           <form.Field name="nombreCompleto">
