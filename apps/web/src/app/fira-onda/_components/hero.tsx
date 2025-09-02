@@ -12,15 +12,7 @@ export function Hero() {
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto pt-20 bg-white">
-      <Confetti
-        ref={confettiRef}
-        options={{
-          particleCount: 400,
-          spread: 100,
-          origin: { y: 0.6 }
-        }}
-        className="absolute left-0 top-0 z-20 size-full"
-      />
+      
 
       <div className="container mx-auto px-4 relative z-30">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
@@ -31,7 +23,7 @@ export function Hero() {
               <span className="text-md lg:text-xl font-semibold font-clash-display text-primary">¡Fira d'Onda 2025!</span>
             </div>
             <div className="mb-12">
-              <GlitchText className="text-6xl lg:text-8xl text-[var(--primary-color)] font-bold font-khand">
+              <GlitchText className="text-6xl lg:text-8xl text-[var(--primary-color)] font-bold font-khand" shadowColor1="#ff0080" shadowColor2="#00ffff">
                 LO QUE NECESITES PARA TUS FIESTAS
               </GlitchText>
             </div>
@@ -80,6 +72,7 @@ export function Hero() {
           </div>
         </div>
       </div>
+      
     </section>
   )
 }
