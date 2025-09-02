@@ -1,0 +1,23 @@
+import { Hero } from "./_components/hero"
+import { ConfidenceSection } from "./_components/confidence-section"
+import { ServicesSection } from "./_components/services-section"
+import { AnniversarySection } from "./_components/anniversary-section"
+import { CTASection } from "./_components/cta-section"
+
+export default function FiraOndaPage() {
+  return (
+    <div className="min-h-screen">
+      <div className="px-2">
+        <Hero />
+      </div>
+      {/* Separator */}
+      <hr className="border-gray-300" />
+      <div className="px-2">
+        <ConfidenceSection />
+        <ServicesSection />
+        <AnniversarySection />
+        <CTASection />
+      </div>
+    </div>
+  )
+}
