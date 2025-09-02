@@ -2,32 +2,16 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import Button from "@/components/ui/retro-btn"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
-import { authClient } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
-import { Menu, X, User, LogOut } from "lucide-react"
+import { Menu } from "lucide-react"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const router = useRouter()
-  const { data: session, isPending } = authClient.useSession()
-
-  const handleSignOut = () => {
-    authClient.signOut({
-      fetchOptions: {
-        onSuccess: () => {
-          router.push("/")
-          setIsOpen(false)
-        },
-      },
-    })
-  }
 
   const navigationLinks = [
     { href: "/", label: "Inicio" },
-    { href: "/fira-onda-2025", label: "Fira d'Onda 2025" },
+    { href: "/fira-onda", label: "Fira d'Onda 2025" },
   ]
 
   return (
@@ -36,7 +20,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-[var(--primary-color)] font-khand font-bold text-4xl">TOT PER FIRA</span>
+            <span className="text-[var(--primary-color)] font-khand font-bold text-2xl md:text-4xl">TOT PER FIRA</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,32 +38,34 @@ export function Navbar() {
               ))}
             </div>
 
-            {/* Auth Buttons */}
-            <div className="flex items-center">
-              {isPending ? (
-                <div className="w-20 h-9 bg-gray-200 rounded-md animate-pulse" />
-              ) : session ? (
-                <Button
-                  variant="outline"
-                  size="md"
-                  onClick={handleSignOut}
-                >
-                  <LogOut className="w-4 h-4 mr-2" />
-                  Cerrar Sesión
-                </Button>
-              ) : (
-                <Button
-                  size="md"
-                  variant="default"
-                >
-                  <Link href="/login">Login</Link>
-                </Button>
-              )}
+            {/* CTA Buttons */}
+            <div className="flex items-center space-x-3">
+              <Button
+                variant="outline"
+                size="md"
+              >
+                <Link href="/contacto">Contactar</Link>
+              </Button>
+              <Button
+                size="md"
+                variant="default"
+              >
+                <Link href="/presupuesto">Crear presupuesto</Link>
+              </Button>
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center space-x-3">
+            {/* Mobile CTA Button */}
+            <Button
+              size="sm"
+              variant="default"
+            >
+              <Link href="/presupuesto">Presupuesto</Link>
+            </Button>
+
+            {/* Mobile Menu Button */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button
@@ -119,47 +105,24 @@ export function Navbar() {
                     </div>
                   </div>
 
-                  {/* Auth Section */}
+                  {/* CTA Section */}
                   <div className="border-t border-gray-200 pt-6">
-                    {isPending ? (
-                      <div className="w-full h-12 bg-gray-200 rounded-lg animate-pulse" />
-                    ) : session ? (
-                      <div className="space-y-4">
-                        <div className="bg-gray-50 rounded-lg p-4">
-                          <p className="text-[var(--primary-color)] font-medium text-sm">Sesión activa</p>
-                          <p className="text-gray-800 font-medium">{session.user.name}</p>
-                          <p className="text-gray-600 text-sm">{session.user.email}</p>
-                        </div>
-                        <Button
-                          variant="outline"
-                          onClick={handleSignOut}
-                          className="w-full"
-                        >
-                          <LogOut className="w-4 h-4 mr-2" />
-                          Cerrar Sesión
-                        </Button>
-                      </div>
-                    ) : (
-                      <div className="space-y-3">
-                        <Button
-                          variant="default"
-                          className="w-full"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <Link href="/login">
-                            <User className="w-4 h-4 mr-2" />
-                            Iniciar Sesión
-                          </Link>
-                        </Button>
-                        <Button
-                          variant="outline"
-                          className="w-full"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <Link href="/register">Registrarse</Link>
-                        </Button>
-                      </div>
-                    )}
+                    <div className="space-y-3">
+                      <Button
+                        variant="default"
+                        className="w-full"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <Link href="/presupuesto">Crear presupuesto</Link>
+                      </Button>
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <Link href="/contacto">Contactar</Link>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </SheetContent>
@@ -169,4 +132,4 @@ export function Navbar() {
       </div>
     </nav>
   )
-} 
+}
