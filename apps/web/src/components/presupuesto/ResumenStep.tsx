@@ -67,8 +67,7 @@ export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar }: Resu
       {/* Productos Seleccionados */}
       <div className="border-b border-gray-300 bg-[var(--complementary-color-turquoise)]/10 p-4">
         <h3 className="text-xl md:text-2xl font-bold font-khand text-[var(--secondary-color)] flex items-center gap-2">
-          <CheckCircle className="text-[var(--complementary-color-green)]" size={24} />
-          Productos Seleccionados ({presupuesto.objetosPedido.length})
+          Productos Seleccionados ({presupuesto.objetosPedido.reduce((total, producto) => total + producto.unidades, 0)})
         </h3>
       </div>
       <div className="border-b border-gray-300 p-6">
