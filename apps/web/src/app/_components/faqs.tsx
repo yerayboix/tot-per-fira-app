@@ -7,7 +7,7 @@ import {
 import Button from "@/components/ui/retro-btn"
 import Link from "next/link"
 
-export default function FrequentQuestions() {
+export default function   FrequentQuestions() {
   const faqs = [
     {
       question: "¿Qué servicios ofrecen?",
@@ -41,10 +41,9 @@ export default function FrequentQuestions() {
         <div className="p-4 border-b border-gray-300 text-center bg-[var(--complementary-color-turquoise)]/10">
           <h2 className="text-4xl md:text-8xl font-bold font-khand text-[var(--primary-color)]">PREGUNTAS FRECUENTES</h2>
         </div>
-        <div className="p-6">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 p-4">
                 <AccordionTrigger className="text-left font-clash-display font-semibold text-lg text-[var(--secondary-color)] hover:text-[var(--primary-color)]">
                   {faq.question}
                 </AccordionTrigger>
@@ -55,7 +54,6 @@ export default function FrequentQuestions() {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
         <div className="pt-20 border-gray-300 text-center p-4 mb-10">
           <div className="">
             <h3 className="text-5xl md:text-7xl font-bold font-khand text-[var(--primary-color)] mb-6">
