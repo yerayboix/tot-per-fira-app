@@ -17,7 +17,7 @@ export function ServicesSection() {
           <div className="p-6 border-b md:border-r border-gray-300">
             <ServiceCard 
               icon={Beer} 
-              title="BARRAS Y BEBIDAS" 
+              title="BARRAS, BEBIDAS Y CONGELADORES" 
               description="Montamos las barras y suministramos toda la bebida que necesites para tu peña. Cerveza, refrescos, agua... ¡lo que quieras!"
               color="text-[var(--primary-color)]"
             />
