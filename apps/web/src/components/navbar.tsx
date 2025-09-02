@@ -62,16 +62,15 @@ export function Navbar() {
           {/* Mobile Navigation */}
           <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="p-2"
-                >
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Abrir menú</span>
-                </Button>
-              </SheetTrigger>
+              <Button
+                variant="outline"
+                size="sm"
+                className="p-2"
+                onClick={() => setIsOpen(true)}
+              >
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Abrir menú</span>
+              </Button>
               <SheetContent
                 side="right"
                 className="w-[300px] sm:w-[400px] bg-white border-l border-gray-200"
