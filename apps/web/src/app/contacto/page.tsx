@@ -128,7 +128,7 @@ export default function ContactoPage() {
                 <Link href="tel:616121597" className="block">
                   <Button 
                     variant="default" 
-                    size="lg" 
+                    size="md" 
                     className="w-full flex items-center justify-center gap-2"
                   >
                     <Phone className="w-5 h-5" />
@@ -138,7 +138,7 @@ export default function ContactoPage() {
                 <Link href="https://wa.me/34616121597" target="_blank" className="block">
                   <Button 
                     variant="secondary" 
-                    size="lg" 
+                    size="md" 
                     className="w-full flex items-center justify-center gap-2"
                   >
                     <MessageCircle className="w-5 h-5" />
@@ -148,7 +148,7 @@ export default function ContactoPage() {
                 <Link href="mailto:totperfira@gmail.com" className="block">
                   <Button 
                     variant="outline" 
-                    size="lg" 
+                    size="md" 
                     className="w-full flex items-center justify-center gap-2"
                   >
                     <Mail className="w-5 h-5" />
