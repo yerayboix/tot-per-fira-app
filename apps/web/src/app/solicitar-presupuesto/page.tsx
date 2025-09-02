@@ -60,7 +60,7 @@ export default function SolicitarPresupuestoPage() {
   }
 
   return (
-    <div className="min-h-screen py-15 px-2">
+    <div className="min-h-screen py-15 px-2 pb-24"> {/* Added pb-24 for cart bar space */}
       <section className="relative overflow-hidden border border-b-0 border-gray-300 container mx-auto">
         <div className="container mx-auto">
           <div className="border-b border-gray-300">

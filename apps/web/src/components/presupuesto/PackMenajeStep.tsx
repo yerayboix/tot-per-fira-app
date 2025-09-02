@@ -7,7 +7,7 @@ import ProductSelector from "./ProductSelector";
 interface PackMenajeStepProps {
   objetosPedido: LineaPresupuesto[];
   onAddProduct: (producto: LineaPresupuesto) => void;
-  onRemoveProduct: (index: number) => void;
+  onRemoveProduct: (producto: LineaPresupuesto) => void;
 }
 
 export default function PackMenajeStep({ objetosPedido, onAddProduct, onRemoveProduct }: PackMenajeStepProps) {

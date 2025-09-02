@@ -7,7 +7,7 @@ import ProductSelector from "./ProductSelector";
 interface PackLimpiezaStepProps {
   objetosPedido: LineaPresupuesto[];
   onAddProduct: (producto: LineaPresupuesto) => void;
-  onRemoveProduct: (index: number) => void;
+  onRemoveProduct: (producto: LineaPresupuesto) => void;
 }
 
 export default function PackLimpiezaStep({ objetosPedido, onAddProduct, onRemoveProduct }: PackLimpiezaStepProps) {
