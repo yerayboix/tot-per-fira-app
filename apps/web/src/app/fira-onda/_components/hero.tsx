@@ -56,7 +56,7 @@ export function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-row gap-6 items-center justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start">
             <Link href="/contacto">
               <Button
                 size="md"

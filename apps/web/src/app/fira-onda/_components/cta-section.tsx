@@ -18,14 +18,14 @@ export function CTASection() {
               las peñas, las tradiciones y lo que realmente necesitas para que tu fiesta 
               sea inolvidable.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center md:justify-start">
               <Link href="/contacto">
-                <Button size="lg" variant="default">
+                <Button size="md" variant="default">
                   Habla con nosotros
                 </Button>
               </Link>
               <Link href="/contacto">
-                <Button size="lg" variant="secondary">
+                <Button size="md" variant="secondary">
                   Pide presupuesto
                 </Button>
               </Link>
