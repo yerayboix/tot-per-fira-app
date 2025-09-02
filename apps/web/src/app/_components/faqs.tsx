@@ -6,6 +6,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import Button from "@/components/ui/retro-btn"
+import Link from "next/link"
 
 export default function FrequentQuestions() {
   const faqs = [
@@ -62,6 +64,31 @@ export default function FrequentQuestions() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+        <div className="pt-20 border-gray-300 text-center p-4 mb-10">
+          <div className="">
+            <h3 className="text-5xl md:text-7xl font-bold font-khand text-[var(--primary-color)] mb-6">
+              ¿A QUE ESTÁS ESPERANDO?
+            </h3>
+            <div className="flex flex-row gap-4 justify-center">
+              <Link href="/nuevo-presupuesto">
+                <Button
+                  size="md"
+                  variant="default"
+                >
+                  Solicitar Presupuesto
+                </Button>
+              </Link>
+              <Link href="/contacto">
+                <Button
+                  variant="outline"
+                  size="md"
+                >
+                  Contactar
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
