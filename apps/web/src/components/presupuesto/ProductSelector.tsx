@@ -83,7 +83,7 @@ export default function ProductSelector({
           </select>
         </div>
 
-        <div>
+        <div className="">
           <Label className="text-[var(--secondary-color)] font-clash-display font-medium text-sm md:text-base">
             Cantidad
           </Label>

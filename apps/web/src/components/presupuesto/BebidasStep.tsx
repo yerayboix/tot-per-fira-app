@@ -24,7 +24,7 @@ export default function BebidasStep({ objetosPedido, onAddProduct, onRemoveProdu
   return (
     <div className="space-y-6">
       {/* Botones de categoría */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 px-4 pt-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4 px-4 pt-4">
         {categorias.map((categoria) => (
           <Button
             key={categoria.key}

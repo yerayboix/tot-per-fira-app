@@ -279,29 +279,33 @@ export default function PresupuestoForm() {
       </div>
 
       {/* Navegación */}
-      <div className="p-4 md:p-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <Button
-          onClick={pasoAnterior}
-          disabled={pasoActual === 1}
-          variant="outline"
-          size="md"
-          className="w-full sm:w-auto order-2 sm:order-1"
-        >
-          <ChevronLeft size={16} className="mr-2" />
-          Anterior
-        </Button>
-
-        {pasoActual < PASOS.length ? (
+      <div className="p-4 md:p-6">
+        <div className="grid grid-cols-2 gap-4 md:flex md:justify-between md:items-center">
           <Button
-            onClick={siguientePaso}
-            variant="default"
+            onClick={pasoAnterior}
+            disabled={pasoActual === 1}
+            variant="outline"
             size="md"
-            className="w-full sm:w-auto order-1 sm:order-2"
+            className="w-full md:w-auto"
           >
-            Siguiente
-            <ChevronRight size={16} className="ml-2" />
+            <ChevronLeft size={16} className="mr-2" />
+            Anterior
           </Button>
-        ) : null}
+
+          {pasoActual < PASOS.length ? (
+            <Button
+              onClick={siguientePaso}
+              variant="default"
+              size="md"
+              className="w-full md:w-auto"
+            >
+              Siguiente
+              <ChevronRight size={16} className="ml-2" />
+            </Button>
+          ) : (
+            <div></div>
+          )}
+        </div>
       </div>
 
       {/* Info del presupuesto actual */}
