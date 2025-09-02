@@ -5,7 +5,7 @@ import "../index.css";
 import Providers from "@/components/providers";
 import { Navbar } from "@/components/navbar";
 import localFont from "next/font/local";
-import { Footer } from "@/components/footer";
+import { ConditionalFooter } from "@/components/conditional-footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -125,7 +125,7 @@ export default function RootLayout({
             <main>
               {children}
             </main>
-            <Footer />
+            <ConditionalFooter />
           </div>
         </Providers>
       </body>
