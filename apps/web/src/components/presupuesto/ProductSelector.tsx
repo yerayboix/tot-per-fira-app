@@ -49,58 +49,62 @@ export default function ProductSelector({
 
   return (
     <div className="border-b border-gray-300 p-4 md:p-6 space-y-4">
-      <div>
-        <Label className="text-[var(--secondary-color)] font-clash-display font-medium text-sm md:text-base">
-          Seleccionar Producto
-        </Label>
-        <select
-          className="w-full mt-2 p-3 h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display bg-white focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
-          value={selectedProduct?.nombre || ''}
-          onChange={(e) => {
-            const producto = productos.find(p => p.nombre === e.target.value);
-            setSelectedProduct(producto || null);
-          }}
-        >
-          <option value="">Selecciona un producto...</option>
-          {productos.map((producto) => (
-            <option key={producto.nombre} value={producto.nombre}>
-              {producto.nombre} {producto.precio && `- €${producto.precio}`}
-            </option>
-          ))}
-        </select>
-      </div>
+      <div className="flex flex-col sm:flex-row sm:gap-4 md:gap-6">
+        <div className="flex-1">
+          <Label className="text-[var(--secondary-color)] font-clash-display font-medium text-sm md:text-base">
+            Seleccionar Producto
+          </Label>
+          <select
+            className="w-full mt-2 p-3 h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display bg-white focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
+            value={selectedProduct?.nombre || ''}
+            onChange={(e) => {
+              const producto = productos.find(p => p.nombre === e.target.value);
+              setSelectedProduct(producto || null);
+            }}
+          >
+            <option value="">Selecciona un producto...</option>
+            {productos.map((producto) => (
+              <option key={producto.nombre} value={producto.nombre}>
+                {producto.nombre} {producto.precio && `- €${producto.precio}`}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <div>
-        <Label className="text-[var(--secondary-color)] font-clash-display font-medium text-sm md:text-base">
-          Cantidad
-        </Label>
-        <div className="flex items-center gap-3 mt-2">
-          <Button
-            type="button"
-            variant="outline"
-            size="md"
-            onClick={() => setCantidad(Math.max(1, cantidad - 1))}
-            disabled={cantidad <= 1}
-            className="flex items-center justify-center"
-          >
-            <Minus size={16} className="flex-shrink-0" />
-          </Button>
-          <Input
-            type="number"
-            value={cantidad}
-            onChange={(e) => setCantidad(Math.max(1, parseInt(e.target.value) || 1))}
-            className="w-20 h-12 text-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
-            min="1"
-          />
-          <Button
-            type="button"
-            variant="outline"
-            size="md"
-            onClick={() => setCantidad(cantidad + 1)}
-            className="flex items-center justify-center"
-          >
-            <Plus size={16} className="flex-shrink-0" />
-          </Button>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:gap-4 mt-4 sm:mt-0">
+          <div className="sm:min-w-fit">
+            <Label className="text-[var(--secondary-color)] font-clash-display font-medium text-sm md:text-base block">
+              Cantidad
+            </Label>
+            <div className="flex items-center gap-2 sm:gap-3 mt-2 justify-center sm:justify-start">
+              <Button
+                type="button"
+                variant="outline"
+                size="md"
+                onClick={() => setCantidad(Math.max(1, cantidad - 1))}
+                disabled={cantidad <= 1}
+                className="h-12 w-12 flex items-center justify-center flex-shrink-0"
+              >
+                <Minus size={16} className="flex-shrink-0" />
+              </Button>
+              <Input
+                type="number"
+                value={cantidad}
+                onChange={(e) => setCantidad(Math.max(1, parseInt(e.target.value) || 1))}
+                className="flex-1 min-w-0 h-12 text-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
+                min="1"
+              />
+              <Button
+                type="button"
+                variant="outline"
+                size="md"
+                onClick={() => setCantidad(cantidad + 1)}
+                className="h-12 w-12 flex items-center justify-center flex-shrink-0"
+              >
+                <Plus size={16} className="flex-shrink-0" />
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
