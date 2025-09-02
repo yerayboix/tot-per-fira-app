@@ -1,6 +1,4 @@
-"use client"
-
-import { Phone, Mail, Instagram, MapPin, Clock, MessageCircle } from "lucide-react"
+import { Phone, Mail, Instagram, MapPin, MessageCircle } from "lucide-react"
 import GlitchText from "@/components/ui/glitch-text"
 import Button from "@/components/ui/retro-btn"
 import Image from "next/image"

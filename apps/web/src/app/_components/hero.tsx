@@ -1,54 +1,13 @@
-"use client"
-
-
-import { AvailabilityIndicator } from "@/components/availability-indicator"
-import { NumberTicker } from "@/components/magicui/number-ticker"
 import Button from "@/components/ui/retro-btn"
 import Link from "next/link"
 import Image from "next/image"
-import { useRef } from "react";
-import { Confetti, type ConfettiRef } from "@/components/magicui/confetti";
 import GlitchText from "@/components/ui/glitch-text";
-
-interface ExperienceCounterProps {
-  value: number
-  text: string
-  prefix?: string
-  className?: string
-}
-
-function ExperienceCounter({ value, text, prefix = "+", className = "" }: ExperienceCounterProps) {
-  return (
-    <div className={className}>
-      <div className="flex items-center justify-center gap-4">
-        <span className="text-sm lg:text-4xl leading-relaxed font-clash-display">
-          {prefix}
-        </span>
-        <NumberTicker
-          value={value}
-          className="text-2xl sm:text-3xl lg:text-4xl text-[var(--primary-color)] font-semibold font-clash-display"
-        />
-      </div>
-      <span className="text-sm lg:text-xl text-gray-600 leading-relaxed tracking-wider font-clash-display">
-        {text}
-      </span>
-    </div>
-  )
-}
+import { ConfettiWrapper } from "./confetti-wrapper";
 
 export function Hero() {
-  const confettiRef = useRef<ConfettiRef>(null);
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden border border-b-0 border-gray-300 container mx-auto pt-20">
-      <Confetti
-        ref={confettiRef}
-        options={{
-          particleCount: 400,
-          spread: 100,
-          origin: { y: 0.6 }
-        }}
-        className="absolute left-0 top-0 z-20 size-full"
-      />
+      <ConfettiWrapper />
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
