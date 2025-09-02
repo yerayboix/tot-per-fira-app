@@ -36,7 +36,7 @@ export default function   FrequentQuestions() {
   ]
 
   return (
-    <section className="relative overflow-hidden border border-b-0 border-t-0 border-gray-300 container mx-auto pt-20 pb-20">
+    <section className="relative overflow-hidden border border-b-0 border-t-0 border-gray-300 container mx-auto  pb-20">
       <div className="container mx-auto">
         <div className="p-4 border-b border-gray-300 text-center bg-[var(--complementary-color-turquoise)]/10">
           <h2 className="text-4xl md:text-8xl font-bold font-khand text-[var(--primary-color)]">PREGUNTAS FRECUENTES</h2>
