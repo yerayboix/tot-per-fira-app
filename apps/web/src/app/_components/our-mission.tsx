@@ -40,7 +40,7 @@ export function OurMission() {
           </div>
         </div>
         <div className="mt-8 flex flex-row gap-4 justify-center">
-                <Link href="/nuevo-presupuesto">
+                <Link href="/solicitar-presupuesto">
                   <Button
                     size="md"
                     variant="default"

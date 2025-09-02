@@ -42,7 +42,7 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-row gap-6 items-center justify-center mb-16">
-            <Link href="/nuevo-presupuesto" className="block">
+            <Link href="/solicitar-presupuesto" className="block">
               <Button
                 size="md"
                 variant="default"

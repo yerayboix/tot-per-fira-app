@@ -63,7 +63,7 @@ export default function   FrequentQuestions() {
               Haz la prueba con nosotros y no te arrepentirás.
             </p>
             <div className="flex flex-row gap-4 justify-center">
-              <Link href="/nuevo-presupuesto" className="block">
+              <Link href="/solicitar-presupuesto" className="block">
                 <Button
                   size="md"
                   variant="default"

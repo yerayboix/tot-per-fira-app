@@ -74,7 +74,7 @@ export function Products() {
               No dudes en contactarnos para solicitar un presupuesto personalizado o resolver cualquier duda que tengas.
             </p>
             <div className="flex flex-row gap-4 justify-center">
-              <Link href="/nuevo-presupuesto">
+              <Link href="/solicitar-presupuesto">
                 <Button
                   size="md"
                   variant="default"
