@@ -51,7 +51,7 @@ export function Navbar() {
                   Contactar
                 </Button>
               </Link>
-              <Link href="/presupuesto" className="block">
+              <Link href="/solicitar-presupuesto" className="block">
                 <Button
                   size="sm"
                   variant="default"
@@ -64,7 +64,7 @@ export function Navbar() {
 
           {/* Mobile Navigation */}
           <div className="md:hidden flex items-center space-x-3">
-            <Link href="/presupuesto" className="block">
+            <Link href="/solicitar-presupuesto" className="block">
               <Button
                 size="md"
                 className="p-2"
@@ -116,7 +116,7 @@ export function Navbar() {
                   {/* CTA Section */}
                   <div className="border-t border-gray-200 pt-6">
                     <div className="space-y-3">
-                      <Link href="/presupuesto" className="block" onClick={() => setIsOpen(false)}>
+                      <Link href="/solicitar-presupuesto" className="block" onClick={() => setIsOpen(false)}>
                         <Button
                           variant="default"
                           className="w-full"

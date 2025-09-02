@@ -15,7 +15,7 @@ export function DrinksSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
-            <Link href="/presupuesto">
+            <Link href="/solicitar-presupuesto">
               <Button size="md" variant="default">
                 Pide tu presupuesto
               </Button>

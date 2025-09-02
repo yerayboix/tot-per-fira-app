@@ -80,7 +80,7 @@ export function AnniversarySection() {
               Resolvemos tus dudas
             </Button>
           </Link>
-          <Link href="/presupuesto">
+          <Link href="/solicitar-presupuesto">
             <Button size="md" variant="secondary">
               Pide tu presupuesto
             </Button>
