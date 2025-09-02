@@ -116,10 +116,10 @@ function ProductCard({
   descriptionColor?: string
 }) {
   return (
-    <div className={`${bgColor} p-8 text-center min-h-[400px] flex flex-col items-center justify-center`}>
+    <div className={`${bgColor} p-8 text-center min-h-[350px] flex flex-col items-center justify-center`}>
       <Icon className={`w-30 h-30 mb-6 ${iconColor}`} />
-      <h2 className={`text-5xl md:text-7xl font-bold font-khand mb-4 ${textColor}`}>{title}</h2>
-      <p className={`text-lg ${descriptionColor}`}>{description}</p>
+      <h2 className={`text-4xl md:text-7xl font-bold font-khand mb-4 ${textColor}`}>{title}</h2>
+      <p className={`text-md md:text-lg ${descriptionColor}`}>{description}</p>
     </div>
   )
 }
