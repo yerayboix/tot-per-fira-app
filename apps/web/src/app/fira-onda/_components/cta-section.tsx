@@ -24,7 +24,7 @@ export function CTASection() {
                   Habla con nosotros
                 </Button>
               </Link>
-              <Link href="/contacto">
+              <Link href="/solicitar-presupuesto">
                 <Button size="md" variant="secondary">
                   Pide presupuesto
                 </Button>
