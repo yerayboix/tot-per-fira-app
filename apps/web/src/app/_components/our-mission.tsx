@@ -28,14 +28,14 @@ export function OurMission() {
                 </p>
 
                 <div className="bg-gray-50 p-6 border-l-4 border-[var(--primary-color)]">
-                  <p className="text-base md:text-ºlg text-gray-700 leading-relaxed">
+                  <p className="text-base md:ºlg text-gray-700 leading-relaxed">
                     <strong>¿Tienes dudas?</strong> Siempre estamos disponibles para resolver cualquier consulta que tengas, ya sea por teléfono, email o WhatsApp.
                   </p>
                 </div>
               </div>
 
               <div className="mt-8 flex flex-row gap-4 justify-center">
-                <Link href="/nuevo-presupuesto">
+                <Link href="/nuevo-presupuesto" className="block">
                   <Button
                     size="md"
                     variant="default"
@@ -43,7 +43,7 @@ export function OurMission() {
                     Solicitar Presupuesto
                   </Button>
                 </Link>
-                <Link href="/contacto">
+                <Link href="/contacto" className="block">
                   <Button
                     variant="outline"
                     size="md"

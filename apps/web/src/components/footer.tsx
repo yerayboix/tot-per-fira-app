@@ -94,24 +94,24 @@ export function Footer() {
               ponte en contacto con nosotros.
             </p>
             <div className="space-y-3">
-              <Button 
-                variant="default" 
-                size="md" 
-                className="w-full"
-              >
-                <Link href="tel:616121597">
+              <Link href="tel:616121597" className="block">
+                <Button 
+                  variant="default" 
+                  size="md" 
+                  className="w-full"
+                >
                   Llamar ahora
-                </Link>
-              </Button>
-              <Button 
-                variant="outlinewhite" 
-                size="md" 
-                className="w-full"
-              >
-                <Link href="https://wa.me/34616121597" target="_blank">
+                </Button>
+              </Link>
+              <Link href="https://wa.me/34616121597" target="_blank" className="block">
+                <Button 
+                  variant="outlinewhite" 
+                  size="md" 
+                  className="w-full"
+                >
                   WhatsApp
-                </Link>
-              </Button>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

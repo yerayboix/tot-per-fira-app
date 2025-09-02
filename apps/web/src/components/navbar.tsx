@@ -40,45 +40,42 @@ export function Navbar() {
 
             {/* CTA Buttons */}
             <div className="flex items-center space-x-3">
-              <Button
-                variant="outline"
-                size="md"
-              >
-                <Link href="/contacto">Contactar</Link>
-              </Button>
-              <Button
-                size="md"
-                variant="default"
-              >
-                <Link href="/presupuesto">Crear presupuesto</Link>
-              </Button>
+              <Link href="/contacto" className="block">
+                <Button
+                  variant="outline"
+                  size="md"
+                >
+                  Contactar
+                </Button>
+              </Link>
+              <Link href="/presupuesto" className="block">
+                <Button
+                  size="md"
+                  variant="default"
+                >
+                  Crear presupuesto
+                </Button>
+              </Link>
             </div>
           </div>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden flex items-center space-x-3">
-            {/* Mobile CTA Button */}
-            <Button
-              size="sm"
-              variant="default"
-            >
-              <Link href="/presupuesto">Presupuesto</Link>
-            </Button>
-
-            {/* Mobile Menu Button */}
+          <div className="md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button
                   variant="outline"
-                  size="md"
-                  className="text-gray-700 hover:bg-gray-100"
+                  size="sm"
+                  className="p-2"
                 >
-                  <Menu className="w-5 h-5" />
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Abrir menú</span>
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="bg-white border-l border-gray-200 w-80 p-0"
+                className="w-[300px] sm:w-[400px] bg-white border-l border-gray-200"
+
               >
                 <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
                 <div className="flex flex-col h-full p-6">
@@ -108,20 +105,22 @@ export function Navbar() {
                   {/* CTA Section */}
                   <div className="border-t border-gray-200 pt-6">
                     <div className="space-y-3">
-                      <Button
-                        variant="default"
-                        className="w-full"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <Link href="/presupuesto">Crear presupuesto</Link>
-                      </Button>
-                      <Button
-                        variant="outline"
-                        className="w-full"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <Link href="/contacto">Contactar</Link>
-                      </Button>
+                      <Link href="/presupuesto" className="block" onClick={() => setIsOpen(false)}>
+                        <Button
+                          variant="default"
+                          className="w-full"
+                        >
+                          Crear presupuesto
+                        </Button>
+                      </Link>
+                      <Link href="/contacto" className="block" onClick={() => setIsOpen(false)}>
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                        >
+                          Contactar
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>

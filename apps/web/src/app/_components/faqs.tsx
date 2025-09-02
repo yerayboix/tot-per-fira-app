@@ -12,55 +12,48 @@ import Link from "next/link"
 export default function FrequentQuestions() {
   const faqs = [
     {
-      question: "¿Quiénes somos?",
-      answer: "Tot Per Fira es un proyecto impulsado por tres socios de Onda con amplia experiencia organizando fiestas populares. Trabajamos con más de 80 peñas de la zona y ofrecemos un servicio cercano, profesional y flexible."
+      question: "¿Qué servicios ofrecen?",
+      answer: "Ofrecemos alquiler de altavoces, congeladores, botelleros, suministro de bebidas, grifos de cerveza, packs de limpieza y menaje. También proporcionamos personal de barra y montaje completo."
     },
     {
-      question: "¿Cómo trabajamos?",
-      answer: "No tienes que preocuparte de nada, nos encargamos de todo: transporte, montaje, servicio y recogida. Adaptamos cada servicio a las necesidades del cliente. Próximamente, dispondremos de una web para facilitar la gestión de reservas."
+      question: "¿En qué zonas trabajan?",
+      answer: "Trabajamos principalmente en la Comunidad Valenciana, con sede en Onda, Castellón. Para eventos fuera de esta zona, consúltanos y estudiaremos la viabilidad."
     },
     {
-      question: "¿A quién va dirigido?",
-      answer: "• Peñas y asociaciones festivas.\n• Ayuntamientos y comisiones de fiestas.\n• Eventos de particulares.\n• Bares, locales y negocios que organizan vermuts, conciertos o celebraciones."
+      question: "¿Cuánto tiempo de antelación necesito para reservar?",
+      answer: "Recomendamos contactar con al menos 2 semanas de antelación, especialmente en temporada alta. Sin embargo, también podemos atender pedidos de última hora según disponibilidad."
     },
     {
-      question: "¿Dónde trabajamos?",
-      answer: "Nuestra base está en Onda (Castellón), y actualmente ofrecemos servicio en localidades cercanas como Betxí, l' Alcora, Vila-Real, Nules, Tales, Artesa, Sueras, Fanzara y otras zonas del interior de Castellón."
+      question: "¿Incluyen montaje y desmontaje?",
+      answer: "Sí, nuestro servicio incluye el montaje completo del equipo en el lugar del evento y el desmontaje posterior. Solo necesitas indicarnos dónde y cuándo."
     },
     {
-      question: "¿Cómo se conectan los altavoces, por Bluetooth o por USB?",
-      answer: "Nuestros altavoces se pueden conectar de varias formas para que no tengas problema: con Bluetooth (desde el móvil u otro dispositivo), por USB o con cable auxiliar. Y si tu equipo no tiene Bluetooth, también podemos montar una mesa con receptor para que lo tengas igual de fácil."
+      question: "¿Qué incluye el personal de barra?",
+      answer: "El personal de barra se encarga de servir las bebidas, mantener la barra limpia y organizada, y asegurar que no falte nada durante el evento. Incluye uniforme y experiencia en el sector."
     },
     {
-      question: "¿Repartís hielo entre semana o solo los fines de semana?",
-      answer: "Repartimos hielo todos los días, también entre semana. Lo único que pedimos es que nos avises con un poco de antelación para poder organizar la entrega a la hora que mejor te venga."
-    },
-    {
-      question: "Si necesito devolver algo, ¿qué hago?",
-      answer: "No te preocupes. Si algo no sale como esperabas o necesitas devolver un producto, solo tienes que llamarnos o escribirnos. Revisamos cada caso personalmente y buscamos la mejor solución contigo: cambiarlo, devolverlo o ajustar el servicio según lo que necesites."
+      question: "¿Cómo funciona el pago?",
+      answer: "Solicitamos una señal del 30% para confirmar la reserva, y el resto se paga el día del evento una vez montado todo el equipo. Aceptamos efectivo, transferencia bancaria y tarjeta."
     }
   ]
 
   return (
-    <section className="relative overflow-hidden border border-b-0 border-t-0 border-gray-300 container mx-auto">
+    <section className="relative overflow-hidden border border-b-0 border-t-0 border-gray-300 container mx-auto pt-20 pb-20">
       <div className="container mx-auto">
-        <div className="p-4 border-b border-gray-300 text-center bg-[var(--complementary-color-pink)]/10">
+        <div className="p-4 border-b border-gray-300 text-center bg-[var(--complementary-color-turquoise)]/10">
           <h2 className="text-4xl md:text-8xl font-bold font-khand text-[var(--primary-color)]">PREGUNTAS FRECUENTES</h2>
         </div>
-        <div>
-          <Accordion type="single" collapsible className="">
+        <div className="p-6">
+          <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-300 p-4">
-                <AccordionTrigger className="text-left py-6 hover:no-underline group cursor-pointer">
-                  <h3 className="text-xl md:text-2xl font-bold font-khand text-[var(--secondary-color)] group-hover:text-[var(--primary-color)] transition-colors">
-                    {faq.question}
-                  </h3>
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200">
+                <AccordionTrigger className="text-left font-clash-display font-semibold text-lg text-[var(--secondary-color)] hover:text-[var(--primary-color)]">
+                  {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="pb-6">
-                  <div className="text-gray-600 leading-relaxed whitespace-pre-line text-md md:text-lg">
-                    {faq.answer}
-                  </div>
+                <AccordionContent className="text-gray-600 leading-relaxed font-clash-display">
+                  {faq.answer}
                 </AccordionContent>
+
               </AccordionItem>
             ))}
           </Accordion>
@@ -71,7 +64,7 @@ export default function FrequentQuestions() {
               ¿A QUE ESTÁS ESPERANDO?
             </h3>
             <div className="flex flex-row gap-4 justify-center">
-              <Link href="/nuevo-presupuesto">
+              <Link href="/nuevo-presupuesto" className="block">
                 <Button
                   size="md"
                   variant="default"
@@ -79,7 +72,7 @@ export default function FrequentQuestions() {
                   Solicitar Presupuesto
                 </Button>
               </Link>
-              <Link href="/contacto">
+              <Link href="/contacto" className="block">
                 <Button
                   variant="outline"
                   size="md"
