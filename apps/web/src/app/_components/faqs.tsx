@@ -59,6 +59,9 @@ export default function   FrequentQuestions() {
             <h3 className="text-5xl md:text-7xl font-bold font-khand text-[var(--primary-color)] mb-6">
               ¿A QUE ESTÁS ESPERANDO?
             </h3>
+            <p className="text-lg md:text-xl text-gray-600 leading-relaxed font-clash-display mb-8">
+              Haz la prueba con nosotros y no te arrepentirás.
+            </p>
             <div className="flex flex-row gap-4 justify-center">
               <Link href="/nuevo-presupuesto" className="block">
                 <Button
