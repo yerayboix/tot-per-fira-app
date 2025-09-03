@@ -70,7 +70,7 @@ export default function CartModal({ isOpen, onClose, productos, onRemoveProduct 
         </DialogHeader>
 
         {/* Content */}
-        <div className="overflow-y-auto h-[calc(100vh-140px)]">
+        <div className="overflow-y-auto h-[calc(100vh-140px)] pb-20">
           {productos.length === 0 ? (
             <div className="p-8 text-center">
               <ShoppingCart size={48} className="mx-auto mb-4 text-gray-400" />
@@ -130,7 +130,7 @@ export default function CartModal({ isOpen, onClose, productos, onRemoveProduct 
 
         {/* Footer con total */}
         {productos.length > 0 && calcularTotal() > 0 && (
-          <div className="absolute bottom-0 left-0 right-0 border-t border-gray-300 bg-[var(--complementary-color-green)]/10 p-4">
+          <div className="absolute bottom-0 left-0 right-0 border-t border-gray-300 bg-white p-4">
             <div className="flex justify-between items-center">
               <span className="text-xl font-bold font-khand text-[var(--secondary-color)]">
                 Total Estimado:
