@@ -31,11 +31,11 @@ import { type Presupuesto, type LineaPresupuesto } from "@/types/presupuesto";
 
 const PASOS = [
   { id: 1, titulo: "Información Personal", required: true },
-  { id: 2, titulo: "Añadir Bebidas", required: false },
-  { id: 3, titulo: "Añadir Congelador y Hielos", required: false },
-  { id: 4, titulo: "Añadir Altavoces", required: false },
-  { id: 5, titulo: "Añadir Pack Limpieza", required: false },
-  { id: 6, titulo: "Añadir Pack Menaje", required: false },
+  { id: 2, titulo: "Bebidas", required: false },
+  { id: 3, titulo: "Congelador y Hielos", required: false },
+  { id: 4, titulo: "Altavoces", required: false },
+  { id: 5, titulo: "Pack Limpieza", required: false },
+  { id: 6, titulo: "Pack Menaje", required: false },
   { id: 7, titulo: "Resumen", required: true },
 ];
 
