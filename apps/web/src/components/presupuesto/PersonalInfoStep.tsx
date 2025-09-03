@@ -35,6 +35,7 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                   }}
                   placeholder="Introduce tu nombre completo"
                   className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
+                  autoComplete="name"
                 />
                 {field.state.meta.errors.map((error: any) => (
                   <p key={error?.message} className="text-red-600 text-sm font-clash-display border-2 border-red-600 bg-red-50 p-2 rounded-none">
@@ -68,6 +69,7 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                   }}
                   placeholder="ejemplo@correo.com"
                   className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
+                  autoComplete="email"
                 />
                 {field.state.meta.errors.map((error: any) => (
                   <p key={error?.message} className="text-red-600 text-sm font-clash-display border-2 border-red-600 bg-red-50 p-2 rounded-none">
@@ -101,6 +103,7 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                   }}
                   placeholder="123456789"
                   className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
+                  autoComplete="tel"
                 />
                 {field.state.meta.errors.map((error: any) => (
                   <p key={error?.message} className="text-red-600 text-sm font-clash-display border-2 border-red-600 bg-red-50 p-2 rounded-none">
