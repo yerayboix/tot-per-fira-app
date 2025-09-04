@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, Truck, Settings, Wrench } from "lucide-react";
 import Button from "@/components/ui/retro-btn";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -107,6 +107,41 @@ export default function ProductSelector({
           </div>
         </div>
       </div>
+
+      {/* Indicadores para altavoces */}
+      {categoria === 'altavoces' && (
+        <div className="space-y-2">
+          <div className="flex items-center gap-4 text-xs text-gray-600">
+            <span className="font-khand font-medium">Incluye:</span>
+            <div className="flex items-center gap-1">
+              <Truck size={12} />
+              <span className="font-khand">Transporte</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Settings size={12} />
+              <span className="font-khand">Mesa de sonido</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Wrench size={12} />
+              <span className="font-khand">Instalación</span>
+            </div>
+          </div>
+          <div className="text-xs text-gray-500 font-khand italic">
+            * Para equipos de más de 3.000W (hasta 7.000W) consultar disponibilidad
+          </div>
+        </div>
+      )}
+
+      {/* Indicador para congelador */}
+      {categoria === 'congelador' && (
+        <div className="flex items-center gap-4 text-xs text-gray-600">
+          <span className="font-khand font-medium">Incluye:</span>
+          <div className="flex items-center gap-1">
+            <Truck size={12} />
+            <span className="font-khand">Transporte</span>
+          </div>
+        </div>
+      )}
 
       <Button
         onClick={handleAddProduct}
