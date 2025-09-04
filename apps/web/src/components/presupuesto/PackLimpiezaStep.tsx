@@ -18,7 +18,7 @@ export default function PackLimpiezaStep({ objetosPedido, onAddProduct, onRemove
       objetosPedido={objetosPedido}
       onAddProduct={onAddProduct}
       onRemoveProduct={onRemoveProduct}
-      titulo="Packs de Limpieza"
+      titulo="Pack de Limpieza"
     />
   );
 }

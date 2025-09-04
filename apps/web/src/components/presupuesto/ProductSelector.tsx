@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Minus, Truck, Settings, Wrench } from "lucide-react";
+import { Plus, Minus, Truck, Settings, Wrench, Info } from "lucide-react";
 import Button from "@/components/ui/retro-btn";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,6 +19,7 @@ interface ProductSelectorProps {
   objetosPedido: LineaPresupuesto[];
   onAddProduct: (producto: LineaPresupuesto) => void;
   onRemoveProduct: (producto: LineaPresupuesto) => void;
+
 }
 
 export default function ProductSelector({
@@ -49,13 +50,15 @@ export default function ProductSelector({
 
   return (
     <div className="border-b border-gray-300 p-4 md:p-6 space-y-4">
+
+      
       <div className="flex flex-col sm:flex-row sm:gap-4 md:gap-6">
         <div className="flex-1">
           <Label className="text-[var(--secondary-color)] font-clash-display font-medium text-sm md:text-base">
             Seleccionar Producto
           </Label>
           <select
-            className="w-full mt-2 p-3 h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display bg-white focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
+            className="w-full mt-2 p-3 h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display bg-white focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-base"
             value={selectedProduct?.nombre || ''}
             onChange={(e) => {
               const producto = productos.find(p => p.nombre === e.target.value);
@@ -91,7 +94,7 @@ export default function ProductSelector({
                 type="number"
                 value={cantidad}
                 onChange={(e) => setCantidad(Math.max(1, parseInt(e.target.value) || 1))}
-                className="flex-1 min-w-0 h-12 text-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-sm md:text-base"
+                className="flex-1 min-w-0 h-12 text-center border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-base"
                 min="1"
               />
               <Button

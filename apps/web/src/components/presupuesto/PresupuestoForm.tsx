@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "@tanstack/react-form";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Check, ChevronLeft, ChevronRight, Send } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Send, Info } from "lucide-react";
 
 import Button from "@/components/ui/retro-btn";
 import PersonalInfoStep from "./PersonalInfoStep";
@@ -16,6 +16,7 @@ import PackMenajeStep from "./PackMenajeStep";
 import ResumenStep from "./ResumenStep";
 import CartModal from "./CartModal";
 import CartBar from "./CartBar";
+import PackInfoModal from "./PackInfoModal";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -54,6 +55,8 @@ export default function PresupuestoForm() {
     objetosPedido: [],
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isPackInfoOpen, setIsPackInfoOpen] = useState(false);
+  const [packInfoType, setPackInfoType] = useState<'limpieza' | 'menaje'>('limpieza');
 
   const form = useForm({
     defaultValues: {
@@ -204,6 +207,19 @@ export default function PresupuestoForm() {
 
   const pasoActualData = PASOS[pasoActual - 1];
 
+  const openPackInfo = (type: 'limpieza' | 'menaje') => {
+    setPackInfoType(type);
+    setIsPackInfoOpen(true);
+  };
+
+  const shouldShowInfoButton = () => {
+    return pasoActual === 5 || pasoActual === 6; // Pack Limpieza o Pack Menaje
+  };
+
+  const getInfoButtonType = (): 'limpieza' | 'menaje' => {
+    return pasoActual === 5 ? 'limpieza' : 'menaje';
+  };
+
   // Función para obtener pasos visibles en móvil
   const getPasosMovil = () => {
     const pasos = [];
@@ -258,12 +274,26 @@ export default function PresupuestoForm() {
 
           {/* Título del paso */}
           <div className="border-b border-gray-300 bg-[var(--complementary-color-yellow)]/10 p-4">
-            <h2 className="text-2xl md:text-4xl font-bold font-khand text-[var(--secondary-color)]">
-              {pasoActualData.titulo}
-              {!pasoActualData.required && (
-                <span className="text-sm font-normal text-gray-600 ml-2 font-clash-display">(Opcional)</span>
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1 min-w-0">
+                <h2 className="text-2xl md:text-4xl font-bold font-khand text-[var(--secondary-color)]">
+                  {pasoActualData.titulo}
+                  {!pasoActualData.required && (
+                    <span className="text-sm font-normal text-gray-600 ml-2 font-clash-display">(Opcional)</span>
+                  )}
+                </h2>
+              </div>
+              
+              {shouldShowInfoButton() && (
+                <button
+                  onClick={() => openPackInfo(getInfoButtonType())}
+                  className="flex items-center gap-2 px-3 py-2 text-sm text-[var(--secondary-color)] hover:text-[var(--primary-color)] border border-gray-300 hover:border-[var(--primary-color)] transition-colors bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] flex-shrink-0"
+                >
+                  <Info size={16} />
+                  <span className="font-clash-display hidden sm:inline">¿Qué incluye?</span>
+                </button>
               )}
-            </h2>
+            </div>
           </div>
 
           {/* Contenido del paso */}
@@ -369,6 +399,13 @@ export default function PresupuestoForm() {
         onClose={() => setIsCartOpen(false)}
         productos={presupuesto.objetosPedido}
         onRemoveProduct={eliminarProducto}
+      />
+
+      {/* Pack Info Modal */}
+      <PackInfoModal
+        isOpen={isPackInfoOpen}
+        onClose={() => setIsPackInfoOpen(false)}
+        packType={packInfoType}
       />
     </>
   );

@@ -6,6 +6,7 @@ import { type LineaPresupuesto } from "@/types/presupuesto";
 import { productosPorCategoria } from "@/data/productos";
 import ProductSelector from "./ProductSelector";
 
+
 interface PackMenajeStepProps {
   objetosPedido: LineaPresupuesto[];
   onAddProduct: (producto: LineaPresupuesto) => void;
@@ -14,6 +15,7 @@ interface PackMenajeStepProps {
 
 export default function PackMenajeStep({ objetosPedido, onAddProduct, onRemoveProduct }: PackMenajeStepProps) {
   const [categoriaActiva, setCategoriaActiva] = useState<'pack_menaje' | 'vasos'>('pack_menaje');
+
 
   const categorias = [
     { key: 'pack_menaje' as const, label: 'Pack de Menaje', productos: productosPorCategoria.pack_menaje },

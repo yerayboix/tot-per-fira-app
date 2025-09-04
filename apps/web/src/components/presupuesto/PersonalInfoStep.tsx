@@ -34,7 +34,7 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                     onUpdate({ nombreCompleto: e.target.value });
                   }}
                   placeholder="Introduce tu nombre completo"
-                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
+                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-base"
                   autoComplete="name"
                 />
                 {field.state.meta.errors.map((error: any) => (
@@ -68,7 +68,7 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                     onUpdate({ correoElectronico: e.target.value });
                   }}
                   placeholder="ejemplo@correo.com"
-                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
+                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-base"
                   autoComplete="email"
                 />
                 {field.state.meta.errors.map((error: any) => (
@@ -102,7 +102,7 @@ export default function PersonalInfoStep({ form, presupuesto, onUpdate }: Person
                     onUpdate({ numeroTelefono: e.target.value });
                   }}
                   placeholder="123456789"
-                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none"
+                  className="h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display p-3 focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-base"
                   autoComplete="tel"
                 />
                 {field.state.meta.errors.map((error: any) => (
