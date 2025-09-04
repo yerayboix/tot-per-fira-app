@@ -181,3 +181,48 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Custom Toast Styles */
+[data-sonner-toaster] {
+  --width: 360px;
+  --font-family: var(--font-clash-display);
+}
+
+[data-sonner-toast] {
+  border-radius: 0px !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px 0px #000000 !important;
+  font-family: var(--font-clash-display) !important;
+  font-weight: 500 !important;
+}
+
+[data-sonner-toast][data-type="success"] {
+  background: var(--complementary-color-green) !important;
+  color: white !important;
+  border-color: #000000 !important;
+}
+
+[data-sonner-toast][data-type="error"] {
+  background: #ef4444 !important;
+  color: white !important;
+  border-color: #000000 !important;
+}
+
+[data-sonner-toast][data-type="info"] {
+  background: var(--complementary-color-turquoise) !important;
+  color: var(--secondary-color) !important;
+  border-color: #000000 !important;
+}
+
+[data-sonner-toast] [data-icon] {
+  color: inherit !important;
+}
+
+[data-sonner-toast] [data-title] {
+  font-family: var(--font-clash-display) !important;
+  font-weight: 600 !important;
+}
+
+[data-sonner-toast] [data-description] {
+  font-family: var(--font-khand) !important;
+}

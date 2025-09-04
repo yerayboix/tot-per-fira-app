@@ -24,7 +24,22 @@ export default function Providers({
         {children}
         <ReactQueryDevtools />
       </QueryClientProvider>
-      <Toaster richColors />
+      <Toaster 
+        richColors 
+        position="top-center"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: 'white',
+            color: 'var(--secondary-color)',
+            border: '2px solid #000000',
+            borderRadius: '0px',
+            boxShadow: '2px 2px 0px 0px #000000',
+            fontFamily: 'var(--font-clash-display)',
+            fontWeight: '500',
+          },
+        }}
+      />
     </ThemeProvider>
   );
 }
