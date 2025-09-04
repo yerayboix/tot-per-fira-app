@@ -8,9 +8,10 @@ interface ResumenStepProps {
   presupuesto: Presupuesto;
   onEnviar: () => void;
   puedeEnviar: boolean;
+  isLoading?: boolean;
 }
 
-export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar }: ResumenStepProps) {
+export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar, isLoading = false }: ResumenStepProps) {
   const calcularTotal = () => {
     return presupuesto.objetosPedido.reduce((total, producto) => {
       return total + (producto.precio ? producto.precio * producto.unidades : 0);

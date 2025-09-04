@@ -1,10 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useForm } from "@tanstack/react-form";
+import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { toast } from "sonner";
-import { Check, ChevronLeft, ChevronRight, Send, Info } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Send, Info, Loader2 } from "lucide-react";
+import { createOrder } from "@/lib/actions/orders";
 
 import Button from "@/components/ui/retro-btn";
 import PersonalInfoStep from "./PersonalInfoStep";
@@ -47,6 +49,7 @@ const personalInfoSchema = z.object({
 });
 
 export default function PresupuestoForm() {
+  const router = useRouter();
   const [pasoActual, setPasoActual] = useState(1);
   const [presupuesto, setPresupuesto] = useState<Presupuesto>({
     nombreCompleto: "",
@@ -57,6 +60,7 @@ export default function PresupuestoForm() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isPackInfoOpen, setIsPackInfoOpen] = useState(false);
   const [packInfoType, setPackInfoType] = useState<'limpieza' | 'menaje'>('limpieza');
+  const [isPending, startTransition] = useTransition();
 
   const form = useForm({
     defaultValues: {
@@ -134,12 +138,28 @@ export default function PresupuestoForm() {
   };
 
   const enviarPresupuesto = () => {
-    if (puedeEnviar()) {
-      console.log("Presupuesto enviado:", presupuesto);
-      toast.success("¡Presupuesto enviado correctamente!");
-    } else {
+    if (!puedeEnviar()) {
       toast.error("Complete la información requerida y añada al menos un producto");
+      return;
     }
+
+    startTransition(async () => {
+      try {
+        const result = await createOrder(presupuesto);
+        
+        if (result.success) {
+          toast.success("¡Pedido creado exitosamente! Redirigiendo...");
+          
+          // Redirigir a la página de confirmación con el ID del pedido
+          router.push(`/presupuesto-confirmado?orderId=${result.data?.orderId}`);
+        } else {
+          toast.error(result.error || "Error al crear el pedido");
+        }
+      } catch (error) {
+        console.error("Error enviando pedido:", error);
+        toast.error("Error inesperado al enviar el pedido");
+      }
+    });
   };
 
   const renderPaso = () => {
@@ -198,6 +218,7 @@ export default function PresupuestoForm() {
             presupuesto={presupuesto}
             onEnviar={enviarPresupuesto}
             puedeEnviar={puedeEnviar() as boolean}
+            isLoading={isPending}
           />
         );
       default:
@@ -330,13 +351,17 @@ export default function PresupuestoForm() {
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
                     <Button
-                      disabled={!puedeEnviar()}
+                      disabled={!puedeEnviar() || isPending}
                       variant="default"
                       size="md"
                       className="w-full md:w-auto"
                     >
-                      <Send size={16} className="mr-2" />
-                      Completar Pedido
+                      {isPending ? (
+                        <Loader2 size={16} className="mr-2 animate-spin" />
+                      ) : (
+                        <Send size={16} className="mr-2" />
+                      )}
+                      {isPending ? "Procesando..." : "Completar Pedido"}
                     </Button>
                   </AlertDialogTrigger>
                   <AlertDialogContent className="border border-gray-300 rounded-none">
@@ -354,9 +379,17 @@ export default function PresupuestoForm() {
                       </AlertDialogCancel>
                       <AlertDialogAction 
                         onClick={enviarPresupuesto}
-                        className="bg-[var(--primary-color)] text-[var(--secondary-color)] border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] rounded-none font-clash-display hover:bg-[var(--primary-color)]/90"
+                        disabled={isPending}
+                        className="bg-[var(--primary-color)] text-[var(--secondary-color)] border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] rounded-none font-clash-display hover:bg-[var(--primary-color)]/90 disabled:opacity-50"
                       >
-                        Confirmar Pedido
+                        {isPending ? (
+                          <div className="flex items-center">
+                            <Loader2 size={16} className="mr-2 animate-spin" />
+                            Procesando...
+                          </div>
+                        ) : (
+                          "Confirmar Pedido"
+                        )}
                       </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
