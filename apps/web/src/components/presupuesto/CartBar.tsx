@@ -7,9 +7,11 @@ import { type LineaPresupuesto } from "@/types/presupuesto";
 interface CartBarProps {
   productos: LineaPresupuesto[];
   onOpenCart: () => void;
+  pasoActual?: number;
+  totalPasos?: number;
 }
 
-export default function CartBar({ productos, onOpenCart }: CartBarProps) {
+export default function CartBar({ productos, onOpenCart, pasoActual, totalPasos }: CartBarProps) {
   const calcularTotal = () => {
     return productos.reduce((total, producto) => {
       return total + (producto.precio ? producto.precio * producto.unidades : 0);
@@ -18,13 +20,23 @@ export default function CartBar({ productos, onOpenCart }: CartBarProps) {
 
   const total = calcularTotal();
 
-  // No mostrar la barra si no hay productos
-  if (productos.length === 0) return null;
+  // Mostrar barra siempre en móvil si tenemos info de pasos, o si hay productos
+  const shouldShow = productos.length > 0 || (pasoActual && totalPasos);
+  if (!shouldShow) return null;
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-gray-300 bg-white shadow-lg">
       <div className="container mx-auto px-4 py-3">
         <div className="max-w-md mx-auto md:max-w-lg">
+          {/* Contador de pasos en móvil */}
+          {pasoActual && totalPasos && (
+            <div className="block lg:hidden text-center mb-2">
+              <span className="text-xs font-clash-display text-[var(--secondary-color)]">
+                Paso {pasoActual} de {totalPasos}
+              </span>
+            </div>
+          )}
+          
           <Button
             onClick={onOpenCart}
             variant="default"

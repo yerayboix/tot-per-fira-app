@@ -218,44 +218,10 @@ export default function PresupuestoForm() {
     <>
       <div className=""> {/* Padding bottom para la barra del carrito */}
         <div>
-          {/* Indicador de progreso */}
-          <div className="border-b border-gray-300 pb-6 mb-0 p-4">
-            {/* Versión móvil - solo pasos contextuales */}
-            <div className="block lg:hidden">
-              <div className="text-center mb-4">
-                <span className="text-sm font-clash-display text-[var(--secondary-color)]">
-                  Paso {pasoActual} de {PASOS.length}
-                </span>
-              </div>
-              <div className="flex items-center justify-center gap-2 mb-4">
-                {getPasosMovil().map((paso, index) => (
-                  <div key={paso.id} className="flex items-center">
-                    <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold font-clash-display ${
-                        paso.id < pasoActual
-                          ? "bg-[var(--complementary-color-green)] text-white"
-                          : paso.id === pasoActual
-                          ? "bg-[var(--primary-color)] text-white"
-                          : "bg-gray-200 text-[var(--secondary-color)]"
-                      }`}
-                    >
-                      {paso.id < pasoActual ? <Check size={16} /> : paso.id}
-                    </div>
-                    {paso.id === pasoActual && (
-                      <span className="ml-2 text-sm font-clash-display font-bold text-[var(--primary-color)] truncate max-w-[120px]">
-                        {paso.titulo}
-                      </span>
-                    )}
-                    {index < getPasosMovil().length - 1 && (
-                      <div className="w-4 h-px bg-gray-300 mx-2" />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
+          {/* Indicador de progreso - solo desktop */}
+          <div className="hidden lg:block border-b border-gray-300 pb-6 mb-0 p-4">
             {/* Versión desktop - todos los pasos */}
-            <div className="hidden lg:block">
+            <div>
               <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
                 {PASOS.map((paso, index) => (
                   <div key={paso.id} className="flex items-center">
@@ -390,9 +356,11 @@ export default function PresupuestoForm() {
       )}
 
       {/* Cart Bar */}
-      <CartBar 
-        productos={presupuesto.objetosPedido}
+            <CartBar 
+        productos={presupuesto.objetosPedido} 
         onOpenCart={() => setIsCartOpen(true)}
+        pasoActual={pasoActual}
+        totalPasos={PASOS.length}
       />
 
       {/* Cart Modal */}
