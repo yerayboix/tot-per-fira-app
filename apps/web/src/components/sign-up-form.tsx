@@ -24,7 +24,7 @@ export default function SignUpForm({
       name: "",
     },
     onSubmit: async ({ value }) => {
-      await authClient.signUp.email(
+      await authClient.signUpEmail(
         {
           email: value.email,
           password: value.password,

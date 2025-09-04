@@ -23,7 +23,7 @@ export default function SignInForm({
       password: "",
     },
     onSubmit: async ({ value }) => {
-      await authClient.signIn.email(
+      await authClient.signInEmail(
         {
           email: value.email,
           password: value.password,
