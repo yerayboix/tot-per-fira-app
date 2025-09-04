@@ -111,13 +111,15 @@ export const productosPorCategoria = {
     { nombre: 'Equipo de 3.000W', precio: 550 },
   ],
   pack_limpieza: [
-    { nombre: 'Pack Limpieza Básico (10 unidades)', precio: 25 },
-    { nombre: 'Pack Limpieza Premium (20 unidades)', precio: 45 },
-    { nombre: 'Pack Limpieza Deluxe (30 unidades)', precio: 65 },
+    { nombre: 'Pack de Limpieza' },
   ],
   pack_menaje: [
-    { nombre: 'Pack Menaje Completo (incluye vasos 200ml, 300ml, 500ml)', precio: 60 },
-    { nombre: 'Pack Menaje Básico (incluye vasos 200ml, 300ml)', precio: 40 },
-    { nombre: 'Pack Menaje Premium (incluye vasos 200ml, 300ml, 500ml, 750ml)', precio: 80 },
+    { nombre: 'Pack de Menaje' },
+  ],
+  vasos: [
+    { nombre: 'Vasos 0.33L (1000 uds.)' },
+    { nombre: 'Vasos 0.40L (1000 uds.)' },
+    { nombre: 'Vasos 0.5L (1000 uds.)' },
+    { nombre: 'Vasos 1L (1000 uds.)' },
   ]
 };
