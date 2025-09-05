@@ -258,31 +258,60 @@ export default function ConsultarPresupuestoPage() {
                 Productos Solicitados
               </h3>
               
-              <div className="space-y-4">
-                {orderData.items.map((item: any, index: number) => (
-                  <div key={index} className="border-l-4 border-[var(--primary-color)] pl-4 py-2">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                      <div className="flex-1">
-                        <h4 className="font-bold font-clash-display text-[var(--secondary-color)]">
-                          {item.nombre}
-                        </h4>
-                        <p className="text-sm text-gray-600 font-clash-display">
-                          {getCategoriaLabel(item.categoria)} • {item.unidades} unidade{item.unidades !== 1 ? 's' : ''}
-                        </p>
-                      </div>
-                      {item.precio && (
-                        <div className="text-right mt-2 sm:mt-0">
-                          <p className="text-lg font-bold font-khand text-[var(--primary-color)]">
-                            €{(item.precio * item.unidades).toFixed(2)}
-                          </p>
-                          <p className="text-sm text-gray-600 font-clash-display">
-                            €{item.precio.toFixed(2)}/unidad
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="border-b-2 border-gray-200">
+                      <th className="text-left py-3 px-2 font-bold font-clash-display text-[var(--secondary-color)]">
+                        Producto
+                      </th>
+                      <th className="text-center py-3 px-2 font-bold font-clash-display text-[var(--secondary-color)] min-w-[80px]">
+                        Cantidad
+                      </th>
+                      <th className="text-left py-3 px-2 font-bold font-clash-display text-[var(--secondary-color)]">
+                        Categoría
+                      </th>
+                      <th className="text-right py-3 px-2 font-bold font-clash-display text-[var(--secondary-color)]">
+                        Precio
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {orderData.items.map((item: any, index: number) => (
+                      <tr key={index} className="border-b border-gray-100 hover:bg-gray-50/50">
+                        <td className="py-3 px-2">
+                          <span className="font-medium font-clash-display text-[var(--secondary-color)]">
+                            {item.nombre}
+                          </span>
+                        </td>
+                        <td className="py-3 px-2 text-center">
+                          <span className="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full font-bold font-khand text-lg inline-block min-w-[50px]">
+                            {item.unidades}
+                          </span>
+                        </td>
+                        <td className="py-3 px-2">
+                          <span className="text-sm text-gray-600 font-clash-display bg-gray-100 px-2 py-1 rounded">
+                            {getCategoriaLabel(item.categoria)}
+                          </span>
+                        </td>
+                        <td className="py-3 px-2 text-right">
+                          {item.precio ? (
+                            <div>
+                              <div className="font-bold font-khand text-[var(--primary-color)] text-lg">
+                                €{(item.precio * item.unidades).toFixed(2)}
+                              </div>
+                              <div className="text-xs text-gray-500 font-clash-display">
+                                €{item.precio.toFixed(2)}/ud
+                              </div>
+                            </div>
+                          ) : (
+                            <span className="text-gray-400 text-sm font-clash-display">-</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
