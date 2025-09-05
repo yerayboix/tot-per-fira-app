@@ -13,12 +13,12 @@ interface BebidasStepProps {
 }
 
 export default function BebidasStep({ objetosPedido, onAddProduct, onRemoveProduct }: BebidasStepProps) {
-  const [categoriaActiva, setCategoriaActiva] = useState<'alcohol' | 'cervezas' | 'mezcla'>('alcohol');
+  const [categoriaActiva, setCategoriaActiva] = useState<'alcohol' | 'cervezas' | 'bebida'>('alcohol');
 
   const categorias = [
     { key: 'alcohol' as const, label: 'Alcohol', productos: productosPorCategoria.alcohol },
     { key: 'cervezas' as const, label: 'Cervezas', productos: productosPorCategoria.cervezas },
-    { key: 'mezcla' as const, label: 'Mezcla', productos: productosPorCategoria.mezcla },
+    { key: 'bebida' as const, label: 'Bebidas', productos: productosPorCategoria.bebida },
   ];
 
   return (
