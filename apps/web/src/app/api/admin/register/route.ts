@@ -4,6 +4,10 @@ import { db } from "@/lib/db";
 import { user } from "@/lib/db/schema/auth";
 import { eq } from "drizzle-orm";
 
+// Configuración para runtime
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 export async function HEAD(request: NextRequest) {
   const registrationEnabled = process.env.ENABLE_ADMIN_REGISTRATION === "true";
   
