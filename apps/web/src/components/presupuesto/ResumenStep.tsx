@@ -49,23 +49,50 @@ export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar, isLoad
         </h3>
       </div>
       <div className="border-b border-gray-300 p-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <span className="font-bold font-clash-display text-[var(--primary-color)] text-sm block mb-2">Nombre</span>
             <div className="p-3 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-gray-50">
               <p className="text-[var(--secondary-color)] font-clash-display text-sm font-bold">{presupuesto.nombreCompleto}</p>
             </div>
           </div>
+          
+          {presupuesto.nombrePenya && (
+            <div>
+              <span className="font-bold font-clash-display text-[var(--primary-color)] text-sm block mb-2">Nombre de Peña</span>
+              <div className="p-3 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-gray-50">
+                <p className="text-[var(--secondary-color)] font-clash-display text-sm font-bold">{presupuesto.nombrePenya}</p>
+              </div>
+            </div>
+          )}
+
           <div>
             <span className="font-bold font-clash-display text-[var(--primary-color)] text-sm block mb-2">Email</span>
             <div className="p-3 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-gray-50">
               <p className="text-[var(--secondary-color)] font-clash-display text-sm font-bold">{presupuesto.correoElectronico}</p>
             </div>
           </div>
+
           <div>
-            <span className="font-bold font-clash-display text-[var(--primary-color)] text-sm block mb-2">Teléfono</span>
+            <span className="font-bold font-clash-display text-[var(--primary-color)] text-sm block mb-2">Teléfono Principal</span>
             <div className="p-3 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-gray-50">
               <p className="text-[var(--secondary-color)] font-clash-display text-sm font-bold">{presupuesto.numeroTelefono}</p>
+            </div>
+          </div>
+
+          {presupuesto.segundoNumeroTelefono && (
+            <div>
+              <span className="font-bold font-clash-display text-[var(--primary-color)] text-sm block mb-2">Segundo Teléfono</span>
+              <div className="p-3 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-gray-50">
+                <p className="text-[var(--secondary-color)] font-clash-display text-sm font-bold">{presupuesto.segundoNumeroTelefono}</p>
+              </div>
+            </div>
+          )}
+
+          <div>
+            <span className="font-bold font-clash-display text-[var(--primary-color)] text-sm block mb-2">Dirección de Entrega</span>
+            <div className="p-3 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] bg-gray-50">
+              <p className="text-[var(--secondary-color)] font-clash-display text-sm font-bold">{presupuesto.direccion}</p>
             </div>
           </div>
         </div>

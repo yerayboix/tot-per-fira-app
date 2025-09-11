@@ -33,7 +33,7 @@ import {
 import { type Presupuesto, type LineaPresupuesto } from "@/types/presupuesto";
 
 const PASOS = [
-  { id: 1, titulo: "Información Personal", required: true },
+  { id: 1, titulo: "Información de Contacto", required: true },
   { id: 2, titulo: "Bebidas", required: false },
   { id: 3, titulo: "Congelador y Hielos", required: false },
   { id: 4, titulo: "Altavoces", required: false },
@@ -44,8 +44,11 @@ const PASOS = [
 
 const personalInfoSchema = z.object({
   nombreCompleto: z.string().min(1, "El nombre es obligatorio"),
+  direccion: z.string().min(1, "La dirección es obligatoria"),
   correoElectronico: z.string().email("Introduce un email válido"),
   numeroTelefono: z.string().min(1, "El teléfono es obligatorio"),
+  segundoNumeroTelefono: z.string(),
+  nombrePenya: z.string(),
 });
 
 export default function PresupuestoForm() {
@@ -53,9 +56,12 @@ export default function PresupuestoForm() {
   const [pasoActual, setPasoActual] = useState(1);
   const [presupuesto, setPresupuesto] = useState<Presupuesto>({
     nombreCompleto: "",
+    direccion: "",
     correoElectronico: "",
     numeroTelefono: "",
     objetosPedido: [],
+    nombrePenya: "",
+    segundoNumeroTelefono: "",
   });
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isPackInfoOpen, setIsPackInfoOpen] = useState(false);
@@ -64,9 +70,12 @@ export default function PresupuestoForm() {
 
   const form = useForm({
     defaultValues: {
-      nombreCompleto: "",
-      correoElectronico: "",
-      numeroTelefono: "",
+      nombreCompleto: presupuesto.nombreCompleto,
+      direccion: presupuesto.direccion,
+      correoElectronico: presupuesto.correoElectronico,
+      numeroTelefono: presupuesto.numeroTelefono,
+      nombrePenya: presupuesto.nombrePenya || "",
+      segundoNumeroTelefono: presupuesto.segundoNumeroTelefono || "",
     },
     onSubmit: async ({ value }) => {
       console.log("Form submitted:", value);
@@ -109,6 +118,7 @@ export default function PresupuestoForm() {
     // Si estamos en el paso de información personal, validar que esté completa
     if (pasoActual === 1) {
       return presupuesto.nombreCompleto.trim() !== '' &&
+             presupuesto.direccion.trim() !== '' &&
              presupuesto.correoElectronico.trim() !== '' &&
              presupuesto.numeroTelefono.trim() !== '';
     }
@@ -130,6 +140,7 @@ export default function PresupuestoForm() {
 
   const puedeEnviar = () => {
     const infoCompleta = presupuesto.nombreCompleto && 
+                        presupuesto.direccion &&
                         presupuesto.correoElectronico && 
                         presupuesto.numeroTelefono;
     const tieneProductos = presupuesto.objetosPedido.length > 0;
@@ -145,7 +156,12 @@ export default function PresupuestoForm() {
 
     startTransition(async () => {
       try {
-        const result = await createOrder(presupuesto);
+        const presupuestoToSend = {
+          ...presupuesto,
+          segundoNumeroTelefono: presupuesto.segundoNumeroTelefono?.trim() === "" ? undefined : presupuesto.segundoNumeroTelefono,
+          nombrePenya: presupuesto.nombrePenya?.trim() === "" ? undefined : presupuesto.nombrePenya,
+        };
+        const result = await createOrder(presupuestoToSend);
         
         if (result.success) {
           toast.success("¡Pedido creado exitosamente! Redirigiendo...");

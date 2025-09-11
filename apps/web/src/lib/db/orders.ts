@@ -11,8 +11,11 @@ function generateId(): string {
 
 export async function createOrderInDB(orderData: {
   nombreCompleto: string;
+  nombrePenya?: string;
+  direccion: string;
   correoElectronico: string;
   numeroTelefono: string;
+  segundoNumeroTelefono?: string;
   objetosPedido: Array<{
     nombre: string;
     unidades: number;
@@ -32,13 +35,18 @@ export async function createOrderInDB(orderData: {
   const newOrder: NewOrder = {
     id: orderId,
     nombreCompleto: orderData.nombreCompleto,
+    nombrePenya: orderData.nombrePenya,
+    direccion: orderData.direccion,
     correoElectronico: orderData.correoElectronico,
     numeroTelefono: orderData.numeroTelefono,
+    segundoNumeroTelefono: orderData.segundoNumeroTelefono,
     estado: "pendiente",
     totalEstimado: totalEstimado > 0 ? totalEstimado : null,
     fechaCreacion: now,
     fechaActualizacion: now,
   };
+
+  console.log(newOrder);
 
   await db.insert(orders).values(newOrder);
 

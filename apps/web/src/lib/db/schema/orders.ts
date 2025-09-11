@@ -3,8 +3,11 @@ import { sqliteTable, text, integer, real } from "drizzle-orm/sqlite-core";
 export const orders = sqliteTable("orders", {
   id: text("id").primaryKey(),
   nombreCompleto: text("nombre_completo").notNull(),
+  nombrePenya: text("nombre_penya"),
+  direccion: text("direccion").notNull().default("sin_direccion"),
   correoElectronico: text("correo_electronico").notNull(),
   numeroTelefono: text("numero_telefono").notNull(),
+  segundoNumeroTelefono: text("segundo_numero_telefono"),
   estado: text("estado", { 
     enum: ["pendiente", "confirmado", "en_proceso", "completado", "cancelado"] 
   }).notNull().default("pendiente"),

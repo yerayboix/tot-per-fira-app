@@ -6,8 +6,11 @@ import { type Presupuesto } from "@/types/presupuesto";
 
 const createOrderSchema = z.object({
   nombreCompleto: z.string().min(1, "El nombre es obligatorio"),
+  direccion: z.string().min(1, "La dirección es obligatoria"),
   correoElectronico: z.string().email("Email inválido"),
   numeroTelefono: z.string().min(1, "El teléfono es obligatorio"),
+  segundoNumeroTelefono: z.string().optional(),
+  nombrePenya: z.string().optional(),
   objetosPedido: z.array(z.object({
     nombre: z.string(),
     unidades: z.number().min(1),

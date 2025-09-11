@@ -9,5 +9,8 @@ export interface Presupuesto {
   nombreCompleto: string;
   correoElectronico: string;
   numeroTelefono: string;
+  direccion: string;
   objetosPedido: LineaPresupuesto[];
+  nombrePenya?: string;
+  segundoNumeroTelefono?: string;
 } 
