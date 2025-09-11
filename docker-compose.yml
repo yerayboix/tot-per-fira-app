@@ -15,7 +15,7 @@ services:
         BETTER_AUTH_URL: ${BETTER_AUTH_URL}
         DATABASE_URL: ${DATABASE_URL}
         DATABASE_AUTH_TOKEN: ${DATABASE_AUTH_TOKEN}
-    ports:
+    expose:
       - 3000
     environment: # Variables en runtime (las mismas)
       NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL}
