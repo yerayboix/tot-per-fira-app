@@ -129,6 +129,9 @@ export function Footer() {
               <Link href="/fira-onda" className="text-white/60 hover:text-white transition-colors">
                 Fira d'Onda 2025
               </Link>
+              <Link href="/politica-privacidad" className="text-white/60 hover:text-white transition-colors">
+                Política de Privacidad
+              </Link>
             </div>
           </div>
         </div>
