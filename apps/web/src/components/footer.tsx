@@ -126,7 +126,7 @@ export function Footer() {
               <Link href="/" className="text-white/60 hover:text-white transition-colors">
                 Inicio
               </Link>
-              <Link href="/fira-onda-2025" className="text-white/60 hover:text-white transition-colors">
+              <Link href="/fira-onda" className="text-white/60 hover:text-white transition-colors">
                 Fira d'Onda 2025
               </Link>
             </div>
