@@ -8,6 +8,8 @@ import localFont from "next/font/local";
 import { ConditionalFooter } from "@/components/conditional-footer";
 import { unstable_ViewTransition as ViewTransition } from 'react'
 import { structuredData } from "@/lib/structured-data";
+import CookieBanner from "@/components/analytics/cookie-banner";
+import ConditionalGoogleAnalytics from "@/components/analytics/conditional-google-analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -232,9 +234,11 @@ export default function RootLayout({
               <main>
 
                 {children}
+                <CookieBanner />
               </main>
               <ConditionalFooter />
             </div>
+            <ConditionalGoogleAnalytics />
           </ViewTransition>
         </Providers>
       </body>

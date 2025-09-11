@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Phone, Mail, Instagram, MapPin, Clock } from "lucide-react"
 import Button from "@/components/ui/retro-btn"
+import CookiePreferencesButton from "@/components/analytics/cookie-preferences-button"
 
 export function Footer() {
   return (
@@ -132,6 +133,7 @@ export function Footer() {
               <Link href="/politica-privacidad" className="text-white/60 hover:text-white transition-colors">
                 Política de Privacidad
               </Link>
+              <CookiePreferencesButton />
             </div>
           </div>
         </div>
