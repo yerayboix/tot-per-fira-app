@@ -1,0 +1,29 @@
+services:
+  totperfira_nextjs:
+    container_name: totperfira_nextjs
+    hostname: totperfira_nextjs
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_SERVER_URL
+      - ENABLE_ADMIN_REGISTRATION
+      - BETTER_AUTH_SECRET
+      - BETTER_AUTH_URL
+      - DATABASE_URL
+      - DATABASE_AUTH_TOKEN
+    networks:
+      - dokploy-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.totperfira_nextjs.rule=Host(`totperfira.es`) || Host(`www.totperfira.es`)"
+      - "traefik.http.routers.totperfira_nextjs.entrypoints=websecure"
+      - "traefik.http.routers.totperfira_nextjs.tls.certResolver=letsencrypt"
+      - "traefik.http.services.totperfira_nextjs.loadbalancer.server.port=3000"
+
+
+networks:
+  dokploy-network:
+    external: true
