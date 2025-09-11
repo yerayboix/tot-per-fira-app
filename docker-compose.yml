@@ -16,7 +16,7 @@ services:
         DATABASE_URL: ${DATABASE_URL}
         DATABASE_AUTH_TOKEN: ${DATABASE_AUTH_TOKEN}
     ports:
-      - "3000:3000"
+      - 3000
     environment: # Variables en runtime (las mismas)
       NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL}
       ENABLE_ADMIN_REGISTRATION: ${ENABLE_ADMIN_REGISTRATION}
