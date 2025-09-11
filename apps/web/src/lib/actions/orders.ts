@@ -37,7 +37,6 @@ export async function createOrder(presupuesto: Presupuesto) {
     };
 
   } catch (error) {
-    console.error("Error creating order:", error);
     
     if (error instanceof z.ZodError) {
       return {

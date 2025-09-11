@@ -78,7 +78,7 @@ export default function PresupuestoForm() {
       segundoNumeroTelefono: presupuesto.segundoNumeroTelefono || "",
     },
     onSubmit: async ({ value }) => {
-      console.log("Form submitted:", value);
+      console.log("Form submitted:");
     },
     validators: {
       onChange: personalInfoSchema,
