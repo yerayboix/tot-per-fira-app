@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   totperfira_nextjs:
     container_name: totperfira_nextjs
@@ -5,15 +7,23 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+      # Variables de entorno para el build
+      args:
+        NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL}
+        ENABLE_ADMIN_REGISTRATION: ${ENABLE_ADMIN_REGISTRATION}
+        BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+        BETTER_AUTH_URL: ${BETTER_AUTH_URL}
+        DATABASE_URL: ${DATABASE_URL}
+        DATABASE_AUTH_TOKEN: ${DATABASE_AUTH_TOKEN}
     ports:
       - "3000:3000"
-    environment:
-      - NEXT_PUBLIC_SERVER_URL=${NEXT_PUBLIC_SERVER_URL}
-      - ENABLE_ADMIN_REGISTRATION=${ENABLE_ADMIN_REGISTRATION}
-      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET}
-      - BETTER_AUTH_URL=${BETTER_AUTH_URL}
-      - DATABASE_URL=${DATABASE_URL}
-      - DATABASE_AUTH_TOKEN=${DATABASE_AUTH_TOKEN}
+    environment: # Variables en runtime (las mismas)
+      NEXT_PUBLIC_SERVER_URL: ${NEXT_PUBLIC_SERVER_URL}
+      ENABLE_ADMIN_REGISTRATION: ${ENABLE_ADMIN_REGISTRATION}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL}
+      DATABASE_URL: ${DATABASE_URL}
+      DATABASE_AUTH_TOKEN: ${DATABASE_AUTH_TOKEN}
     networks:
       - dokploy-network
     labels:
@@ -22,7 +32,6 @@ services:
       - "traefik.http.routers.totperfira_nextjs.entrypoints=websecure"
       - "traefik.http.routers.totperfira_nextjs.tls.certResolver=letsencrypt"
       - "traefik.http.services.totperfira_nextjs.loadbalancer.server.port=3000"
-
 
 networks:
   dokploy-network:

@@ -6,28 +6,33 @@ RUN npm install -g pnpm
 # Set working directory
 WORKDIR /app
 
-# Copy web app package files
+# -------- Build arguments --------
+ARG NEXT_PUBLIC_SERVER_URL
+ARG ENABLE_ADMIN_REGISTRATION
+ARG BETTER_AUTH_SECRET
+ARG BETTER_AUTH_URL
+ARG DATABASE_URL
+ARG DATABASE_AUTH_TOKEN
+
+# -------- Env for runtime & build --------
+ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL \
+    ENABLE_ADMIN_REGISTRATION=$ENABLE_ADMIN_REGISTRATION \
+    BETTER_AUTH_SECRET=$BETTER_AUTH_SECRET \
+    BETTER_AUTH_URL=$BETTER_AUTH_URL \
+    DATABASE_URL=$DATABASE_URL \
+    DATABASE_AUTH_TOKEN=$DATABASE_AUTH_TOKEN
+
+# Copy package files (optimiza cache)
 COPY apps/web/package.json ./
 
 # Install dependencies
-RUN pnpm install
+RUN pnpm install --frozen-lockfile
 
-# Copy web app source
+# Copy source
 COPY apps/web ./
 
-# Set environment variables for build
-ENV DATABASE_URL=$DATABASE_URL
-ENV DATABASE_AUTH_TOKEN=$DATABASE_AUTH_TOKEN
-ENV BETTER_AUTH_SECRET=$BETTER_AUTH_SECRET
-ENV BETTER_AUTH_URL=$BETTER_AUTH_URL
-ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
-ENV ENABLE_ADMIN_REGISTRATION=$ENABLE_ADMIN_REGISTRATION
-
-# Build the web app
+# Build the web app (usa las vars anteriores)
 RUN pnpm build
 
-# Expose port
 EXPOSE 3000
-
-# Start the app
 CMD ["pnpm", "start"]
