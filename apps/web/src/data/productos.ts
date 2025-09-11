@@ -116,10 +116,10 @@ export const productosPorCategoria = {
     { nombre: 'Equipo de 6.000W', precio: 800 },
   ],
   pack_limpieza: [
-    { nombre: 'Pack de Limpieza' },
+    { nombre: 'Pack de Limpieza', precio: 40 },
   ],
   pack_menaje: [
-    { nombre: 'Pack de Menaje' },
+    { nombre: 'Pack de Menaje', precio: 50 },
   ],
   vasos: [
     { nombre: 'Vasos 0.22L (1000 uds.)' },

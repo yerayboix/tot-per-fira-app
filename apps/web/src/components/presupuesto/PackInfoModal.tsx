@@ -14,25 +14,28 @@ const packContent = {
   limpieza: {
     title: "Pack de Limpieza",
     items: [
-      "Bolsas de basura 2 rollos (20 bolsas)",
-      "Bayetas y estropajos multiuso 10 uds.",
-      "Guantes de látex/nitrilo 1 caja",
-      "Papel secamanos/rollos de cocina 6 uds.",
-      "Jabón líquido 2 uds",
-      "Papel higiénico 6 uds",
-      "Lavavajillas 2 uds"
+      "Bolsas de basura 2 rollos de 5 bolsas",
+      "Bayetas 1 pack de 9 unidades",
+      "Estropajos multiuso 1 pack de 3 unidades",
+      "Guantes de látex/nitrilo 1 caja de 100 unidades",
+      "Papel secamanos/rollos de cocina 1 pack de 4 unidades",
+      "Jabón líquido 2 botellas",
+      "Papel higiénico 6 rollos",
+      "Lavavajillas 2 botellas",
+      "Lejía 1 botella de 2L",
+      "Desinfectante de superficies 2 botellas"
     ]
   },
   menaje: {
     title: "Pack de Menaje",
     items: [
-      "100 CUCHILLOS",
-      "100 TENEDORES", 
-      "200 PLATOS GRANDES",
-      "100 CUCHARILLAS",
-      "100 VASOS DE CAFÉ",
-      "100 SERVILLETAS GRANDES",
-      "1 MANTEL"
+      "100 cuchillos",
+      "100 tenedores",
+      "100 cucharas",
+      "100 cucharillas postre/café",
+      "100 vasos café",
+      "200 servilletas",
+      "1 mantel 25m"
     ]
   }
 };
