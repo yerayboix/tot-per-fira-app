@@ -167,7 +167,7 @@ export default function PresupuestoForm() {
           toast.success("¡Pedido creado exitosamente! Redirigiendo...");
           
           // Redirigir a la página de confirmación con el ID del pedido
-          router.push(`/presupuesto-confirmado?orderId=${result.data?.orderId}`);
+          router.push(`/presupuesto-confirmado/${result.data?.orderId}`);
         } else {
           toast.error(result.error || "Error al crear el pedido");
         }

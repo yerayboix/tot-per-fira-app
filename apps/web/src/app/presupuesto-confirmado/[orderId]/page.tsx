@@ -1,19 +1,10 @@
-"use client";
-
-import { useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import { CheckCircle, ArrowLeft, Home } from "lucide-react";
 import Button from "@/components/ui/retro-btn";
+import Link from "next/link";
 
-export default function PedidoConfirmadoPage() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const [orderId, setOrderId] = useState<string | null>(null);
+export default async function PedidoConfirmadoPage(props: { params: { orderId: string } }) {
+  const { orderId } = await props.params;
 
-  useEffect(() => {
-    const id = searchParams.get("orderId");
-    setOrderId(id);
-  }, [searchParams]);
 
   if (!orderId) {
     return (
@@ -30,15 +21,16 @@ export default function PedidoConfirmadoPage() {
           <p className="text-gray-600 font-clash-display mb-6">
             No se encontró información del presupuesto.
           </p>
-          <Button
-            onClick={() => router.push("/")}
-            variant="default"
-            size="md"
-            className="w-full"
-          >
-            <Home size={16} className="mr-2" />
-            Volver al Inicio
-          </Button>
+          <Link href="/" className="w-full">
+            <Button
+              variant="default"
+              size="md"
+              className="w-full"
+            >
+              <Home size={16} className="mr-2" />
+              Volver al Inicio
+            </Button>
+          </Link>
         </div>
       </div>
     );
@@ -84,25 +76,27 @@ export default function PedidoConfirmadoPage() {
         </div>
 
         {/* Botones de acción */}
-        <div className="flex flex-col sm:flex-row gap-3">
-          <Button
-            onClick={() => router.push("/solicitar-presupuesto")}
-            variant="outline"
-            size="md"
-            className="flex-1"
-          >
-            <ArrowLeft size={16} className="mr-2" />
-            Nuevo Presupuesto
-          </Button>
-          <Button
-            onClick={() => router.push("/")}
-            variant="default"
-            size="md"
-            className="flex-1"
-          >
-            <Home size={16} className="mr-2" />
-            Volver al Inicio
-          </Button>
+        <div className="flex flex-col gap-3">
+          <Link href="/solicitar-presupuesto" className="flex-1">
+            <Button
+              variant="outline"
+              size="md"
+              className="w-full"
+            >
+              <ArrowLeft size={16} className="mr-2" />
+              Nuevo Presupuesto
+            </Button>
+          </Link>
+          <Link href="/" className="flex-1">
+            <Button
+              variant="default"
+              size="md"
+              className="w-full"
+            >
+              <Home size={16} className="mr-2" />
+              Volver al Inicio
+            </Button>
+          </Link>
         </div>
 
         {/* Nota final */}

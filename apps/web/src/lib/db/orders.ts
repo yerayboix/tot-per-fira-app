@@ -46,7 +46,6 @@ export async function createOrderInDB(orderData: {
     fechaActualizacion: now,
   };
 
-  console.log(newOrder);
 
   await db.insert(orders).values(newOrder);
 

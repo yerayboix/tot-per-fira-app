@@ -110,7 +110,7 @@ export default function AdminRegisterPage() {
                   </div>
                   {field.state.meta.errors && (
                     <p className="text-red-500 text-sm font-clash-display">
-                      {field.state.meta.errors[0]}
+                      {field.state.meta.errors.map((error: any) => error.message).join(", ")}
                     </p>
                   )}
                 </div>
@@ -137,7 +137,7 @@ export default function AdminRegisterPage() {
                   </div>
                   {field.state.meta.errors && (
                     <p className="text-red-500 text-sm font-clash-display">
-                      {field.state.meta.errors[0]}
+                      {field.state.meta.errors.map((error: any) => error.message).join(", ")}
                     </p>
                   )}
                 </div>
@@ -171,7 +171,7 @@ export default function AdminRegisterPage() {
                   </div>
                   {field.state.meta.errors && (
                     <p className="text-red-500 text-sm font-clash-display">
-                      {field.state.meta.errors[0]}
+                      {field.state.meta.errors.map((error: any) => error.message).join(", ")}
                     </p>
                   )}
                 </div>
@@ -205,7 +205,7 @@ export default function AdminRegisterPage() {
                   </div>
                   {field.state.meta.errors && (
                     <p className="text-red-500 text-sm font-clash-display">
-                      {field.state.meta.errors[0]}
+                      {field.state.meta.errors.map((error: any) => error.message).join(", ")}
                     </p>
                   )}
                 </div>
