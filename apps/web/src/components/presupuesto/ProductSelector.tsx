@@ -136,12 +136,17 @@ export default function ProductSelector({
       )}
 
       {/* Indicador para congelador */}
-      {categoria === 'congelador' && (
+      {(categoria === 'congelador' || categoria === 'hielo') && (
         <div className="flex items-center gap-4 text-xs text-gray-600">
           <span className="font-khand font-medium">Incluye:</span>
           <div className="flex items-center gap-1">
             <Truck size={12} />
             <span className="font-khand">Transporte</span>
+          </div>
+          <span className="font-khand font-medium">Información:</span>
+          <div className="flex items-center gap-1">
+            <Info size={12} />
+            <span className="font-khand">Cada saca de hielo contiene 5 bolsas</span>
           </div>
         </div>
       )}
