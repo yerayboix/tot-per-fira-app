@@ -17,32 +17,32 @@ export function ServicesSection() {
           <div className="p-6 border-b md:border-r border-gray-300">
             <ServiceCard 
               icon={Beer} 
-              title="BARRAS, BEBIDAS Y CONGELADORES" 
-              description="Montamos las barras y suministramos toda la bebida que necesites para tu peña. Cerveza, refrescos, agua... ¡lo que quieras!"
+              title="BEBIDAS" 
+              description="Cerveza, refrescos, agua... ¡toda la bebida que necesites!"
               color="text-[var(--primary-color)]"
             />
           </div>
           <div className="p-6 border-b border-gray-300">
             <ServiceCard 
               icon={Volume2} 
-              title="SONIDO PROFESIONAL" 
-              description="Instalamos el mejor equipo de sonido para que tu fiesta suene perfecta. Altavoces, micrófonos, mezcladores... ¡todo incluido!"
+              title="SONIDO" 
+              description="Altavoces de distintas potencias para que tu peña suene por toda la calle"
               color="text-[var(--complementary-color-green)]"
             />
           </div>
           <div className="p-6 border-b md:border-r border-gray-300">
             <ServiceCard 
               icon={Lightbulb} 
-              title="ILUMINACIÓN" 
-              description="Creamos el ambiente perfecto con iluminación profesional. Luces de colores, efectos especiales... ¡tu peña será la más llamativa!"
+              title="CONGELADORES" 
+              description="Congeladores, hielo, sacos de hielo... todo lo que necesites para mantener tus bebidas frías"
               color="text-[var(--complementary-color-turquoise)]"
             />
           </div>
           <div className="p-6 border-b border-gray-300">
             <ServiceCard 
               icon={Users} 
-              title="PERSONAL DE SERVICIO" 
-              description="Ponemos gente profesional para servir en las barras y atender a todos los miembros de tu peña. ¡Tú solo disfruta!"
+              title="TRANSPORTE" 
+              description="Transporte de bebidas, hielo, sacos de hielo... lo llevamos todo directo a tu peña"
               color="text-[var(--complementary-color-pink)]"
             />
           </div>
