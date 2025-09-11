@@ -151,6 +151,19 @@ export default function ProductSelector({
         </div>
       )}
 
+      {/* Indicador para barriles */}
+      {(categoria === 'cervezas') && (
+        <div className="flex items-center gap-4 text-xs text-gray-600">
+          <div className="flex items-center gap-1">
+            <Info size={12} />
+            <span className="font-khand">El pedido mínimo para barriles es de 3 unidades.</span>
+          </div>
+          <div className="text-xs text-gray-500 font-khand italic">
+            * Gas no incluido
+          </div>
+        </div>
+      )}
+
       <Button
         onClick={handleAddProduct}
         disabled={!selectedProduct}
