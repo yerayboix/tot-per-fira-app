@@ -7,6 +7,7 @@ import { Navbar } from "@/components/navbar";
 import localFont from "next/font/local";
 import { ConditionalFooter } from "@/components/conditional-footer";
 import { unstable_ViewTransition as ViewTransition } from 'react'
+import { structuredData } from "@/lib/structured-data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -106,8 +107,97 @@ const khand = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TOT PER FIRA",
-  description: "TOT PER FIRA",
+  title: {
+    default: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
+    template: "%s | Tot Per Fira"
+  },
+  description: "Tot Per Fira ofrece soluciones completas para fiestas, eventos y celebraciones en Onda y provincia de Castellón. Alquiler de equipos de sonido, congeladores, botelleros, grifos de cerveza, organización de barras y servicio de personal. Más de 10 años de experiencia trabajando con peñas, ayuntamientos y eventos particulares.",
+  keywords: [
+    "alquiler sonido Onda",
+    "equipos música fiestas Castellón",
+    "organización eventos Onda",
+    "congeladores alquiler",
+    "botelleros fiestas",
+    "grifos cerveza",
+    "barras eventos",
+    "peñas Castellón",
+    "fiestas populares",
+    "sonido profesional",
+    "eventos Betxí",
+    "celebraciones Vila-Real",
+    "material fiestas",
+    "hielo eventos",
+    "montaje desmontaje",
+    "personal barra",
+    "Tot Per Fira",
+    "alquiler equipos de sonido",
+    "alquiler congeladores",
+    "venta de bebidas",
+    "organización de eventos",
+    "Onda, Castellón",
+    "venta de bebidas",
+    "Fira d'Onda",
+    "Feria de Onda",
+  ],
+  authors: [{ name: "Tot Per Fira" }],
+  creator: "Tot Per Fira",
+  publisher: "Tot Per Fira",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://totperfira.es"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "https://totperfira.es",
+    title: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
+    description: "Soluciones completas para fiestas y eventos en Castellón. Alquiler de equipos de sonido, congeladores, organización de barras y más. Servicio profesional con más de 10 años de experiencia.",
+    siteName: "Tot Per Fira",
+          images: [
+        {
+          url: "/images/pexels-kampus-6760884.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
+        },
+      ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
+    description: "Soluciones completas para fiestas y eventos en Castellón. Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón.",
+    images: ["/images/pexels-kampus-6760884.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "your-google-verification-code", // Reemplaza con tu código real
+  },
+  category: "Servicios de Eventos",
+  classification: "Alquiler de Equipos y Organización de Eventos",
+  other: {
+    "geo.region": "ES-VC",
+    "geo.placename": "Onda, Castellón",
+    "geo.position": "39.9687;-0.2625", // Coordenadas aproximadas de Onda
+    "ICBM": "39.9687, -0.2625",
+    "business:contact_data:locality": "Onda",
+    "business:contact_data:region": "Castellón",
+    "business:contact_data:country_name": "España",
+  },
 };
 
 export const viewport = {
@@ -124,6 +214,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning className="light">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${montserrat.variable} ${clashDisplay.variable} ${khand.variable} antialiased scroll-smooth`}
       >
