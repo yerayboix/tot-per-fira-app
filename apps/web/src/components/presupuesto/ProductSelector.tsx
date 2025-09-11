@@ -10,6 +10,7 @@ import { type LineaPresupuesto } from "@/types/presupuesto";
 interface Producto {
   nombre: string;
   precio?: number;
+  categoria?: string; // Nueva propiedad
 }
 
 interface ProductSelectorProps {
@@ -32,6 +33,25 @@ export default function ProductSelector({
 }: ProductSelectorProps) {
   const [selectedProduct, setSelectedProduct] = useState<Producto | null>(null);
   const [cantidad, setCantidad] = useState(1);
+
+  // Función para agrupar productos por categoría
+  const agruparPorCategoria = (productos: Producto[]) => {
+    const conCategoria = productos.filter(p => p.categoria);
+    const sinCategoria = productos.filter(p => !p.categoria);
+    
+    const grupos = conCategoria.reduce((acc, producto) => {
+      if (!acc[producto.categoria!]) {
+        acc[producto.categoria!] = [];
+      }
+      acc[producto.categoria!].push(producto);
+      return acc;
+    }, {} as Record<string, Producto[]>);
+    
+    return { grupos, sinCategoria };
+  };
+
+  const { grupos, sinCategoria } = agruparPorCategoria(productos);
+  const tieneGrupos = Object.keys(grupos).length > 0;
 
   const handleAddProduct = () => {
     if (!selectedProduct) return;
@@ -61,12 +81,29 @@ export default function ProductSelector({
             className="w-full mt-2 p-3 h-12 border-2 border-[#000000] shadow-[2px_2px_0px_0px_#000000] font-clash-display bg-white focus:outline-none focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none text-base"
             value={selectedProduct?.nombre || ''}
             onChange={(e) => {
-              const producto = productos.find(p => p.nombre === e.target.value);
+              const todosLosProductos = [
+                ...Object.values(grupos).flat(),
+                ...sinCategoria
+              ];
+              const producto = todosLosProductos.find(p => p.nombre === e.target.value);
               setSelectedProduct(producto || null);
             }}
           >
             <option value="">Selecciona un producto...</option>
-            {productos.map((producto) => (
+            
+            {/* Productos agrupados por categoría */}
+            {tieneGrupos && Object.entries(grupos).map(([categoria, productosGrupo]) => (
+              <optgroup key={categoria} label={categoria}>
+                {productosGrupo.map((producto) => (
+                  <option key={producto.nombre} value={producto.nombre}>
+                    {producto.nombre} {producto.precio && `- €${producto.precio}`}
+                  </option>
+                ))}
+              </optgroup>
+            ))}
+            
+            {/* Productos sin categoría */}
+            {sinCategoria.map((producto) => (
               <option key={producto.nombre} value={producto.nombre}>
                 {producto.nombre} {producto.precio && `- €${producto.precio}`}
               </option>
