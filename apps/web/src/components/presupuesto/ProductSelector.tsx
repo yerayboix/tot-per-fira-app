@@ -38,7 +38,7 @@ export default function ProductSelector({
   const agruparPorCategoria = (productos: Producto[]) => {
     const conCategoria = productos.filter(p => p.categoria);
     const sinCategoria = productos.filter(p => !p.categoria);
-    
+
     const grupos = conCategoria.reduce((acc, producto) => {
       if (!acc[producto.categoria!]) {
         acc[producto.categoria!] = [];
@@ -46,7 +46,7 @@ export default function ProductSelector({
       acc[producto.categoria!].push(producto);
       return acc;
     }, {} as Record<string, Producto[]>);
-    
+
     return { grupos, sinCategoria };
   };
 
@@ -71,7 +71,7 @@ export default function ProductSelector({
   return (
     <div className="border-b border-gray-300 p-4 md:p-6 space-y-4">
 
-      
+
       <div className="flex flex-col sm:flex-row sm:gap-4 md:gap-6">
         <div className="flex-1">
           <Label className="text-[var(--secondary-color)] font-clash-display font-medium text-sm md:text-base">
@@ -90,7 +90,7 @@ export default function ProductSelector({
             }}
           >
             <option value="">Selecciona un producto...</option>
-            
+
             {/* Productos agrupados por categoría */}
             {tieneGrupos && Object.entries(grupos).map(([categoria, productosGrupo]) => (
               <optgroup key={categoria} label={categoria}>
@@ -101,7 +101,7 @@ export default function ProductSelector({
                 ))}
               </optgroup>
             ))}
-            
+
             {/* Productos sin categoría */}
             {sinCategoria.map((producto) => (
               <option key={producto.nombre} value={producto.nombre}>
@@ -174,18 +174,27 @@ export default function ProductSelector({
 
       {/* Indicador para congelador */}
       {(categoria === 'congelador' || categoria === 'hielo') && (
-        <div className="flex items-center gap-4 text-xs text-gray-600">
-          <span className="font-khand font-medium">Incluye:</span>
-          <div className="flex items-center gap-1">
-            <Truck size={12} />
-            <span className="font-khand">Transporte</span>
+        <>
+          <div className="flex items-center gap-4 text-xs text-gray-600">
+            <span className="font-khand font-medium">Incluye:</span>
+            <div className="flex items-center gap-1">
+              <Truck size={12} />
+              <span className="font-khand">Transporte</span>
+            </div>
+            <span className="font-khand font-medium">Información:</span>
+            <div className="flex items-center gap-1">
+              <Info size={12} />
+              <span className="font-khand">Cada saca de hielo contiene 5 bolsas</span>
+            </div>
           </div>
-          <span className="font-khand font-medium">Información:</span>
-          <div className="flex items-center gap-1">
-            <Info size={12} />
-            <span className="font-khand">Cada saca de hielo contiene 5 bolsas</span>
+          <div className="flex items-center gap-4 text-xs text-gray-600">
+            <div className="flex items-center gap-1">
+              <Info size={12} />
+              <span className="font-khand">Si se requiere hielo durante el alquiler, se puede pedir solicitar o reservar</span>
+            </div>
           </div>
-        </div>
+        </>
+
       )}
 
       {/* Indicador para barriles */}
@@ -197,6 +206,15 @@ export default function ProductSelector({
           </div>
           <div className="text-xs text-gray-500 font-khand italic">
             * Gas no incluido
+          </div>
+        </div>
+      )}
+
+      {(categoria === 'alcohol' || categoria === 'bebida' || categoria === 'cervezas') && (
+        <div className="flex items-center gap-4 text-xs text-gray-600">
+          <div className="flex items-center gap-1">
+            <Info size={12} />
+            <span className="font-khand">No indicamos el precio en las bebidas ya que depende de las cantidades y varia según el pedido.</span>
           </div>
         </div>
       )}

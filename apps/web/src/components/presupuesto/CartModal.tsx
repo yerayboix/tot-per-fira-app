@@ -37,7 +37,7 @@ export default function CartModal({ isOpen, onClose, productos, onRemoveProduct 
     const labels: Record<string, string> = {
       alcohol: "Alcohol",
       cervezas: "Cervezas",
-      mezcla: "Mezcla",
+      bebida: "Bebidas no alcohólicas",
       congelador: "Congelador",
       hielo: "Hielo",
       altavoces: "Altavoces",
@@ -51,10 +51,10 @@ export default function CartModal({ isOpen, onClose, productos, onRemoveProduct 
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogOverlay className="backdrop-blur-sm bg-black/30" />
       <DialogContent 
-        className="w-screen h-screen max-w-none overflow-hidden border-0 rounded-none p-0 gap-0"
+        className="w-screen h-[100dvh] max-w-none overflow-hidden border-0 rounded-none p-0 gap-0 flex flex-col"
         showCloseButton={false}
       >
-        <DialogHeader className="border-b border-gray-300 bg-[var(--complementary-color-turquoise)]/10 p-4 flex flex-row items-center justify-between space-y-0">
+        <DialogHeader className="border-b border-gray-300 bg-[var(--complementary-color-turquoise)]/10 p-4 pt-[max(1rem,env(safe-area-inset-top))] flex flex-row items-center justify-between space-y-0 flex-shrink-0">
           <DialogTitle className="text-2xl md:text-3xl font-bold font-khand text-[var(--secondary-color)] flex items-center gap-2">
             <ShoppingCart size={24} />
             Carrito ({productos.length})
@@ -63,14 +63,14 @@ export default function CartModal({ isOpen, onClose, productos, onRemoveProduct 
             onClick={onClose}
             variant="outline"
             size="lg"
-            className="!w-12 !h-12 md:!w-14 md:!h-14 flex items-center justify-center flex-shrink-0"
+            className="!w-12 !h-12 md:!w-14 md:!h-14 flex items-center justify-center flex-shrink-0 relative z-10"
           >
             <X size={24} className="flex-shrink-0" />
           </Button>
         </DialogHeader>
 
         {/* Content */}
-        <div className="overflow-y-auto h-[calc(100vh-140px)] pb-20">
+        <div className="overflow-y-auto flex-1 min-h-0 pb-20">
           {productos.length === 0 ? (
             <div className="p-8 text-center">
               <ShoppingCart size={48} className="mx-auto mb-4 text-gray-400" />

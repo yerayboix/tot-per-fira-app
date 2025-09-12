@@ -71,7 +71,7 @@ export default async function PedidoConfirmadoPage(props: { params: { orderId: s
             <li>• Te contactaremos en las próximas 24 horas</li>
             <li>• Revisaremos tu presupuesto y confirmaremos disponibilidad</li>
             <li>• Te enviaremos un presupuesto final detallado</li>
-            <li>• Coordinaremos la fecha y detalles del evento</li>
+            <li>• Coordinaremos la fecha y detalles de la entrega</li>
           </ul>
         </div>
 

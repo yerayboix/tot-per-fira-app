@@ -36,20 +36,18 @@ export const productosPorCategoria = {
     { nombre: 'Absolut 1L', categoria: 'Vodka' },
     { nombre: 'Eristoff 0.7L', categoria: 'Vodka' },
     { nombre: 'Eristoff 1L', categoria: 'Vodka' },
-    { nombre: 'Vodka Sabores 0.7L', categoria: 'Vodka' },
-    { nombre: 'Vodka Sabores 1L', categoria: 'Vodka' },
+    { nombre: 'Vodka Sabores 0.7L (especificar sabor cuando nos pongamos en contacto)', categoria: 'Vodka' },
+    { nombre: 'Vodka Sabores 1L (especificar sabor cuando nos pongamos en contacto)', categoria: 'Vodka' },
     
     // LICORES
     { nombre: 'Jägermeister 0.7L', categoria: 'Licores' },
     { nombre: 'Jägermeister 1L', categoria: 'Licores' },
     { nombre: 'Tequila 0.7L', categoria: 'Licores' },
-    { nombre: 'Tequila Sabores 0.7L', categoria: 'Licores' },
-    { nombre: 'Licor de Arroz 1L', categoria: 'Licores' },
+    { nombre: 'Tequila de Fresa 0.7L', categoria: 'Licores' },
+    { nombre: 'Tequila de Mango 0.7L', categoria: 'Licores' },
+    { nombre: 'Tequila de Sandía 0.7L', categoria: 'Licores' },
     { nombre: 'Licor de Arroz 3L', categoria: 'Licores' },
-    { nombre: 'Licor de Arroz 5L', categoria: 'Licores' },
-    { nombre: 'Limoncello 1L', categoria: 'Licores' },
     { nombre: 'Limoncello 3L', categoria: 'Licores' },
-    { nombre: 'Limoncello 5L', categoria: 'Licores' },
     { nombre: 'Baileys 0.7L', categoria: 'Licores' },
     { nombre: 'Peché 0.7L', categoria: 'Licores' },
     { nombre: 'Fireball 0.7L', categoria: 'Licores' },
@@ -59,21 +57,22 @@ export const productosPorCategoria = {
   
   // BEBIDAS SIN ALCOHOL
   bebida: [
+    { nombre: 'Aquarius de Naranja 330ml' },
+    { nombre: 'Aquarius de Naranja 1.5L' },
+    { nombre: 'Aquarius de Limón 330ml' },
+    { nombre: 'Aquarius de Limón 1.5L' },
     { nombre: 'Coca Cola 330ml' },
-    { nombre: 'Coca Cola 500ml' },
-    { nombre: 'Coca Cola 1.5L' },
     { nombre: 'Coca Cola 2L' },
     { nombre: 'Fanta Naranja 330ml' },
-    { nombre: 'Fanta Naranja 500ml' },
-    { nombre: 'Fanta Naranja 1.5L' },
     { nombre: 'Fanta Naranja 2L' },
+    { nombre: 'Fanta Limón 330ml' },
+    { nombre: 'Fanta Limón 2L' },
     { nombre: 'Sprite 330ml' },
-    { nombre: 'Sprite 500ml' },
-    { nombre: 'Sprite 1.5L' },
     { nombre: 'Sprite 2L' },
     { nombre: 'Nestea 330ml' },
-    { nombre: 'Nestea 500ml' },
     { nombre: 'Nestea 1.5L' },
+    { nombre: 'Tonica 330ml' },
+    { nombre: 'Tonica 1L' },
     { nombre: 'Agua La Serreta 0.5L' },
     { nombre: 'Agua La Serreta 1.5L' },
   ],
@@ -89,6 +88,7 @@ export const productosPorCategoria = {
     { nombre: 'Cerveza con Limón - Quintos (Pack 24)' },
     { nombre: 'Cerveza con Limón - Cuartos (Pack 24)' },
     { nombre: 'Cerveza con Limón - Tercios (Pack 24)' },
+    { nombre: 'Cerveza 0,0 - Tercios (Pack 24)' },
   ],
 
   // CATEGORÍAS EXISTENTES NO BEBIDAS
@@ -99,7 +99,6 @@ export const productosPorCategoria = {
     { nombre: 'Congelador + 20 sacos de hielos (100 bolsas)', precio: 195 },
   ],
   hielo: [
-    { nombre: '1 saca (5 bolsas)', precio: 6 },
     { nombre: '5 sacas (25 bolsas)', precio: 30 },
     { nombre: '10 sacas (50 bolsas)', precio: 60 },
     { nombre: '15 sacas (75 bolsas)', precio: 90 },
@@ -107,7 +106,7 @@ export const productosPorCategoria = {
   ],
   altavoces: [
     { nombre: 'Equipo de 500W', precio: 200 },
-    { nombre: 'Equipo de 1.000W', precio: 275 },
+    { nombre: 'Equipo de 1.000W', precio: 300 },
     { nombre: 'Equipo de 1.500W', precio: 425 },
     { nombre: 'Equipo de 2.000W', precio: 450 },
     { nombre: 'Equipo de 3.000W', precio: 550 },
@@ -122,8 +121,8 @@ export const productosPorCategoria = {
     { nombre: 'Pack de Menaje', precio: 50 },
   ],
   vasos: [
-    { nombre: 'Vasos 0.22L (1000 uds.)' },
-    { nombre: 'Vasos 0.33L (1000 uds.)' },
-    { nombre: 'Vasos 0.50L (1000 uds.)' },
+    { nombre: 'Vasos 0.22L (500 uds.)' },
+    { nombre: 'Vasos 0.33L (500 uds.)' },
+    { nombre: 'Vasos 0.50L (500 uds.)' },
   ]
 };

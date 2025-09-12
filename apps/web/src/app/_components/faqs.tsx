@@ -10,11 +10,11 @@ import Link from "next/link"
 export default function   FrequentQuestions() {
   const faqs = [
     {
-      question: "¿Qué servicios ofrecen?",
+      question: "¿Qué servicios ofrecemos?",
       answer: "Ofrecemos alquiler de altavoces, congeladores, botelleros, suministro de bebidas, grifos de cerveza, packs de limpieza y menaje. También proporcionamos personal de barra y montaje completo."
     },
     {
-      question: "¿En qué zonas trabajan?",
+      question: "¿En qué zonas trabajamos?",
       answer: "Trabajamos principalmente en la Comunidad Valenciana, con sede en Onda, Castellón. Para eventos fuera de esta zona, consúltanos y estudiaremos la viabilidad."
     },
     {
@@ -26,12 +26,8 @@ export default function   FrequentQuestions() {
       answer: "Sí, nuestro servicio incluye el montaje completo del equipo en el lugar del evento y el desmontaje posterior. Solo necesitas indicarnos dónde y cuándo."
     },
     {
-      question: "¿Qué incluye el personal de barra?",
-      answer: "El personal de barra se encarga de servir las bebidas, mantener la barra limpia y organizada, y asegurar que no falte nada durante el evento. Incluye uniforme y experiencia en el sector."
-    },
-    {
       question: "¿Cómo funciona el pago?",
-      answer: "Solicitamos una señal del 30% para confirmar la reserva, y el resto se paga el día del evento una vez montado todo el equipo. Aceptamos efectivo, transferencia bancaria y tarjeta."
+      answer: "Aceptamos transferencias o efectivo solamente."
     }
   ]
 

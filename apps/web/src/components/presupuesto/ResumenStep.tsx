@@ -30,7 +30,7 @@ export default function ResumenStep({ presupuesto, onEnviar, puedeEnviar, isLoad
     const labels: Record<string, string> = {
       alcohol: 'Alcohol',
       cervezas: 'Cervezas',
-      mezcla: 'Mezcla',
+      bebida: 'Bebidas no alcohólicas',
       congelador: 'Congeladores',
       hielo: 'Hielo',
       altavoces: 'Altavoces',

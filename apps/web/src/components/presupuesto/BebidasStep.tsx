@@ -18,7 +18,7 @@ export default function BebidasStep({ objetosPedido, onAddProduct, onRemoveProdu
   const categorias = [
     { key: 'alcohol' as const, label: 'Alcohol', productos: productosPorCategoria.alcohol },
     { key: 'cervezas' as const, label: 'Cervezas', productos: productosPorCategoria.cervezas },
-    { key: 'bebida' as const, label: 'Bebidas', productos: productosPorCategoria.bebida },
+    { key: 'bebida' as const, label: 'Bebidas no alcohólicas', productos: productosPorCategoria.bebida },
   ];
 
   return (

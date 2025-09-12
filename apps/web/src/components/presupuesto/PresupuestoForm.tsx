@@ -34,9 +34,9 @@ import { type Presupuesto, type LineaPresupuesto } from "@/types/presupuesto";
 
 const PASOS = [
   { id: 1, titulo: "Información de Contacto", required: true },
-  { id: 2, titulo: "Bebidas", required: false },
+  { id: 2, titulo: "Altavoces", required: false },
   { id: 3, titulo: "Congelador y Hielos", required: false },
-  { id: 4, titulo: "Altavoces", required: false },
+  { id: 4, titulo: "Bebidas", required: false },
   { id: 5, titulo: "Pack Limpieza", required: false },
   { id: 6, titulo: "Pack Menaje", required: false },
   { id: 7, titulo: "Resumen", required: true },
@@ -190,11 +190,12 @@ export default function PresupuestoForm() {
         );
       case 2:
         return (
-          <BebidasStep
+          <AltavocesStep
             objetosPedido={presupuesto.objetosPedido}
             onAddProduct={añadirProducto}
             onRemoveProduct={eliminarProducto}
           />
+          
         );
       case 3:
         return (
@@ -206,7 +207,7 @@ export default function PresupuestoForm() {
         );
       case 4:
         return (
-          <AltavocesStep
+          <BebidasStep
             objetosPedido={presupuesto.objetosPedido}
             onAddProduct={añadirProducto}
             onRemoveProduct={eliminarProducto}
@@ -324,10 +325,10 @@ export default function PresupuestoForm() {
               {shouldShowInfoButton() && (
                 <button
                   onClick={() => openPackInfo(getInfoButtonType())}
-                  className="flex items-center gap-2 px-3 py-2 text-sm text-[var(--secondary-color)] hover:text-[var(--primary-color)] border border-gray-300 hover:border-[var(--primary-color)] transition-colors bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,0.1)] flex-shrink-0"
+                  className="flex items-center gap-2 px-3 py-2 text-sm font-clash-display font-medium bg-[var(--primary-color)] text-white border-2 border-[#000000] shadow-[4px_4px_0px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 active:shadow-none active:translate-x-1 active:translate-y-1 transition-all duration-200 flex-shrink-0"
                 >
                   <Info size={16} />
-                  <span className="font-clash-display hidden sm:inline">¿Qué incluye?</span>
+                  <span className="hidden sm:inline">¿Qué incluye?</span>
                 </button>
               )}
             </div>
@@ -386,7 +387,7 @@ export default function PresupuestoForm() {
                         ¿Confirmar pedido?
                       </AlertDialogTitle>
                       <AlertDialogDescription className="font-clash-display text-[var(--secondary-color)]">
-                        ¿Estás seguro de que quieres enviar este presupuesto? Una vez enviado, recibirás una confirmación por email y nos pondremos en contacto contigo.
+                        ¿Estás seguro de que quieres enviar este presupuesto? Una vez enviado, nos pondremos en contacto contigo lo antes posible.
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter className="gap-3">
