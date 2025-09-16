@@ -2,8 +2,8 @@ import { ImageResponse } from 'next/og'
 
 // Image metadata
 export const size = {
-  width: 32,
-  height: 32,
+  width: 48,
+  height: 48,
 }
 export const contentType = 'image/png'
 
@@ -13,17 +13,17 @@ export default function Icon() {
     (
       <div
         style={{
-          fontSize: 16,
-          background: '#e63947', // slate-900 color
-          fontFamily: 'var(--font-khand)',
+          fontSize: 25,
+          background: '#e63947', // Brand red color
+          fontFamily: 'system-ui, -apple-system, sans-serif',
+          fontWeight: 'bold',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          color: '#131629', // white text
-          borderRadius: '6px',
-          fontWeight: 'bold',
+          color: '#131629', // White text for better contrast
+          borderRadius: '8px',
         }}
       >
         TPF

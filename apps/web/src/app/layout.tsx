@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     siteName: "Tot Per Fira",
           images: [
         {
-          url: "/images/pexels-kampus-6760884.jpg",
+          url: "/images/LOGO_Cuadrado_fondo_azul.jpg",
           width: 1200,
           height: 630,
           alt: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
@@ -173,7 +173,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
     description: "Soluciones completas para fiestas y eventos en Castellón. Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón.",
-    images: ["/images/pexels-kampus-6760884.jpg"],
+    images: ["/images/LOGO_Cuadrado_fondo_azul.jpg"],
   },
   robots: {
     index: true,
@@ -185,9 +185,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: "your-google-verification-code", // Reemplaza con tu código real
   },
   category: "Servicios de Eventos",
   classification: "Alquiler de Equipos y Organización de Eventos",
