@@ -29,6 +29,7 @@ const packContent = {
   menaje: {
     title: "Pack de Menaje",
     items: [
+      "200 platos 22cm de diámetro",
       "100 cuchillos",
       "100 tenedores",
       "100 cucharas",
