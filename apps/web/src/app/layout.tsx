@@ -110,10 +110,10 @@ const khand = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
+    default: "Tot Per Fira | Alquiler de sonido, bebidas y organización de eventos en Onda, Castellón",
     template: "%s | Tot Per Fira"
   },
-  description: "Tot Per Fira ofrece soluciones completas para fiestas, eventos y celebraciones en Onda y provincia de Castellón. Alquiler de equipos de sonido, congeladores, botelleros, grifos de cerveza, organización de barras y servicio de personal. Más de 10 años de experiencia trabajando con peñas, ayuntamientos y eventos particulares.",
+  description: "Alquiler de equipos de sonido, congeladores y bebidas en Onda, Castellón. Más de 10 años organizando eventos, fiestas y peñas con servicio profesional.",
   keywords: [
     "alquiler sonido Onda",
     "equipos música fiestas Castellón",
@@ -135,44 +135,33 @@ export const metadata: Metadata = {
     "alquiler equipos de sonido",
     "alquiler congeladores",
     "venta de bebidas",
-    "organización de eventos",
-    "Onda, Castellón",
-    "venta de bebidas",
     "Fira d'Onda",
-    "Feria de Onda",
+    "Feria de Onda"
   ],
   authors: [{ name: "Tot Per Fira" }],
   creator: "Tot Per Fira",
   publisher: "Tot Per Fira",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL("https://totperfira.es"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: "https://totperfira.es",
-    title: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
-    description: "Soluciones completas para fiestas y eventos en Castellón. Alquiler de equipos de sonido, congeladores, organización de barras y más. Servicio profesional con más de 10 años de experiencia.",
+    title: "Tot Per Fira | Equipos de sonido y bebidas para fiestas en Onda, Castellón",
+    description: "Soluciones para fiestas y eventos: sonido, congeladores, bebidas y personal en Onda y Castellón. Servicio profesional con más de 10 años de experiencia.",
     siteName: "Tot Per Fira",
-          images: [
-        {
-          url: "/images/LOGO_Cuadrado_fondo_azul.jpg",
-          width: 1200,
-          height: 630,
-          alt: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
-        },
-      ],
+    images: [
+      {
+        url: "/images/LOGO_Cuadrado_fondo_azul.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tot Per Fira - Equipos de sonido, congeladores y bebidas en Onda, Castellón",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tot Per Fira - Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón",
-    description: "Soluciones completas para fiestas y eventos en Castellón. Alquiler de equipos de sonido, congeladores, venta de bebidas y organización de eventos en Onda, Castellón.",
+    title: "Tot Per Fira | Sonido y organización de eventos en Castellón",
+    description: "Alquiler de sonido, congeladores y bebidas para fiestas en Onda y Castellón. Organización profesional de eventos y peñas.",
     images: ["/images/LOGO_Cuadrado_fondo_azul.jpg"],
   },
   robots: {
@@ -191,13 +180,14 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "ES-VC",
     "geo.placename": "Onda, Castellón",
-    "geo.position": "39.9687;-0.2625", // Coordenadas aproximadas de Onda
+    "geo.position": "39.9687;-0.2625",
     "ICBM": "39.9687, -0.2625",
     "business:contact_data:locality": "Onda",
     "business:contact_data:region": "Castellón",
     "business:contact_data:country_name": "España",
   },
-};
+}
+
 
 export const viewport = {
   width: "device-width",
