@@ -3,6 +3,18 @@ import GlitchText from "@/components/ui/glitch-text"
 import Button from "@/components/ui/retro-btn"
 import Image from "next/image"
 import Link from "next/link"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Contacto",
+  description: "Contacta con Tot Per Fira para cualquier consulta o solicitud de presupuesto.",
+  keywords: [
+    "contacto",
+    "tot per fira",
+    "fiestas",
+    "alquiler de equipos de sonido",
+  ],
+};
 
 export default function ContactoPage() {
   return (
