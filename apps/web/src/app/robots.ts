@@ -13,6 +13,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: 'https://totperfira.es/sitemap.xml',
-    host: 'https://totperfira.es',
   }
 } 
